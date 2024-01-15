@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://dqedknamwrxhk"]
+[gd_scene load_steps=2 format=3 uid="uid://dqedknamwrxhk"]
+
+[ext_resource type="Texture2D" uid="uid://d0hcayid81rte" path="res://icon.svg" id="1_h58cu"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -8,3 +10,8 @@ offset_top = 353.0
 offset_right = 494.0
 offset_bottom = 384.0
 text = "Start"
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(518, 184)
+scale = Vector2(6.39844, 0.757813)
+texture = ExtResource("1_h58cu")
