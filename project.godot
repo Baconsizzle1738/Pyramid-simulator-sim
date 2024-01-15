@@ -13,7 +13,7 @@ config_version=5
 config/name="Pyramid Scheme Sim"
 run/main_scene="res://Game_Scenes/Main_Menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://Assets/Temp/icon.svg"
 
 [display]
 
