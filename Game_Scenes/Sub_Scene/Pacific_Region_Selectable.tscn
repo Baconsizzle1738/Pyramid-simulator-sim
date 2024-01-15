@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://tqve15lstf8n"]
+
+[ext_resource type="Script" path="res://Scripts/Scene_Scripts/Pacific_Region.gd" id="1_rjnpv"]
+[ext_resource type="Texture2D" uid="uid://beti0def2ndtl" path="res://Assets/Temp/usa-map-capitals-only-color.png" id="2_qse5i"]
+[ext_resource type="Texture2D" uid="uid://bgog56fbgc40x" path="res://Assets/Temp/Pacific_region.png" id="3_dwfgk"]
+[ext_resource type="Texture2D" uid="uid://bpv2peux7beyy" path="res://Assets/Temp/blurry pacific coiast.png" id="4_rxm02"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fbofs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_dwfgk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rxm02")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="PacificRegionSelectable" type="Node2D"]
+script = ExtResource("1_rjnpv")
+
+[node name="Usa-map-capitals-only-color" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(574, 346)
+scale = Vector2(0.183355, 0.183355)
+texture = ExtResource("2_qse5i")
+
+[node name="PacificRegion" type="AnimatedSprite2D" parent="."]
+position = Vector2(230, 341.91)
+scale = Vector2(0.673333, 0.673333)
+sprite_frames = SubResource("SpriteFrames_fbofs")
+frame = 1
+frame_progress = 0.878211
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="WestCoast" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(212, 81, 283, 105, 269, 164, 272, 170, 271, 177, 255, 195, 258, 202, 249, 243, 204, 233, 188, 289, 254, 394, 259, 408, 252, 414, 252, 420, 246, 426, 246, 433, 249, 434, 249, 438, 244, 439, 204, 433, 203, 419, 194, 405, 189, 401, 176, 396, 174, 389, 156, 379, 155, 372, 159, 369, 143, 332, 149, 327, 142, 320, 142, 307, 149, 306, 139, 298, 138, 288, 132, 279, 136, 258, 133, 250, 132, 241, 138, 237, 143, 226, 144, 197, 157, 179, 172, 145, 179, 124, 180, 87, 186, 84, 201, 98, 204, 105, 198, 116, 203, 119, 206, 111, 211, 107, 209, 94)
+
+[node name="Alaska" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(276, 507, 292, 507, 292, 567, 297, 583, 326, 601, 320, 609, 305, 594, 291, 588, 280, 581, 274, 571, 268, 571, 268, 578, 264, 577, 262, 581, 256, 581, 256, 574, 249, 577, 252, 581, 250, 587, 243, 591, 225, 604, 196, 608, 217, 599, 239, 586, 239, 580, 229, 581, 220, 579, 221, 570, 216, 568, 215, 561, 215, 553, 225, 546, 232, 545, 235, 542, 222, 535, 220, 527, 223, 522, 231, 522, 237, 528, 240, 524, 229, 508, 232, 505, 238, 505, 247, 497, 259, 497)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(132, 432, 137, 435, 149, 438, 160, 443, 163, 446, 167, 450, 171, 453, 171, 458, 166, 463, 161, 462, 161, 451, 161, 447, 156, 447, 158, 445, 150, 441, 145, 443, 143, 441, 144, 439, 136, 437, 133, 437)
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
