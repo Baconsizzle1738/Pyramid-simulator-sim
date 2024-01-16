@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://cg7toqor2aygk"]
+
+[ext_resource type="Texture2D" uid="uid://d0hcayid81rte" path="res://Assets/Temp/icon.svg" id="1_3ni02"]
+[ext_resource type="Texture2D" uid="uid://bgog56fbgc40x" path="res://Assets/Temp/Pacific_region.png" id="1_sl6m7"]
+
+[node name="PacificPopup" type="Control"]
+layout_mode = 3
+anchor_right = 0.694
+anchor_bottom = 0.617
+offset_right = 0.511963
+offset_bottom = 0.18396
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(450.75, 174)
+scale = Vector2(8.22266, 4.51563)
+texture = ExtResource("1_3ni02")
+
+[node name="PacificRegion" type="Sprite2D" parent="."]
+position = Vector2(189, 200)
+rotation = -0.825541
+scale = Vector2(0.532457, 0.532457)
+texture = ExtResource("1_sl6m7")

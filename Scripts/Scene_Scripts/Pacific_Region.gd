@@ -1,7 +1,10 @@
 extends Node2D
 
+#@onready var pacificPopup = load("res://Game_Scenes/Popups/Pacific_Popup.tscn")
+
 #see if the mouse is hovering over the area selected
 var mouseHovering = false
+var exists = false #if the window exists
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,17 +18,21 @@ func _process(delta):
 
 func _on_area_2d_mouse_entered():
 	mouseHovering = true
-	$PacificRegion.frame = 0
+	if !exists:
+		$PacificRegion.frame = 0
 	#print("IN")
 
 
 func _on_area_2d_mouse_exited():
 	mouseHovering = false
-	$PacificRegion.frame = 1
+	if !exists:
+		$PacificRegion.frame = 1
 	#print("OUT")
 
 
 func _on_area_2d_input_event(viewport, event, shape_idx):
 	#event.button_index == MOUSE_BUTTON_LEFT
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and mouseHovering:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and mouseHovering and !exists:
 		print("CLICKED")
+		get_parent().get_child(3).visible = true #index is based on where the window node is from "GameMap" node
+		exists = true
