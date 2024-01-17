@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3cjwib8lrva2"]
+
+[ext_resource type="Texture2D" uid="uid://d0hcayid81rte" path="res://Assets/Temp/icon.svg" id="1_bhffl"]
+[ext_resource type="Texture2D" uid="uid://dg2bti02pie76" path="res://Assets/Temp/placeholder1.png" id="2_fqetj"]
+
+[node name="SouthwestPopup" type="Control"]
+layout_mode = 3
+anchor_right = 0.694
+anchor_bottom = 0.617
+offset_right = 0.511963
+offset_bottom = 0.18396
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(401.5, 198)
+scale = Vector2(6.25781, 3.07813)
+texture = ExtResource("1_bhffl")
+
+[node name="Southwest" type="Sprite2D" parent="."]
+position = Vector2(208, 203)
+scale = Vector2(0.225333, 0.225333)
+texture = ExtResource("2_fqetj")

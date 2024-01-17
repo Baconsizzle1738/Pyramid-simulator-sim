@@ -1,10 +1,13 @@
-extends Node2D
-
+extends "res://Scripts/Selectable_Abstract.gd"
 #@onready var pacificPopup = load("res://Game_Scenes/Popups/Pacific_Popup.tscn")
 
+#var frameOneLoad = false #for loading things in the first frame bc _ready() doesnt actually wait for all children
+
 #see if the mouse is hovering over the area selected
-var mouseHovering = false
-var exists = false #if the window exists
+#var mouseHovering = false
+#var exists = false #if the window exists
+
+#var IDX #index of this node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,7 +16,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if !frameOneLoad:
+		IDX = get_parent().PacificIDX
+		frameOneLoad = true
 
 
 func _on_area_2d_mouse_entered():
@@ -33,6 +38,6 @@ func _on_area_2d_mouse_exited():
 func _on_area_2d_input_event(viewport, event, shape_idx):
 	#event.button_index == MOUSE_BUTTON_LEFT
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and mouseHovering and !exists:
-		print("CLICKED")
-		get_parent().get_child(3).visible = true #index is based on where the window node is from "GameMap" node
+		#print("CLICKED")
+		get_parent().get_child(IDX).visible = true #index is based on where the window node is from "GameMap" node
 		exists = true

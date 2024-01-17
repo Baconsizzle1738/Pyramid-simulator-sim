@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://cacxm18vf45kk"]
+
+[ext_resource type="Script" path="res://Scripts/Scene_Scripts/South_Atlantic_Selectable.gd" id="1_nxsoc"]
+[ext_resource type="Texture2D" uid="uid://dg2bti02pie76" path="res://Assets/Temp/placeholder1.png" id="1_rsbmq"]
+[ext_resource type="Texture2D" uid="uid://dujsexumthhsn" path="res://Assets/Temp/placeholder2.png" id="2_qr3qc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_04v7j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_rsbmq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qr3qc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="SouthAtlanticSelectable" type="Node2D"]
+script = ExtResource("1_nxsoc")
+
+[node name="SouthAtlanticRegion" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.136667, 0.136667)
+sprite_frames = SubResource("SpriteFrames_04v7j")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="states" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-26, -26, 25, -25, 25, 26, -25, 25)
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

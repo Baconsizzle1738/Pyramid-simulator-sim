@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5f8idolpjdfm"]
+
+[ext_resource type="Texture2D" uid="uid://d0hcayid81rte" path="res://Assets/Temp/icon.svg" id="1_vgnyh"]
+[ext_resource type="Texture2D" uid="uid://dg2bti02pie76" path="res://Assets/Temp/placeholder1.png" id="2_i1plg"]
+
+[node name="SouthernPlainsPopup" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -352.0
+offset_bottom = -248.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(398.5, 200)
+scale = Vector2(6.24219, 3.09375)
+texture = ExtResource("1_vgnyh")
+
+[node name="Placeholder1" type="Sprite2D" parent="."]
+position = Vector2(158, 186)
+scale = Vector2(0.204, 0.204)
+texture = ExtResource("2_i1plg")

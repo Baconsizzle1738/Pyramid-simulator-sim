@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7l5b8sm65s7p"]
+
+[ext_resource type="Texture2D" uid="uid://d0hcayid81rte" path="res://Assets/Temp/icon.svg" id="1_du4e5"]
+[ext_resource type="Texture2D" uid="uid://dg2bti02pie76" path="res://Assets/Temp/placeholder1.png" id="2_g0w73"]
+
+[node name="NorthernRockiesPopup" type="Control"]
+layout_mode = 3
+anchor_right = 0.694
+anchor_bottom = 0.617
+offset_right = 0.511963
+offset_bottom = 0.18396
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(445, 219.5)
+scale = Vector2(7.20313, 3.49219)
+texture = ExtResource("1_du4e5")
+
+[node name="NorthRockies" type="Sprite2D" parent="."]
+position = Vector2(202, 185)
+scale = Vector2(0.42, 0.42)
+texture = ExtResource("2_g0w73")

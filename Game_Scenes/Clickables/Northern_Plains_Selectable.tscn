@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://l1fxtjqpaxfw"]
+
+[ext_resource type="Script" path="res://Scripts/Scene_Scripts/Northern_Plains_Selectable.gd" id="1_gvc4b"]
+[ext_resource type="Texture2D" uid="uid://dg2bti02pie76" path="res://Assets/Temp/placeholder1.png" id="2_jjq05"]
+[ext_resource type="Texture2D" uid="uid://dujsexumthhsn" path="res://Assets/Temp/placeholder2.png" id="3_2sqpk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qnddc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_jjq05")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2sqpk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.0
+}]
+
+[node name="NorthernPlainsSelectable" type="Node2D"]
+script = ExtResource("1_gvc4b")
+
+[node name="NorthernPlainsRegion" type="AnimatedSprite2D" parent="."]
+position = Vector2(9.53674e-07, -1)
+scale = Vector2(0.220667, 0.220667)
+sprite_frames = SubResource("SpriteFrames_qnddc")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="States" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-40, -42, 40, -41, 42, 4, 41, 38, -42, 39)
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

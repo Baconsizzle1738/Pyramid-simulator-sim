@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://0wxted528o6m"]
+
+[ext_resource type="Texture2D" uid="uid://d0hcayid81rte" path="res://Assets/Temp/icon.svg" id="1_plb0o"]
+[ext_resource type="Texture2D" uid="uid://dg2bti02pie76" path="res://Assets/Temp/placeholder1.png" id="2_vby2k"]
+
+[node name="MidwestPopup" type="Control"]
+layout_mode = 3
+anchor_right = 0.694
+anchor_bottom = 0.617
+offset_right = 0.511963
+offset_bottom = 0.18396
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(399, 199.5)
+scale = Vector2(6.25, 3.13281)
+texture = ExtResource("1_plb0o")
+
+[node name="Placeholder1" type="Sprite2D" parent="."]
+position = Vector2(143, 191)
+scale = Vector2(0.188, 0.188)
+texture = ExtResource("2_vby2k")

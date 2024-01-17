@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://bcgyl2byldh3q"]
+
+[ext_resource type="Script" path="res://Scripts/Scene_Scripts/New_England_Selectable.gd" id="1_7cpeu"]
+[ext_resource type="Texture2D" uid="uid://dg2bti02pie76" path="res://Assets/Temp/placeholder1.png" id="2_7sr6c"]
+[ext_resource type="Texture2D" uid="uid://dujsexumthhsn" path="res://Assets/Temp/placeholder2.png" id="3_x3tm5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vsyv3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7sr6c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_x3tm5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="NewEnglandSelectable" type="Node2D"]
+script = ExtResource("1_7cpeu")
+
+[node name="NewEnglandRegion" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.132, 0.132)
+sprite_frames = SubResource("SpriteFrames_vsyv3")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="states" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-24, -25, 24, -25, 24, 25, -24, 24)
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

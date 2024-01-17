@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://carj0ir46234n"]
+
+[ext_resource type="Texture2D" uid="uid://dg2bti02pie76" path="res://Assets/Temp/placeholder1.png" id="1_a5p74"]
+[ext_resource type="Script" path="res://Scripts/Scene_Scripts/Northern_Rockies_Selectable.gd" id="1_t3ov6"]
+[ext_resource type="Texture2D" uid="uid://dujsexumthhsn" path="res://Assets/Temp/placeholder2.png" id="2_10idc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v3qol"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_10idc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_a5p74")
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.0
+}]
+
+[node name="NorthernRockiesSelectable" type="Node2D"]
+script = ExtResource("1_t3ov6")
+
+[node name="NorthernRockiesRegion" type="AnimatedSprite2D" parent="."]
+position = Vector2(-0.25, -0.25)
+scale = Vector2(0.182667, 0.182667)
+sprite_frames = SubResource("SpriteFrames_v3qol")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="States" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(-95.2824, -50.597)
+scale = Vector2(0.186839, 0.191293)
+polygon = PackedVector2Array(329, 83, 516, 75, 694, 79, 707, 454, 329, 440)
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
