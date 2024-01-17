@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7l5b8sm65s7p"]
+[gd_scene load_steps=3 format=3 uid="uid://gsas4nig8cy4"]
 
 [ext_resource type="Texture2D" uid="uid://d0hcayid81rte" path="res://Assets/Temp/icon.svg" id="1_du4e5"]
-[ext_resource type="Texture2D" uid="uid://dg2bti02pie76" path="res://Assets/Temp/placeholder1.png" id="2_g0w73"]
+[ext_resource type="Texture2D" uid="uid://di60nfhdda3tr" path="res://Assets/Map_Graphics/yellowRegion_ponziProject.png" id="2_hadte"]
 
 [node name="NorthernRockiesPopup" type="Control"]
 layout_mode = 3
@@ -18,6 +18,6 @@ scale = Vector2(7.20313, 3.49219)
 texture = ExtResource("1_du4e5")
 
 [node name="NorthRockies" type="Sprite2D" parent="."]
-position = Vector2(202, 185)
-scale = Vector2(0.42, 0.42)
-texture = ExtResource("2_g0w73")
+position = Vector2(742, 398)
+scale = Vector2(0.965244, 0.965244)
+texture = ExtResource("2_hadte")

@@ -1,17 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://carj0ir46234n"]
+[gd_scene load_steps=4 format=3 uid="uid://dxex4mtxqdd4s"]
 
-[ext_resource type="Texture2D" uid="uid://dg2bti02pie76" path="res://Assets/Temp/placeholder1.png" id="1_a5p74"]
 [ext_resource type="Script" path="res://Scripts/Scene_Scripts/Northern_Rockies_Selectable.gd" id="1_t3ov6"]
-[ext_resource type="Texture2D" uid="uid://dujsexumthhsn" path="res://Assets/Temp/placeholder2.png" id="2_10idc"]
+[ext_resource type="Texture2D" uid="uid://di60nfhdda3tr" path="res://Assets/Map_Graphics/yellowRegion_ponziProject.png" id="2_a1d7h"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_v3qol"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_10idc")
+"texture": ExtResource("2_a1d7h")
 }, {
 "duration": 1.0,
-"texture": ExtResource("1_a5p74")
+"texture": ExtResource("2_a1d7h")
 }],
 "loop": true,
 "name": &"default",
@@ -22,8 +21,8 @@ animations = [{
 script = ExtResource("1_t3ov6")
 
 [node name="NorthernRockiesRegion" type="AnimatedSprite2D" parent="."]
-position = Vector2(-0.25, -0.25)
-scale = Vector2(0.182667, 0.182667)
+position = Vector2(222, 97)
+scale = Vector2(0.469, 0.469)
 sprite_frames = SubResource("SpriteFrames_v3qol")
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -31,7 +30,7 @@ sprite_frames = SubResource("SpriteFrames_v3qol")
 [node name="States" type="CollisionPolygon2D" parent="Area2D"]
 position = Vector2(-95.2824, -50.597)
 scale = Vector2(0.186839, 0.191293)
-polygon = PackedVector2Array(329, 83, 516, 75, 694, 79, 707, 454, 329, 440)
+polygon = PackedVector2Array(129.964, -216.438, 675.889, -106.658, 1104.06, -54.3825, 1061.25, 410.872, 1023.78, 844.762, 574.197, 802.941, 413.631, 771.576, 435.04, 661.796, -57.3628, 552.017, -19.8973, 369.052, -3.84073, 342.914, -14.5451, 301.093, -30.6017, 280.183, 71.0901, 180.859, 76.4423, 128.583, 55.0335, 97.2174)
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
