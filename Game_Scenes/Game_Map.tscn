@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://datvv4c7b10o4"]
+[gd_scene load_steps=27 format=3 uid="uid://datvv4c7b10o4"]
 
 [ext_resource type="Script" path="res://Scripts/Scene_Scripts/Game_Map.gd" id="1_0o6xc"]
 [ext_resource type="Texture2D" uid="uid://d0hcayid81rte" path="res://Assets/Temp/icon.svg" id="1_3fppp"]
@@ -25,6 +25,8 @@
 [ext_resource type="PackedScene" uid="uid://bl77w3cersnj8" path="res://Game_Scenes/Popups/South_Atlantic_Popup.tscn" id="21_qtjt7"]
 [ext_resource type="PackedScene" uid="uid://born4gq235enn" path="res://Game_Scenes/Popups/Northern_Atlantic_Popup.tscn" id="23_8ropb"]
 [ext_resource type="PackedScene" uid="uid://vwiyyyror84n" path="res://Game_Scenes/Popups/New_England_Popup.tscn" id="25_fc2g5"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_ekam5"]
 
 [node name="GameMap" type="Node2D"]
 script = ExtResource("1_0o6xc")
@@ -91,6 +93,7 @@ offset_right = 0.0
 offset_bottom = 0.0
 grow_horizontal = 2
 grow_vertical = 2
+group = SubResource("ButtonGroup_ekam5")
 
 [node name="NorthernRockiesWindow" type="Window" parent="."]
 title = "Northern Rockies Region"

@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://cg7toqor2aygk"]
+[gd_scene load_steps=7 format=3 uid="uid://cg7toqor2aygk"]
 
 [ext_resource type="Texture2D" uid="uid://d0hcayid81rte" path="res://Assets/Temp/icon.svg" id="1_3ni02"]
+[ext_resource type="Script" path="res://Scripts/Popup_Scripts/Pacific_Popup.gd" id="1_fp6li"]
 [ext_resource type="Texture2D" uid="uid://bgog56fbgc40x" path="res://Assets/Temp/Pacific_region.png" id="1_sl6m7"]
+[ext_resource type="Texture2D" uid="uid://dg2bti02pie76" path="res://Assets/Temp/placeholder1.png" id="3_8p2ej"]
+[ext_resource type="Texture2D" uid="uid://dujsexumthhsn" path="res://Assets/Temp/placeholder2.png" id="4_3g2js"]
+[ext_resource type="ButtonGroup" uid="uid://18mtff06jo8l" path="res://Assets/Button_Groups/Pacific_Cities.tres" id="4_gfrrf"]
 
 [node name="PacificPopup" type="Control"]
 layout_mode = 3
@@ -9,14 +13,143 @@ anchor_right = 0.694
 anchor_bottom = 0.617
 offset_right = 0.511963
 offset_bottom = 0.18396
+script = ExtResource("1_fp6li")
+group = ExtResource("4_gfrrf")
 
 [node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(450.75, 174)
-scale = Vector2(8.22266, 4.51563)
+position = Vector2(399.5, 200.5)
+scale = Vector2(6.24219, 3.11719)
 texture = ExtResource("1_3ni02")
 
 [node name="PacificRegion" type="Sprite2D" parent="."]
-position = Vector2(189, 200)
-rotation = -0.825541
-scale = Vector2(0.532457, 0.532457)
+position = Vector2(245, 196)
+rotation = -0.95295
+scale = Vector2(0.652816, 0.652816)
 texture = ExtResource("1_sl6m7")
+
+[node name="Cities" type="Node" parent="."]
+
+[node name="Seattle" type="TextureButton" parent="Cities"]
+offset_left = 35.0
+offset_top = 70.0
+offset_right = 67.0
+offset_bottom = 102.0
+toggle_mode = true
+button_group = ExtResource("4_gfrrf")
+texture_normal = ExtResource("3_8p2ej")
+texture_pressed = ExtResource("4_3g2js")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Portland" type="TextureButton" parent="Cities"]
+offset_left = 68.0
+offset_top = 119.0
+offset_right = 100.0
+offset_bottom = 151.0
+toggle_mode = true
+button_group = ExtResource("4_gfrrf")
+texture_normal = ExtResource("3_8p2ej")
+texture_pressed = ExtResource("4_3g2js")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="San Francisco" type="TextureButton" parent="Cities"]
+offset_left = 149.0
+offset_top = 222.0
+offset_right = 181.0
+offset_bottom = 254.0
+toggle_mode = true
+button_group = ExtResource("4_gfrrf")
+texture_normal = ExtResource("3_8p2ej")
+texture_pressed = ExtResource("4_3g2js")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Los Angeles" type="TextureButton" parent="Cities"]
+offset_left = 241.0
+offset_top = 240.0
+offset_right = 273.0
+offset_bottom = 272.0
+toggle_mode = true
+button_group = ExtResource("4_gfrrf")
+texture_normal = ExtResource("3_8p2ej")
+texture_pressed = ExtResource("4_3g2js")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Honolulu" type="TextureButton" parent="Cities"]
+offset_left = 257.0
+offset_top = 304.0
+offset_right = 289.0
+offset_bottom = 336.0
+toggle_mode = true
+button_group = ExtResource("4_gfrrf")
+texture_normal = ExtResource("3_8p2ej")
+texture_pressed = ExtResource("4_3g2js")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Anchorage" type="TextureButton" parent="Cities"]
+offset_left = 429.0
+offset_top = 284.0
+offset_right = 461.0
+offset_bottom = 316.0
+toggle_mode = true
+button_group = ExtResource("4_gfrrf")
+texture_normal = ExtResource("3_8p2ej")
+texture_pressed = ExtResource("4_3g2js")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Icon2" type="Sprite2D" parent="."]
+position = Vector2(657, 200.5)
+scale = Vector2(2.20313, 3.11719)
+texture = ExtResource("1_3ni02")
+
+[node name="Icon3" type="Sprite2D" parent="."]
+position = Vector2(657, 103.5)
+scale = Vector2(2.20313, 1.61719)
+texture = ExtResource("1_3ni02")
+
+[node name="Icon4" type="Sprite2D" parent="."]
+position = Vector2(657.5, 303)
+scale = Vector2(2.21094, 1.51563)
+texture = ExtResource("1_3ni02")
+
+[node name="Data" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.644
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -515.2
+offset_right = -800.0
+offset_bottom = -200.0
+
+[node name="INVESTORS" type="Label" parent="Data"]
+layout_mode = 0
+offset_left = 614.0
+offset_top = 21.0
+offset_right = 700.0
+offset_bottom = 44.0
+text = "INVESTORS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SelectedCity" type="Label" parent="Data"]
+layout_mode = 0
+offset_left = 517.0
+offset_top = 209.0
+offset_right = 798.0
+offset_bottom = 232.0
+text = "Selected: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Population" type="Label" parent="Data"]
+layout_mode = 0
+offset_left = 525.0
+offset_top = 236.0
+offset_right = 790.0
+offset_bottom = 259.0
+text = "Population:"
+vertical_alignment = 1
