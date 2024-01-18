@@ -10,6 +10,8 @@ var legit = 75
 var cash = 1000000.0
 var FBIsus = 0
 
+var timePast = 0
+
 @onready var PacificIDX
 @onready var NorthernRockiesIDX
 @onready var SouthwestIDX
@@ -54,6 +56,22 @@ func _process(delta):
 		#print(PacificIndex)
 		frameOneLoad = true
 	
+	if choosing: #make !choosing later
+		timePast += delta
+		#print(delta)
+		if timePast >= 3: # tick game every "second" representing a "day"
+			print("tick "+str(timePast))
+			
+			#tick each region
+			$PacificWindow/PacificPopup.tick()
+			
+			#update HUD data
+			$Legit.text = "Legitimacy: "+str(GameData.legit)
+			$FBIsus.text = "The FBI is "+GameData.FBIstatus[int(ceil(GameData.FBIsus))]
+			$Cash.text = "Cash: $"+str(GameData.cash)
+			
+			#reset time
+			timePast = 0
 	#other stuff
 
 

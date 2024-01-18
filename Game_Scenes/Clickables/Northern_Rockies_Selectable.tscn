@@ -21,7 +21,7 @@ animations = [{
 script = ExtResource("1_t3ov6")
 
 [node name="NorthernRockiesRegion" type="AnimatedSprite2D" parent="."]
-position = Vector2(222, 97)
+position = Vector2(2.00002, 9.00001)
 scale = Vector2(0.469, 0.469)
 sprite_frames = SubResource("SpriteFrames_v3qol")
 

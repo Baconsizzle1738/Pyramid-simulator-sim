@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cg7toqor2aygk"]
+[gd_scene load_steps=13 format=3 uid="uid://cg7toqor2aygk"]
 
 [ext_resource type="Texture2D" uid="uid://d0hcayid81rte" path="res://Assets/Temp/icon.svg" id="1_3ni02"]
 [ext_resource type="Script" path="res://Scripts/Popup_Scripts/Pacific_Popup.gd" id="1_fp6li"]
@@ -6,6 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://dg2bti02pie76" path="res://Assets/Temp/placeholder1.png" id="3_8p2ej"]
 [ext_resource type="Texture2D" uid="uid://dujsexumthhsn" path="res://Assets/Temp/placeholder2.png" id="4_3g2js"]
 [ext_resource type="ButtonGroup" uid="uid://18mtff06jo8l" path="res://Assets/Button_Groups/Pacific_Cities.tres" id="4_gfrrf"]
+[ext_resource type="Script" path="res://Scripts/Button_Scripts/Seattle.gd" id="7_3uorx"]
+[ext_resource type="Script" path="res://Scripts/Button_Scripts/Portland.gd" id="8_j3k71"]
+[ext_resource type="Script" path="res://Scripts/Button_Scripts/San Francisco.gd" id="9_j7ta4"]
+[ext_resource type="Script" path="res://Scripts/Button_Scripts/Los Angeles.gd" id="10_588tl"]
+[ext_resource type="Script" path="res://Scripts/Button_Scripts/Honolulu.gd" id="11_fqnm1"]
+[ext_resource type="Script" path="res://Scripts/Button_Scripts/Anchorage.gd" id="12_448rl"]
 
 [node name="PacificPopup" type="Control"]
 layout_mode = 3
@@ -40,6 +46,7 @@ texture_normal = ExtResource("3_8p2ej")
 texture_pressed = ExtResource("4_3g2js")
 ignore_texture_size = true
 stretch_mode = 0
+script = ExtResource("7_3uorx")
 
 [node name="Portland" type="TextureButton" parent="Cities"]
 offset_left = 68.0
@@ -52,6 +59,7 @@ texture_normal = ExtResource("3_8p2ej")
 texture_pressed = ExtResource("4_3g2js")
 ignore_texture_size = true
 stretch_mode = 0
+script = ExtResource("8_j3k71")
 
 [node name="San Francisco" type="TextureButton" parent="Cities"]
 offset_left = 149.0
@@ -64,6 +72,7 @@ texture_normal = ExtResource("3_8p2ej")
 texture_pressed = ExtResource("4_3g2js")
 ignore_texture_size = true
 stretch_mode = 0
+script = ExtResource("9_j7ta4")
 
 [node name="Los Angeles" type="TextureButton" parent="Cities"]
 offset_left = 241.0
@@ -76,6 +85,7 @@ texture_normal = ExtResource("3_8p2ej")
 texture_pressed = ExtResource("4_3g2js")
 ignore_texture_size = true
 stretch_mode = 0
+script = ExtResource("10_588tl")
 
 [node name="Honolulu" type="TextureButton" parent="Cities"]
 offset_left = 257.0
@@ -88,6 +98,7 @@ texture_normal = ExtResource("3_8p2ej")
 texture_pressed = ExtResource("4_3g2js")
 ignore_texture_size = true
 stretch_mode = 0
+script = ExtResource("11_fqnm1")
 
 [node name="Anchorage" type="TextureButton" parent="Cities"]
 offset_left = 429.0
@@ -100,6 +111,7 @@ texture_normal = ExtResource("3_8p2ej")
 texture_pressed = ExtResource("4_3g2js")
 ignore_texture_size = true
 stretch_mode = 0
+script = ExtResource("12_448rl")
 
 [node name="Icon2" type="Sprite2D" parent="."]
 position = Vector2(657, 200.5)
@@ -145,6 +157,14 @@ text = "Selected: "
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="HQCost" type="Label" parent="Data"]
+offset_left = 525.0
+offset_top = 258.0
+offset_right = 790.0
+offset_bottom = 281.0
+text = "HQ cost:"
+vertical_alignment = 1
+
 [node name="Population" type="Label" parent="Data"]
 layout_mode = 0
 offset_left = 525.0
@@ -152,4 +172,28 @@ offset_top = 236.0
 offset_right = 790.0
 offset_bottom = 259.0
 text = "Population:"
+vertical_alignment = 1
+
+[node name="Tier3Invest" type="Label" parent="Data"]
+offset_left = 524.0
+offset_top = 45.0
+offset_right = 789.0
+offset_bottom = 68.0
+text = "Tier 3:"
+vertical_alignment = 1
+
+[node name="Tier2Invest" type="Label" parent="Data"]
+offset_left = 524.0
+offset_top = 69.0
+offset_right = 789.0
+offset_bottom = 92.0
+text = "Tier 2:"
+vertical_alignment = 1
+
+[node name="Tier1Invest" type="Label" parent="Data"]
+offset_left = 524.0
+offset_top = 93.0
+offset_right = 789.0
+offset_bottom = 116.0
+text = "Tier 1:"
 vertical_alignment = 1

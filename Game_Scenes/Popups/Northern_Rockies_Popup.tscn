@@ -13,11 +13,11 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(445, 219.5)
-scale = Vector2(7.20313, 3.49219)
+position = Vector2(399.5, 198.5)
+scale = Vector2(6.22656, 3.11719)
 texture = ExtResource("1_du4e5")
 
 [node name="NorthRockies" type="Sprite2D" parent="."]
-position = Vector2(742, 398)
-scale = Vector2(0.965244, 0.965244)
+position = Vector2(250, 200)
+scale = Vector2(0.818979, 0.818979)
 texture = ExtResource("2_hadte")
