@@ -2,9 +2,12 @@ extends Control
 
 @export var group: ButtonGroup
 
-var regionPopulation
 #var BaseInvestGrowth
+var regionPopulation
+
 var publicity = 5
+const DEFAULT_PUBLICITY_GROWTH = 0.01
+var publicGrowth = DEFAULT_PUBLICITY_GROWTH
 
 #Base daily investor growth factor
 var Tier3GrowthFactor = 0.0000000005

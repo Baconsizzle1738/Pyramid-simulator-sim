@@ -16,12 +16,15 @@ func button_pressed():
 
 # Called to update region data
 func tick():
+	#add to buffers
 	buffer3 += regionPopulation * Tier3GrowthFactor * publicity * ExternalFactor3
 	buffer2 += regionPopulation * Tier2GrowthFactor * publicity * ExternalFactor2
 	buffer1 += regionPopulation * Tier1GrowthFactor * publicity * ExternalFactor1
 	var grow3 = int(buffer3) # no half ppl
 	var grow2 = int(buffer2)
 	var grow1 = int(buffer1)
+	
+	publicity += publicGrowth #growth of publicity
 	
 	#subtract from buffer
 	buffer3 -= grow3
