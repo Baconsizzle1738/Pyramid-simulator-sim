@@ -25,3 +25,26 @@ func init():
 #process game tick 
 func tick(delta):
 	pass
+	
+	
+
+# basic functions
+
+#convert large numbers ex 1142000 -> 1.14M
+func numSuffix(num) -> String:
+	if num >= 1000000000: #billion
+		num /= 10000000.0
+		num = round(num)
+		num /= 100.0
+		return str(num)+" B"
+	if num >= 1000000: #million
+		num /= 10000.0
+		num = round(num)
+		num /= 100.0
+		return str(num)+" M"
+	if num >= 10000: #thousansk, only over 10 k
+		num /= 1000.0
+		num = round(num)
+		return str(num)+" k"
+	return str(num)
+	

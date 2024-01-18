@@ -3,6 +3,7 @@ extends "res://Scripts/Popup_Data.gd"
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	regionPopulation = 53400000
+	$Data/RegionPopulation.text = "Region population: "+GameData.numSuffix(regionPopulation)
 	#BaseInvestGrowth = 0.0000003 * regionPopulation
 	for i in group.get_buttons():
 		i.connect("pressed", button_pressed) #connect all buttons to the buttons_pressed() func
@@ -10,7 +11,7 @@ func _ready():
 func button_pressed():
 	print(group.get_pressed_button().get_name())
 	$Data/SelectedCity.text = "Selected: "+group.get_pressed_button().get_name()
-	$Data/Population.text = "Population: "+str(group.get_pressed_button().population)
+	$Data/Population.text = "Population: "+GameData.numSuffix(group.get_pressed_button().population)
 	$Data/HQCost.text = "HQ cost: $"+str(group.get_pressed_button().HQBaseCost)
 
 # Called to update region data
@@ -36,7 +37,7 @@ func tick():
 	var TotalCashGenerated = grow3*GameData.Tier3Worth + grow2*GameData.Tier2Worth + grow1*GameData.Tier1Worth
 	GameData.cash += TotalCashGenerated
 	
-	$Data/Tier3Invest.text = "Tier 3: "+str(int(Tier3))
-	$Data/Tier2Invest.text = "Tier 2: "+str(int(Tier2))
-	$Data/Tier1Invest.text = "Tier 1: "+str(int(Tier1))
+	$Data/Tier3Invest.text = "Tier 3: "+GameData.numSuffix(int(Tier3))
+	$Data/Tier2Invest.text = "Tier 2: "+GameData.numSuffix(int(Tier2))
+	$Data/Tier1Invest.text = "Tier 1: "+GameData.numSuffix(int(Tier1))
 	

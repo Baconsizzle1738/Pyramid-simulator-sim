@@ -140,9 +140,9 @@ offset_bottom = -200.0
 [node name="INVESTORS" type="Label" parent="Data"]
 layout_mode = 0
 offset_left = 614.0
-offset_top = 21.0
+offset_top = 7.0
 offset_right = 700.0
-offset_bottom = 44.0
+offset_bottom = 30.0
 text = "INVESTORS"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -158,6 +158,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="HQCost" type="Label" parent="Data"]
+layout_mode = 0
 offset_left = 525.0
 offset_top = 258.0
 offset_right = 790.0
@@ -175,25 +176,36 @@ text = "Population:"
 vertical_alignment = 1
 
 [node name="Tier3Invest" type="Label" parent="Data"]
+layout_mode = 0
 offset_left = 524.0
-offset_top = 45.0
+offset_top = 31.0
 offset_right = 789.0
-offset_bottom = 68.0
+offset_bottom = 54.0
 text = "Tier 3:"
 vertical_alignment = 1
 
 [node name="Tier2Invest" type="Label" parent="Data"]
+layout_mode = 0
 offset_left = 524.0
-offset_top = 69.0
+offset_top = 55.0
 offset_right = 789.0
-offset_bottom = 92.0
+offset_bottom = 78.0
 text = "Tier 2:"
 vertical_alignment = 1
 
-[node name="Tier1Invest" type="Label" parent="Data"]
+[node name="RegionPopulation" type="Label" parent="Data"]
 offset_left = 524.0
-offset_top = 93.0
+offset_top = 130.0
 offset_right = 789.0
-offset_bottom = 116.0
+offset_bottom = 153.0
+text = "Region Population:"
+vertical_alignment = 1
+
+[node name="Tier1Invest" type="Label" parent="Data"]
+layout_mode = 0
+offset_left = 524.0
+offset_top = 79.0
+offset_right = 789.0
+offset_bottom = 102.0
 text = "Tier 1:"
 vertical_alignment = 1

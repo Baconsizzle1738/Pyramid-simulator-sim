@@ -5,26 +5,26 @@
 [ext_resource type="Texture2D" uid="uid://dl45o60jgy302" path="res://Assets/Map_Graphics/map_ponziProject.png" id="2_fxt1d"]
 [ext_resource type="PackedScene" uid="uid://tqve15lstf8n" path="res://Game_Scenes/Clickables/Pacific_Region_Selectable.tscn" id="4_3f574"]
 [ext_resource type="PackedScene" uid="uid://cg7toqor2aygk" path="res://Game_Scenes/Popups/Pacific_Popup.tscn" id="5_4igp3"]
-[ext_resource type="PackedScene" uid="uid://ri25dcymudl5" path="res://Game_Scenes/Clickables/Southwest_Selectable.tscn" id="6_0cwd3"]
+[ext_resource type="PackedScene" path="res://Game_Scenes/Clickables/Southwest_Selectable.tscn" id="6_0cwd3"]
 [ext_resource type="PackedScene" uid="uid://dxex4mtxqdd4s" path="res://Game_Scenes/Clickables/Northern_Rockies_Selectable.tscn" id="6_u0kkx"]
-[ext_resource type="PackedScene" uid="uid://l1fxtjqpaxfw" path="res://Game_Scenes/Clickables/Northern_Plains_Selectable.tscn" id="7_lean7"]
+[ext_resource type="PackedScene" path="res://Game_Scenes/Clickables/Northern_Plains_Selectable.tscn" id="7_lean7"]
 [ext_resource type="PackedScene" uid="uid://gsas4nig8cy4" path="res://Game_Scenes/Popups/Northern_Rockies_Popup.tscn" id="7_ner87"]
-[ext_resource type="PackedScene" uid="uid://c7ltnayvbb8bx" path="res://Game_Scenes/Clickables/Southern_Plains_Selectable.tscn" id="8_dg5at"]
-[ext_resource type="PackedScene" uid="uid://c3cjwib8lrva2" path="res://Game_Scenes/Popups/Southwest_Popup.tscn" id="9_7dfnp"]
-[ext_resource type="PackedScene" uid="uid://cglxn7k2yc41e" path="res://Game_Scenes/Clickables/Gulf_Coast_Selectable.tscn" id="9_gpm3q"]
-[ext_resource type="PackedScene" uid="uid://c2upgcdjty6r7" path="res://Game_Scenes/Clickables/Midwest_Selectable.tscn" id="10_bgsx3"]
-[ext_resource type="PackedScene" uid="uid://2vbl67m6f7qs" path="res://Game_Scenes/Popups/Northern_Plains_Popup.tscn" id="11_tymo8"]
-[ext_resource type="PackedScene" uid="uid://bjrckyni80img" path="res://Game_Scenes/Clickables/Appalachia_Selectable.tscn" id="11_xgupn"]
-[ext_resource type="PackedScene" uid="uid://cacxm18vf45kk" path="res://Game_Scenes/Clickables/South_Atlantic_Selectable.tscn" id="12_6ko11"]
-[ext_resource type="PackedScene" uid="uid://cm0txfy3gg3vr" path="res://Game_Scenes/Clickables/North_Atlantic_Selectable.tscn" id="13_ifc1p"]
-[ext_resource type="PackedScene" uid="uid://c5f8idolpjdfm" path="res://Game_Scenes/Popups/Southern_Plains_Popup.tscn" id="13_qjgxr"]
-[ext_resource type="PackedScene" uid="uid://bcgyl2byldh3q" path="res://Game_Scenes/Clickables/New_England_Selectable.tscn" id="14_g2aqd"]
-[ext_resource type="PackedScene" uid="uid://bre1weenlv0wg" path="res://Game_Scenes/Popups/Gulf_Coast_Popup.tscn" id="15_r0vhv"]
-[ext_resource type="PackedScene" uid="uid://0wxted528o6m" path="res://Game_Scenes/Popups/Midwest_Popup.tscn" id="17_6cwqu"]
-[ext_resource type="PackedScene" uid="uid://kscb5h6pc2ri" path="res://Game_Scenes/Popups/Appalachia_Popup.tscn" id="19_6by06"]
-[ext_resource type="PackedScene" uid="uid://bl77w3cersnj8" path="res://Game_Scenes/Popups/South_Atlantic_Popup.tscn" id="21_qtjt7"]
-[ext_resource type="PackedScene" uid="uid://born4gq235enn" path="res://Game_Scenes/Popups/Northern_Atlantic_Popup.tscn" id="23_8ropb"]
-[ext_resource type="PackedScene" uid="uid://vwiyyyror84n" path="res://Game_Scenes/Popups/New_England_Popup.tscn" id="25_fc2g5"]
+[ext_resource type="PackedScene" path="res://Game_Scenes/Clickables/Southern_Plains_Selectable.tscn" id="8_dg5at"]
+[ext_resource type="PackedScene" path="res://Game_Scenes/Popups/Southwest_Popup.tscn" id="9_7dfnp"]
+[ext_resource type="PackedScene" path="res://Game_Scenes/Clickables/Gulf_Coast_Selectable.tscn" id="9_gpm3q"]
+[ext_resource type="PackedScene" path="res://Game_Scenes/Clickables/Midwest_Selectable.tscn" id="10_bgsx3"]
+[ext_resource type="PackedScene" path="res://Game_Scenes/Popups/Northern_Plains_Popup.tscn" id="11_tymo8"]
+[ext_resource type="PackedScene" path="res://Game_Scenes/Clickables/Appalachia_Selectable.tscn" id="11_xgupn"]
+[ext_resource type="PackedScene" path="res://Game_Scenes/Clickables/South_Atlantic_Selectable.tscn" id="12_6ko11"]
+[ext_resource type="PackedScene" path="res://Game_Scenes/Clickables/North_Atlantic_Selectable.tscn" id="13_ifc1p"]
+[ext_resource type="PackedScene" path="res://Game_Scenes/Popups/Southern_Plains_Popup.tscn" id="13_qjgxr"]
+[ext_resource type="PackedScene" path="res://Game_Scenes/Clickables/New_England_Selectable.tscn" id="14_g2aqd"]
+[ext_resource type="PackedScene" path="res://Game_Scenes/Popups/Gulf_Coast_Popup.tscn" id="15_r0vhv"]
+[ext_resource type="PackedScene" path="res://Game_Scenes/Popups/Midwest_Popup.tscn" id="17_6cwqu"]
+[ext_resource type="PackedScene" path="res://Game_Scenes/Popups/Appalachia_Popup.tscn" id="19_6by06"]
+[ext_resource type="PackedScene" path="res://Game_Scenes/Popups/South_Atlantic_Popup.tscn" id="21_qtjt7"]
+[ext_resource type="PackedScene" path="res://Game_Scenes/Popups/Northern_Atlantic_Popup.tscn" id="23_8ropb"]
+[ext_resource type="PackedScene" path="res://Game_Scenes/Popups/New_England_Popup.tscn" id="25_fc2g5"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_ekam5"]
 
@@ -207,21 +207,21 @@ offset_left = 223.0
 offset_top = 22.0
 offset_right = 265.0
 offset_bottom = 45.0
-text = "Legitimacy:"
+text = "Legitimacy: 75"
 
 [node name="FBIsus" type="Label" parent="."]
 offset_left = 448.0
 offset_top = 6.0
 offset_right = 490.0
 offset_bottom = 29.0
-text = "The FBI is "
+text = "The FBI is ININTERESTED"
 
 [node name="Cash" type="Label" parent="."]
 offset_left = 66.0
 offset_top = 22.0
 offset_right = 108.0
 offset_bottom = 45.0
-text = "Cash:"
+text = "Cash: $1000000"
 
 [connection signal="close_requested" from="PacificWindow" to="." method="_on_pacific_window_close_requested"]
 [connection signal="close_requested" from="NorthernRockiesWindow" to="." method="_on_northern_rockies_window_close_requested"]
