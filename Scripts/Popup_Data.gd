@@ -6,7 +6,7 @@ extends Control
 var regionPopulation
 
 var publicity = 5
-const DEFAULT_PUBLICITY_GROWTH = 0.01
+const DEFAULT_PUBLICITY_GROWTH = 0.015
 var publicGrowth = DEFAULT_PUBLICITY_GROWTH
 
 #Base daily investor growth factor

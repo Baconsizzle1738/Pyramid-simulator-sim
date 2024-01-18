@@ -43,4 +43,4 @@ func tick():
 	$Data/Tier3Invest.text = "Tier 3: "+GameData.numSuffix(int(Tier3))
 	$Data/Tier2Invest.text = "Tier 2: "+GameData.numSuffix(int(Tier2))
 	$Data/Tier1Invest.text = "Tier 1: "+GameData.numSuffix(int(Tier1))
-	
+	$Data/Publicity.text = "Publicity: "+str(round(publicity))

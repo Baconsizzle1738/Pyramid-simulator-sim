@@ -193,6 +193,15 @@ offset_bottom = 78.0
 text = "Tier 2:"
 vertical_alignment = 1
 
+[node name="Tier1Invest" type="Label" parent="Data"]
+layout_mode = 0
+offset_left = 524.0
+offset_top = 79.0
+offset_right = 789.0
+offset_bottom = 102.0
+text = "Tier 1:"
+vertical_alignment = 1
+
 [node name="RegionPopulation" type="Label" parent="Data"]
 offset_left = 524.0
 offset_top = 130.0
@@ -201,11 +210,10 @@ offset_bottom = 153.0
 text = "Region Population:"
 vertical_alignment = 1
 
-[node name="Tier1Invest" type="Label" parent="Data"]
-layout_mode = 0
+[node name="Publicity" type="Label" parent="Data"]
 offset_left = 524.0
-offset_top = 79.0
+offset_top = 153.0
 offset_right = 789.0
-offset_bottom = 102.0
-text = "Tier 1:"
+offset_bottom = 176.0
+text = "Publicity: 5"
 vertical_alignment = 1
