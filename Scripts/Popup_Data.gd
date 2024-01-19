@@ -9,6 +9,7 @@ var publicity = 5
 const DEFAULT_PUBLICITY_GROWTH = 0.015
 var publicGrowth = DEFAULT_PUBLICITY_GROWTH
 
+
 #Base daily investor growth factor
 var Tier3GrowthFactor = 0.0000000005
 var Tier2GrowthFactor = 0.000000001

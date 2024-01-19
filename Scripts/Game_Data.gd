@@ -2,6 +2,12 @@ extends Node #GLOBAL DATA FOR THE GAME
 
 var playerName #name of player
 
+var days = 0 # days passed
+
+var choosing = true # change to true later
+
+var HQBuildTime = 30
+
 #global stats for the player
 var legit = 75.0
 var cash = 1000000.0
@@ -10,6 +16,7 @@ var FBIstatus = ["UNINTERESTED", "INTRIGUED", "SUSPICIOUS", "ALARMED", "APPREHEN
 var Tier3Worth = 1000
 var Tier2Worth = 250
 var Tier1Worth = 15
+var LegitIncreaseFactor = 1.0 + (legit-50)/100.0
 
 #run at game start, reset values to default
 func init():
@@ -18,13 +25,18 @@ func init():
 	FBIsus = 0.0
 	Tier3Worth = 1000
 	Tier2Worth = 250
-	Tier1Worth = 15	
+	Tier1Worth = 15
+	days = 0
+	choosing = true
+	LegitIncreaseFactor = 1.0 + (legit-50)/100.0
+	HQBuildTime = 30
 	#FBIstatus = "uninterested"
 
 
 #process game tick 
-func tick(delta):
-	pass
+func tick():
+	days += 1
+	LegitIncreaseFactor = 1.0 + (legit-50)/100.0 # needed to update increase of investors based off legitamacy
 	
 	
 

@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://sj3vbrki06d2"]
+
+[ext_resource type="Texture2D" uid="uid://dg2bti02pie76" path="res://Assets/Temp/placeholder1.png" id="1_8a8rw"]
+
+[node name="Hq" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -7.0
+offset_top = -7.0
+offset_right = 7.0
+offset_bottom = 7.0
+texture = ExtResource("1_8a8rw")
+expand_mode = 1

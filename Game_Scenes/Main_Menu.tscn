@@ -7,23 +7,26 @@
 script = ExtResource("1_yqqyg")
 
 [node name="Start_Button" type="Button" parent="."]
-offset_left = 448.0
-offset_top = 353.0
-offset_right = 494.0
-offset_bottom = 384.0
+offset_left = 407.0
+offset_top = 351.0
+offset_right = 707.0
+offset_bottom = 421.0
 text = "Start"
 
 [node name="Quit_Button" type="Button" parent="."]
-offset_left = 444.0
-offset_top = 401.0
-offset_right = 486.0
-offset_bottom = 432.0
+offset_left = 409.0
+offset_top = 428.0
+offset_right = 709.0
+offset_bottom = 498.0
 text = "Quit"
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(518, 184)
-scale = Vector2(6.39844, 0.757813)
+[node name="Title" type="TextureRect" parent="."]
+offset_left = 201.0
+offset_top = 33.0
+offset_right = 901.0
+offset_bottom = 333.0
 texture = ExtResource("1_h58cu")
+expand_mode = 1
 
 [connection signal="pressed" from="Start_Button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Quit_Button" to="." method="_on_quit_button_pressed"]

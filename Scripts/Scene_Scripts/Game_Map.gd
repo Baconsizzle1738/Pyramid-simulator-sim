@@ -3,7 +3,7 @@ extends Node2D
 var frameOneLoad = false
 
 
-var choosing = true
+#var choosing = true
 var showing_popup = false
 
 var legit = 75
@@ -26,7 +26,7 @@ var timePast = 0
 
 
 func reset():
-	choosing = true
+	#choosing = true
 	showing_popup = false
 	legit = 75
 	cash = 1000000.0
@@ -56,19 +56,22 @@ func _process(delta):
 		#print(PacificIndex)
 		frameOneLoad = true
 	
-	if choosing: #make !choosing later
+	if GameData.choosing: #make !choosing later
 		timePast += delta
 		#print(delta)
-		if timePast >= 3: # tick game every "second" representing a "day"
+		if timePast >= 1: # tick game every "second" representing a "day"
 			print("tick "+str(timePast))
 			
 			#tick each region
 			$PacificWindow/PacificPopup.tick()
 			
+			GameData.tick() # day go up
+			
 			#update HUD data
-			$Legit.text = "Legitimacy: "+str(GameData.legit)
+			$Legit.text = "Legitimacy: "+str(round(GameData.legit))
 			$FBIsus.text = "The FBI is "+GameData.FBIstatus[int(ceil(GameData.FBIsus))]
-			$Cash.text = "Cash: $"+str(GameData.cash)
+			$Cash.text = "Cash: $"+str(round(GameData.cash))
+			$Days.text = "Day "+str(GameData.days)
 			
 			#reset time
 			timePast = 0

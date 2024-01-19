@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cg7toqor2aygk"]
+[gd_scene load_steps=14 format=3 uid="uid://cg7toqor2aygk"]
 
 [ext_resource type="Texture2D" uid="uid://d0hcayid81rte" path="res://Assets/Temp/icon.svg" id="1_3ni02"]
 [ext_resource type="Script" path="res://Scripts/Popup_Scripts/Pacific_Popup.gd" id="1_fp6li"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://Scripts/Button_Scripts/Los Angeles.gd" id="10_588tl"]
 [ext_resource type="Script" path="res://Scripts/Button_Scripts/Honolulu.gd" id="11_fqnm1"]
 [ext_resource type="Script" path="res://Scripts/Button_Scripts/Anchorage.gd" id="12_448rl"]
+[ext_resource type="PackedScene" uid="uid://sj3vbrki06d2" path="res://Game_Scenes/HQ.tscn" id="13_lvhlx"]
 
 [node name="PacificPopup" type="Control"]
 layout_mode = 3
@@ -48,6 +49,19 @@ ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("7_3uorx")
 
+[node name="Bar" type="ProgressBar" parent="Cities/Seattle"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 32.0
+offset_top = 33.0
+offset_right = 36.0
+offset_bottom = 65.0
+rotation = 1.5708
+max_value = 0.0
+fill_mode = 2
+show_percentage = false
+
 [node name="Portland" type="TextureButton" parent="Cities"]
 offset_left = 68.0
 offset_top = 119.0
@@ -60,6 +74,19 @@ texture_pressed = ExtResource("4_3g2js")
 ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("8_j3k71")
+
+[node name="Bar" type="ProgressBar" parent="Cities/Portland"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 32.0
+offset_top = 33.0
+offset_right = 36.0
+offset_bottom = 65.0
+rotation = 1.5708
+max_value = 0.0
+fill_mode = 2
+show_percentage = false
 
 [node name="San Francisco" type="TextureButton" parent="Cities"]
 offset_left = 149.0
@@ -74,6 +101,19 @@ ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("9_j7ta4")
 
+[node name="Bar" type="ProgressBar" parent="Cities/San Francisco"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 32.0
+offset_top = 33.0
+offset_right = 36.0
+offset_bottom = 65.0
+rotation = 1.5708
+max_value = 0.0
+fill_mode = 2
+show_percentage = false
+
 [node name="Los Angeles" type="TextureButton" parent="Cities"]
 offset_left = 241.0
 offset_top = 240.0
@@ -86,6 +126,19 @@ texture_pressed = ExtResource("4_3g2js")
 ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("10_588tl")
+
+[node name="Bar" type="ProgressBar" parent="Cities/Los Angeles"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 32.0
+offset_top = 33.0
+offset_right = 36.0
+offset_bottom = 65.0
+rotation = 1.5708
+max_value = 0.0
+fill_mode = 2
+show_percentage = false
 
 [node name="Honolulu" type="TextureButton" parent="Cities"]
 offset_left = 257.0
@@ -100,6 +153,19 @@ ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("11_fqnm1")
 
+[node name="Bar" type="ProgressBar" parent="Cities/Honolulu"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 32.0
+offset_top = 33.0
+offset_right = 36.0
+offset_bottom = 65.0
+rotation = 1.5708
+max_value = 0.0
+fill_mode = 2
+show_percentage = false
+
 [node name="Anchorage" type="TextureButton" parent="Cities"]
 offset_left = 429.0
 offset_top = 284.0
@@ -112,6 +178,45 @@ texture_pressed = ExtResource("4_3g2js")
 ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("12_448rl")
+
+[node name="Bar" type="ProgressBar" parent="Cities/Anchorage"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 32.0
+offset_top = 33.0
+offset_right = 36.0
+offset_bottom = 65.0
+rotation = 1.5708
+max_value = 0.0
+fill_mode = 2
+show_percentage = false
+
+[node name="CityHQ" type="Node" parent="."]
+
+[node name="Seattle" parent="CityHQ" instance=ExtResource("13_lvhlx")]
+visible = false
+position = Vector2(45, 63)
+
+[node name="Portland" parent="CityHQ" instance=ExtResource("13_lvhlx")]
+visible = false
+position = Vector2(88, 157)
+
+[node name="San Francisco" parent="CityHQ" instance=ExtResource("13_lvhlx")]
+visible = false
+position = Vector2(157, 217)
+
+[node name="Los Angeles" parent="CityHQ" instance=ExtResource("13_lvhlx")]
+visible = false
+position = Vector2(234, 261)
+
+[node name="Honolulu" parent="CityHQ" instance=ExtResource("13_lvhlx")]
+visible = false
+position = Vector2(253, 314)
+
+[node name="Anchorage" parent="CityHQ" instance=ExtResource("13_lvhlx")]
+visible = false
+position = Vector2(432, 320)
 
 [node name="Icon2" type="Sprite2D" parent="."]
 position = Vector2(657, 200.5)
@@ -140,9 +245,9 @@ offset_bottom = -200.0
 [node name="INVESTORS" type="Label" parent="Data"]
 layout_mode = 0
 offset_left = 614.0
-offset_top = 7.0
+offset_top = 6.0
 offset_right = 700.0
-offset_bottom = 30.0
+offset_bottom = 29.0
 text = "INVESTORS"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -163,7 +268,7 @@ offset_left = 525.0
 offset_top = 258.0
 offset_right = 790.0
 offset_bottom = 281.0
-text = "HQ cost:"
+text = "HQ cost: 0"
 vertical_alignment = 1
 
 [node name="Population" type="Label" parent="Data"]
@@ -172,48 +277,86 @@ offset_left = 525.0
 offset_top = 236.0
 offset_right = 790.0
 offset_bottom = 259.0
-text = "Population:"
+text = "Population: 0"
 vertical_alignment = 1
 
 [node name="Tier3Invest" type="Label" parent="Data"]
 layout_mode = 0
 offset_left = 524.0
-offset_top = 31.0
+offset_top = 30.0
 offset_right = 789.0
-offset_bottom = 54.0
-text = "Tier 3:"
+offset_bottom = 53.0
+text = "Tier 3: 0"
 vertical_alignment = 1
 
 [node name="Tier2Invest" type="Label" parent="Data"]
 layout_mode = 0
 offset_left = 524.0
-offset_top = 55.0
+offset_top = 54.0
 offset_right = 789.0
-offset_bottom = 78.0
-text = "Tier 2:"
+offset_bottom = 77.0
+text = "Tier 2: 0"
 vertical_alignment = 1
 
 [node name="Tier1Invest" type="Label" parent="Data"]
 layout_mode = 0
 offset_left = 524.0
-offset_top = 79.0
+offset_top = 78.0
 offset_right = 789.0
-offset_bottom = 102.0
-text = "Tier 1:"
+offset_bottom = 101.0
+text = "Tier 1: 0"
 vertical_alignment = 1
 
 [node name="RegionPopulation" type="Label" parent="Data"]
+layout_mode = 0
 offset_left = 524.0
-offset_top = 130.0
+offset_top = 106.0
 offset_right = 789.0
-offset_bottom = 153.0
-text = "Region Population:"
+offset_bottom = 129.0
+text = "Region Population: "
 vertical_alignment = 1
 
 [node name="Publicity" type="Label" parent="Data"]
+layout_mode = 0
 offset_left = 524.0
-offset_top = 153.0
+offset_top = 129.0
 offset_right = 789.0
-offset_bottom = 176.0
+offset_bottom = 152.0
 text = "Publicity: 5"
 vertical_alignment = 1
+
+[node name="Build_HQ" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 607.0
+offset_top = 291.0
+offset_right = 707.0
+offset_bottom = 331.0
+texture_normal = ExtResource("3_8p2ej")
+texture_disabled = ExtResource("1_3ni02")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Run_Ads" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 607.0
+offset_top = 155.0
+offset_right = 707.0
+offset_bottom = 195.0
+texture_normal = ExtResource("3_8p2ej")
+texture_disabled = ExtResource("1_3ni02")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Travel" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 607.0
+offset_top = 344.0
+offset_right = 707.0
+offset_bottom = 384.0
+texture_normal = ExtResource("3_8p2ej")
+texture_disabled = ExtResource("1_3ni02")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="pressed" from="Build_HQ" to="." method="_on_build_hq_pressed"]
+[connection signal="pressed" from="Run_Ads" to="." method="_on_run_ads_pressed"]
