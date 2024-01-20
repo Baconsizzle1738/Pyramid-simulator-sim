@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cg7toqor2aygk"]
+[gd_scene load_steps=15 format=3 uid="uid://cg7toqor2aygk"]
 
 [ext_resource type="Texture2D" uid="uid://d0hcayid81rte" path="res://Assets/Temp/icon.svg" id="1_3ni02"]
 [ext_resource type="Script" path="res://Scripts/Popup_Scripts/Pacific_Popup.gd" id="1_fp6li"]
@@ -8,6 +8,7 @@
 [ext_resource type="ButtonGroup" uid="uid://18mtff06jo8l" path="res://Assets/Button_Groups/Pacific_Cities.tres" id="4_gfrrf"]
 [ext_resource type="Script" path="res://Scripts/Button_Scripts/Seattle.gd" id="7_3uorx"]
 [ext_resource type="Script" path="res://Scripts/Button_Scripts/Portland.gd" id="8_j3k71"]
+[ext_resource type="PackedScene" uid="uid://efbeq0ykeep8" path="res://Game_Scenes/Player_Icon.tscn" id="8_opc0s"]
 [ext_resource type="Script" path="res://Scripts/Button_Scripts/San Francisco.gd" id="9_j7ta4"]
 [ext_resource type="Script" path="res://Scripts/Button_Scripts/Los Angeles.gd" id="10_588tl"]
 [ext_resource type="Script" path="res://Scripts/Button_Scripts/Honolulu.gd" id="11_fqnm1"]
@@ -62,6 +63,14 @@ max_value = 0.0
 fill_mode = 2
 show_percentage = false
 
+[node name="Player" parent="Cities/Seattle" instance=ExtResource("8_opc0s")]
+visible = false
+show_behind_parent = true
+offset_left = 14.0
+offset_top = -6.0
+offset_right = 14.0
+offset_bottom = -6.0
+
 [node name="Portland" type="TextureButton" parent="Cities"]
 offset_left = 68.0
 offset_top = 119.0
@@ -87,6 +96,14 @@ rotation = 1.5708
 max_value = 0.0
 fill_mode = 2
 show_percentage = false
+
+[node name="Player" parent="Cities/Portland" instance=ExtResource("8_opc0s")]
+visible = false
+show_behind_parent = true
+offset_left = 14.0
+offset_top = -6.0
+offset_right = 14.0
+offset_bottom = -6.0
 
 [node name="San Francisco" type="TextureButton" parent="Cities"]
 offset_left = 149.0
@@ -114,6 +131,14 @@ max_value = 0.0
 fill_mode = 2
 show_percentage = false
 
+[node name="Player" parent="Cities/San Francisco" instance=ExtResource("8_opc0s")]
+visible = false
+show_behind_parent = true
+offset_left = 14.0
+offset_top = -6.0
+offset_right = 14.0
+offset_bottom = -6.0
+
 [node name="Los Angeles" type="TextureButton" parent="Cities"]
 offset_left = 241.0
 offset_top = 240.0
@@ -139,6 +164,14 @@ rotation = 1.5708
 max_value = 0.0
 fill_mode = 2
 show_percentage = false
+
+[node name="Player" parent="Cities/Los Angeles" instance=ExtResource("8_opc0s")]
+visible = false
+show_behind_parent = true
+offset_left = 14.0
+offset_top = -6.0
+offset_right = 14.0
+offset_bottom = -6.0
 
 [node name="Honolulu" type="TextureButton" parent="Cities"]
 offset_left = 257.0
@@ -166,6 +199,14 @@ max_value = 0.0
 fill_mode = 2
 show_percentage = false
 
+[node name="Player" parent="Cities/Honolulu" instance=ExtResource("8_opc0s")]
+visible = false
+show_behind_parent = true
+offset_left = 14.0
+offset_top = -6.0
+offset_right = 14.0
+offset_bottom = -6.0
+
 [node name="Anchorage" type="TextureButton" parent="Cities"]
 offset_left = 429.0
 offset_top = 284.0
@@ -191,6 +232,14 @@ rotation = 1.5708
 max_value = 0.0
 fill_mode = 2
 show_percentage = false
+
+[node name="Player" parent="Cities/Anchorage" instance=ExtResource("8_opc0s")]
+visible = false
+show_behind_parent = true
+offset_left = 14.0
+offset_top = -6.0
+offset_right = 14.0
+offset_bottom = -6.0
 
 [node name="CityHQ" type="Node" parent="."]
 
@@ -325,23 +374,22 @@ offset_bottom = 152.0
 text = "Publicity: 5"
 vertical_alignment = 1
 
+[node name="AdCost" type="Label" parent="Data"]
+layout_mode = 0
+offset_left = 648.0
+offset_top = 162.0
+offset_right = 769.0
+offset_bottom = 185.0
+text = "$0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
 [node name="Build_HQ" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 607.0
 offset_top = 291.0
 offset_right = 707.0
 offset_bottom = 331.0
-texture_normal = ExtResource("3_8p2ej")
-texture_disabled = ExtResource("1_3ni02")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="Run_Ads" type="TextureButton" parent="."]
-layout_mode = 0
-offset_left = 607.0
-offset_top = 155.0
-offset_right = 707.0
-offset_bottom = 195.0
 texture_normal = ExtResource("3_8p2ej")
 texture_disabled = ExtResource("1_3ni02")
 ignore_texture_size = true
@@ -358,5 +406,43 @@ texture_disabled = ExtResource("1_3ni02")
 ignore_texture_size = true
 stretch_mode = 0
 
+[node name="Bar" type="ProgressBar" parent="Travel"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 97.0
+offset_top = 41.0
+offset_right = 101.0
+offset_bottom = 135.0
+rotation = 1.5708
+max_value = 0.0
+fill_mode = 2
+show_percentage = false
+
+[node name="Run_Ads" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 545.0
+offset_top = 153.0
+offset_right = 645.0
+offset_bottom = 193.0
+texture_normal = ExtResource("3_8p2ej")
+texture_disabled = ExtResource("1_3ni02")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Bar" type="ProgressBar" parent="Run_Ads"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 97.0
+offset_top = 41.0
+offset_right = 101.0
+offset_bottom = 135.0
+rotation = 1.5708
+max_value = 0.0
+fill_mode = 2
+show_percentage = false
+
 [connection signal="pressed" from="Build_HQ" to="." method="_on_build_hq_pressed"]
+[connection signal="pressed" from="Travel" to="." method="_on_travel_pressed"]
 [connection signal="pressed" from="Run_Ads" to="." method="_on_run_ads_pressed"]

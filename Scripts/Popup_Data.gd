@@ -6,9 +6,13 @@ extends Control
 var regionPopulation
 
 var publicity = 5
-const DEFAULT_PUBLICITY_GROWTH = 0.015
+const DEFAULT_PUBLICITY_GROWTH = 0.008
 var publicGrowth = DEFAULT_PUBLICITY_GROWTH
-
+const AD_COST_FACTOR = 0.01 # multiply this value by the region population
+var AdCost
+const AD_INCREASE_FACTOR = 0.05 #add this to publicGrowth
+const AD_COOLDOWN = 50 # player can only run ads once per this many days
+var daysSinceAd = 0 #set to AD_COOLDOWN and count down once ad is run
 
 #Base daily investor growth factor
 var Tier3GrowthFactor = 0.0000000005

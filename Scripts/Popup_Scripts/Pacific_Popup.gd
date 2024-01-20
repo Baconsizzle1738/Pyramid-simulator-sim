@@ -8,7 +8,11 @@ func _ready():
 	for i in group.get_buttons():
 		i.connect("pressed", button_pressed) #connect all buttons to the buttons_pressed() func
 	group.get_buttons()[0].button_pressed = true # so that there are no null instances
-	button_pressed()
+	button_pressed() #press the button such that there is no null
+	
+	AdCost = regionPopulation * AD_COST_FACTOR
+	$Data/AdCost.text = "$"+str(round(AdCost))
+	$Run_Ads.disabled = AdCost > GameData.cash
 
 func button_pressed():
 	#print(group.get_pressed_button().get_name())
@@ -17,6 +21,8 @@ func button_pressed():
 	$Data/HQCost.text = "HQ cost: $"+str(group.get_pressed_button().HQBaseCost)
 	
 	$Build_HQ.disabled = (GameData.cash <= group.get_pressed_button().HQBaseCost) or (group.get_pressed_button().HQTimer > 0) or (group.get_pressed_button().HQs == 1)
+	$Travel.disabled = GameData.travelling or group.get_pressed_button().hasPlayer or group.get_pressed_button().HQs < 1
+	
 
 # Called to update region data
 func tick():
@@ -28,7 +34,7 @@ func tick():
 	var grow3 = int(buffer3) # no half ppl
 	var grow2 = int(buffer2)
 	var grow1 = int(buffer1)
-	print(group.get_pressed_button())
+	#print(group.get_pressed_button())
 	publicity += publicGrowth #growth of publicity
 	print("publicity "+str(publicity))
 	
@@ -36,20 +42,31 @@ func tick():
 	buffer3 -= grow3
 	buffer2 -= grow2
 	buffer1 -= grow1
-	print("buffer2 "+str(buffer2))
+	#print("buffer2 "+str(buffer2))
 	
 	Tier3 += grow3
 	Tier2 += grow2
 	Tier1 += grow1
-	print("Tier2 "+str(Tier2))
+	#print("Tier2 "+str(Tier2))
 	
 	var TotalCashGenerated = grow3*GameData.Tier3Worth + grow2*GameData.Tier2Worth + grow1*GameData.Tier1Worth
 	GameData.cash += TotalCashGenerated
 	
-	for button in group.get_buttons(): #countdown for the HQ build time
+	#Ad timer logic
+	daysSinceAd -= 1
+	$Run_Ads/Bar.value -= 1
+	if daysSinceAd <= 0:
+		daysSinceAd = 0
+	if daysSinceAd == 1:
+		$Run_Ads.disabled = GameData.cash < AdCost
+		$Run_Ads/Bar.visible = false
+		
+	
+	
+	for button in group.get_buttons(): 
 		#print(get_node("CityHQ/"+button.name).visible)
 		#button.get_child(0).visible = true
-		button.HQTimer -= 1
+		button.HQTimer -= 1 #countdown for the HQ build time
 		button.get_child(0).value -= 1
 		#print(button.get_child(0).value)
 		if button.HQTimer < 0:
@@ -60,11 +77,26 @@ func tick():
 			GameData.legit += button.population * button.HQLegitIncrease
 			get_node("CityHQ/"+button.name).visible = true #HQ name and button name MUST BE THE SAME
 			button.get_child(0).visible = false
+		
+		#check if the player is in the city
+		if GameData.currLocation == button.get_name():
+			button.get_child(1).visible = true
+			button.hasPlayer = true
+		else:
+			button.get_child(1).visible = false
+			button.hasPlayer = false
+	
+	#determine if travel bar is visible
+	$Travel/Bar.value = GameData.travelTimer
+	if GameData.travelTimer <= 0:
+		$Travel/Bar.visible = false
 	
 	$Data/Tier3Invest.text = "Tier 3: "+GameData.numSuffix(int(Tier3))
 	$Data/Tier2Invest.text = "Tier 2: "+GameData.numSuffix(int(Tier2))
 	$Data/Tier1Invest.text = "Tier 1: "+GameData.numSuffix(int(Tier1))
 	$Data/Publicity.text = "Publicity: "+str(round(publicity))
+	
+	update_button_cash_disabled()
 
 
 func _on_build_hq_pressed():
@@ -74,8 +106,36 @@ func _on_build_hq_pressed():
 	group.get_pressed_button().get_child(0).max_value = GameData.HQBuildTime
 	group.get_pressed_button().get_child(0).value = GameData.HQBuildTime
 	$Build_HQ.disabled = true
+	update_button_cash_disabled()
+
+func _on_travel_pressed():
+	GameData.travelling = true
+	GameData.destination = group.get_pressed_button().get_name()
+	GameData.travelTimer = GameData.TIME_TO_TRAVEL
+	GameData.currLocation = "IN_TRANSIT"
+	GameData.destination = group.get_pressed_button().get_name()
+	$Travel/Bar.visible = true
+	$Travel/Bar.max_value = GameData.TIME_TO_TRAVEL
+	$Travel/Bar.value = GameData.TIME_TO_TRAVEL
+	$Travel.disabled = true
 
 
 func _on_run_ads_pressed():
-	# run da ads
-	pass # Replace with function body.
+	GameData.cash -= AdCost
+	daysSinceAd = AD_COOLDOWN
+	$Run_Ads.disabled = true
+	$Run_Ads/Bar.visible = true
+	$Run_Ads/Bar.max_value = AD_COOLDOWN
+	$Run_Ads/Bar.value = AD_COOLDOWN
+	publicGrowth += AD_INCREASE_FACTOR
+	update_button_cash_disabled()
+	
+
+func update_button_cash_disabled():
+	$Build_HQ.disabled = (GameData.cash <= group.get_pressed_button().HQBaseCost) or (group.get_pressed_button().HQTimer > 0) or (group.get_pressed_button().HQs == 1)
+	$Run_Ads.disabled = (AdCost > GameData.cash) or (daysSinceAd > 0)
+	$Travel.disabled = GameData.travelling or group.get_pressed_button().hasPlayer or group.get_pressed_button().HQs < 1
+	
+
+
+

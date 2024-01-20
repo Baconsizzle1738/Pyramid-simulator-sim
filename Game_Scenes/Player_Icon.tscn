@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://efbeq0ykeep8"]
+
+[ext_resource type="Texture2D" uid="uid://d0hcayid81rte" path="res://Assets/Temp/icon.svg" id="1_d3rkm"]
+
+[node name="PlayerIcon" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Player" type="TextureRect" parent="."]
+offset_left = -6.0
+offset_top = -12.0
+offset_right = 6.0
+offset_bottom = 12.0
+texture = ExtResource("1_d3rkm")
+expand_mode = 1

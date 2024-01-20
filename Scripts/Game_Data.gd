@@ -1,5 +1,12 @@
 extends Node #GLOBAL DATA FOR THE GAME
 
+
+const DEFAULT_TIER3_WORTH = 2500
+const DEFAULT_TIER2_WORTH = 300
+const DEFAULT_TIER1_WORTH = 20
+
+const TIME_TO_TRAVEL = 4 #time it takes to travel in days
+
 var playerName #name of player
 
 var days = 0 # days passed
@@ -13,23 +20,30 @@ var legit = 75.0
 var cash = 1000000.0
 var FBIsus = 0.0 #ceil the number to get the FBIstatus(FBIstatis[ceil(FBIsus)])
 var FBIstatus = ["UNINTERESTED", "INTRIGUED", "SUSPICIOUS", "ALARMED", "APPREHENDING"]
-var Tier3Worth = 1000
-var Tier2Worth = 250
-var Tier1Worth = 15
+var Tier3Worth = DEFAULT_TIER3_WORTH
+var Tier2Worth = DEFAULT_TIER2_WORTH
+var Tier1Worth = DEFAULT_TIER1_WORTH
 var LegitIncreaseFactor = 1.0 + (legit-50)/100.0
+
+var currLocation
+var travelling = false
+var destination
+var travelTimer = 0 #set to time to travel and count down
+
 
 #run at game start, reset values to default
 func init():
 	legit = 75
 	cash = 1000000.0
 	FBIsus = 0.0
-	Tier3Worth = 1000
-	Tier2Worth = 250
-	Tier1Worth = 15
+	Tier3Worth = DEFAULT_TIER3_WORTH
+	Tier2Worth = DEFAULT_TIER2_WORTH
+	Tier1Worth = DEFAULT_TIER1_WORTH
 	days = 0
 	choosing = true
 	LegitIncreaseFactor = 1.0 + (legit-50)/100.0
 	HQBuildTime = 30
+	travelling = false
 	#FBIstatus = "uninterested"
 
 
@@ -37,7 +51,12 @@ func init():
 func tick():
 	days += 1
 	LegitIncreaseFactor = 1.0 + (legit-50)/100.0 # needed to update increase of investors based off legitamacy
-	
+	travelTimer -= 1
+	if travelTimer < -1:
+		travelTimer = -1
+	if travelTimer == 0:
+		travelling = false
+		currLocation = destination
 	
 
 # basic functions

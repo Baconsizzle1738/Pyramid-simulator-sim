@@ -6,9 +6,9 @@ var frameOneLoad = false
 #var choosing = true
 var showing_popup = false
 
-var legit = 75
-var cash = 1000000.0
-var FBIsus = 0
+#var legit = 75
+#var cash = 1000000.0
+#var FBIsus = 0
 
 var timePast = 0
 
@@ -28,9 +28,11 @@ var timePast = 0
 func reset():
 	#choosing = true
 	showing_popup = false
-	legit = 75
-	cash = 1000000.0
-	FBIsus = 0
+	#legit = 75
+	#cash = 1000000.0
+	#FBIsus = 0
+	timePast = 0
+	GameData.init()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

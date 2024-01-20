@@ -7,5 +7,7 @@ var HQs = 0
 var HQBaseCost
 var HQTimer = 0
 
-var HQLegitIncrease = 0.0000007 #legitamacy increase based on population for HQ
+var HQLegitIncrease = 0.000002 #legitamacy increase based on population for HQ
 var HQPublicIncrease = 0.000001 # publicity increase based on population for HQ
+
+var hasPlayer = false
