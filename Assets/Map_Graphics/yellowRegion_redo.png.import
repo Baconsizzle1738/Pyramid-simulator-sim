@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://di60nfhdda3tr"
-path="res://.godot/imported/yellowRegion_ponziProject.png-54c50f4565e6c55c4997ae87e5c582ea.ctex"
+uid="uid://cb0ik11n7leny"
+path="res://.godot/imported/yellowRegion_redo.png-3d31fb1be8322eec3e6d6488e21c01bc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Map_Graphics/yellowRegion_ponziProject.png"
-dest_files=["res://.godot/imported/yellowRegion_ponziProject.png-54c50f4565e6c55c4997ae87e5c582ea.ctex"]
+source_file="res://Assets/Map_Graphics/yellowRegion_redo.png"
+dest_files=["res://.godot/imported/yellowRegion_redo.png-3d31fb1be8322eec3e6d6488e21c01bc.ctex"]
 
 [params]
 

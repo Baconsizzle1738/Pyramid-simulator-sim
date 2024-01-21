@@ -1,16 +1,16 @@
 [gd_scene load_steps=4 format=3 uid="uid://dxex4mtxqdd4s"]
 
 [ext_resource type="Script" path="res://Scripts/Scene_Scripts/Northern_Rockies_Selectable.gd" id="1_t3ov6"]
-[ext_resource type="Texture2D" uid="uid://di60nfhdda3tr" path="res://Assets/Map_Graphics/yellowRegion_ponziProject.png" id="2_a1d7h"]
+[ext_resource type="Texture2D" uid="uid://cb0ik11n7leny" path="res://Assets/Map_Graphics/yellowRegion_redo.png" id="2_5yacb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_v3qol"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_a1d7h")
+"texture": ExtResource("2_5yacb")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_a1d7h")
+"texture": ExtResource("2_5yacb")
 }],
 "loop": true,
 "name": &"default",

@@ -1,11 +1,12 @@
-[gd_scene load_steps=15 format=3 uid="uid://cg7toqor2aygk"]
+[gd_scene load_steps=16 format=3 uid="uid://cg7toqor2aygk"]
 
 [ext_resource type="Texture2D" uid="uid://d0hcayid81rte" path="res://Assets/Temp/icon.svg" id="1_3ni02"]
 [ext_resource type="Script" path="res://Scripts/Popup_Scripts/Pacific_Popup.gd" id="1_fp6li"]
-[ext_resource type="Texture2D" uid="uid://bgog56fbgc40x" path="res://Assets/Temp/Pacific_region.png" id="1_sl6m7"]
 [ext_resource type="Texture2D" uid="uid://dg2bti02pie76" path="res://Assets/Temp/placeholder1.png" id="3_8p2ej"]
+[ext_resource type="PackedScene" uid="uid://dmlrmano2ig6n" path="res://Game_Scenes/Popup_Base_Bkgd.tscn" id="3_rc1p1"]
 [ext_resource type="Texture2D" uid="uid://dujsexumthhsn" path="res://Assets/Temp/placeholder2.png" id="4_3g2js"]
 [ext_resource type="ButtonGroup" uid="uid://18mtff06jo8l" path="res://Assets/Button_Groups/Pacific_Cities.tres" id="4_gfrrf"]
+[ext_resource type="Texture2D" uid="uid://dbqur1uqsokte" path="res://Assets/Map_Graphics/redRegion_ponziProject.png" id="4_jpkch"]
 [ext_resource type="Script" path="res://Scripts/Button_Scripts/Seattle.gd" id="7_3uorx"]
 [ext_resource type="Script" path="res://Scripts/Button_Scripts/Portland.gd" id="8_j3k71"]
 [ext_resource type="PackedScene" uid="uid://efbeq0ykeep8" path="res://Game_Scenes/Player_Icon.tscn" id="8_opc0s"]
@@ -24,24 +25,21 @@ offset_bottom = 0.18396
 script = ExtResource("1_fp6li")
 group = ExtResource("4_gfrrf")
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(399.5, 200.5)
-scale = Vector2(6.24219, 3.11719)
-texture = ExtResource("1_3ni02")
+[node name="PopupBaseBkgd" parent="." instance=ExtResource("3_rc1p1")]
 
-[node name="PacificRegion" type="Sprite2D" parent="."]
-position = Vector2(245, 196)
-rotation = -0.95295
-scale = Vector2(0.652816, 0.652816)
-texture = ExtResource("1_sl6m7")
+[node name="RedRegionPonziProject" type="Sprite2D" parent="."]
+position = Vector2(248.636, 202.589)
+rotation = -0.904081
+scale = Vector2(0.430726, 0.430726)
+texture = ExtResource("4_jpkch")
 
 [node name="Cities" type="Node" parent="."]
 
 [node name="Seattle" type="TextureButton" parent="Cities"]
-offset_left = 35.0
-offset_top = 70.0
-offset_right = 67.0
-offset_bottom = 102.0
+offset_left = 37.0
+offset_top = 58.0
+offset_right = 69.0
+offset_bottom = 90.0
 toggle_mode = true
 button_group = ExtResource("4_gfrrf")
 texture_normal = ExtResource("3_8p2ej")
@@ -66,16 +64,16 @@ show_percentage = false
 [node name="Player" parent="Cities/Seattle" instance=ExtResource("8_opc0s")]
 visible = false
 show_behind_parent = true
-offset_left = 14.0
+offset_left = 15.0
 offset_top = -6.0
-offset_right = 14.0
+offset_right = 15.0
 offset_bottom = -6.0
 
 [node name="Portland" type="TextureButton" parent="Cities"]
 offset_left = 68.0
-offset_top = 119.0
+offset_top = 110.0
 offset_right = 100.0
-offset_bottom = 151.0
+offset_bottom = 142.0
 toggle_mode = true
 button_group = ExtResource("4_gfrrf")
 texture_normal = ExtResource("3_8p2ej")
@@ -106,10 +104,10 @@ offset_right = 14.0
 offset_bottom = -6.0
 
 [node name="San Francisco" type="TextureButton" parent="Cities"]
-offset_left = 149.0
-offset_top = 222.0
-offset_right = 181.0
-offset_bottom = 254.0
+offset_left = 150.0
+offset_top = 226.0
+offset_right = 182.0
+offset_bottom = 258.0
 toggle_mode = true
 button_group = ExtResource("4_gfrrf")
 texture_normal = ExtResource("3_8p2ej")
@@ -140,10 +138,10 @@ offset_right = 14.0
 offset_bottom = -6.0
 
 [node name="Los Angeles" type="TextureButton" parent="Cities"]
-offset_left = 241.0
-offset_top = 240.0
-offset_right = 273.0
-offset_bottom = 272.0
+offset_left = 242.0
+offset_top = 250.0
+offset_right = 274.0
+offset_bottom = 282.0
 toggle_mode = true
 button_group = ExtResource("4_gfrrf")
 texture_normal = ExtResource("3_8p2ej")
@@ -174,10 +172,10 @@ offset_right = 14.0
 offset_bottom = -6.0
 
 [node name="Honolulu" type="TextureButton" parent="Cities"]
-offset_left = 257.0
-offset_top = 304.0
-offset_right = 289.0
-offset_bottom = 336.0
+offset_left = 251.0
+offset_top = 313.0
+offset_right = 283.0
+offset_bottom = 345.0
 toggle_mode = true
 button_group = ExtResource("4_gfrrf")
 texture_normal = ExtResource("3_8p2ej")
@@ -208,10 +206,10 @@ offset_right = 14.0
 offset_bottom = -6.0
 
 [node name="Anchorage" type="TextureButton" parent="Cities"]
-offset_left = 429.0
-offset_top = 284.0
-offset_right = 461.0
-offset_bottom = 316.0
+offset_left = 419.0
+offset_top = 305.0
+offset_right = 451.0
+offset_bottom = 337.0
 toggle_mode = true
 button_group = ExtResource("4_gfrrf")
 texture_normal = ExtResource("3_8p2ej")
@@ -245,42 +243,27 @@ offset_bottom = -6.0
 
 [node name="Seattle" parent="CityHQ" instance=ExtResource("13_lvhlx")]
 visible = false
-position = Vector2(45, 63)
+position = Vector2(33, 64)
 
 [node name="Portland" parent="CityHQ" instance=ExtResource("13_lvhlx")]
 visible = false
-position = Vector2(88, 157)
+position = Vector2(77, 145)
 
 [node name="San Francisco" parent="CityHQ" instance=ExtResource("13_lvhlx")]
 visible = false
-position = Vector2(157, 217)
+position = Vector2(144, 227)
 
 [node name="Los Angeles" parent="CityHQ" instance=ExtResource("13_lvhlx")]
 visible = false
-position = Vector2(234, 261)
+position = Vector2(236, 261)
 
 [node name="Honolulu" parent="CityHQ" instance=ExtResource("13_lvhlx")]
 visible = false
-position = Vector2(253, 314)
+position = Vector2(247, 343)
 
 [node name="Anchorage" parent="CityHQ" instance=ExtResource("13_lvhlx")]
 visible = false
-position = Vector2(432, 320)
-
-[node name="Icon2" type="Sprite2D" parent="."]
-position = Vector2(657, 200.5)
-scale = Vector2(2.20313, 3.11719)
-texture = ExtResource("1_3ni02")
-
-[node name="Icon3" type="Sprite2D" parent="."]
-position = Vector2(657, 103.5)
-scale = Vector2(2.20313, 1.61719)
-texture = ExtResource("1_3ni02")
-
-[node name="Icon4" type="Sprite2D" parent="."]
-position = Vector2(657.5, 303)
-scale = Vector2(2.21094, 1.51563)
-texture = ExtResource("1_3ni02")
+position = Vector2(450, 299)
 
 [node name="Data" type="Control" parent="."]
 layout_mode = 1

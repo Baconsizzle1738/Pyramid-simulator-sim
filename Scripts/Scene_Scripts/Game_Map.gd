@@ -58,7 +58,7 @@ func _process(delta):
 		#print(PacificIndex)
 		frameOneLoad = true
 	
-	if GameData.choosing: #make !choosing later
+	if !GameData.choosing: #make !choosing later
 		timePast += delta
 		#print(delta)
 		if timePast >= 1: # tick game every "second" representing a "day"
@@ -66,6 +66,13 @@ func _process(delta):
 			
 			#tick each region
 			$PacificWindow/PacificPopup.tick()
+			
+			#debt timer
+			GameData.debtDays -= 1
+			if GameData.debtDays <= -1:
+				GameData.debtDays = -1
+			if GameData.debtDays == 0:
+				pass
 			
 			GameData.tick() # day go up
 			

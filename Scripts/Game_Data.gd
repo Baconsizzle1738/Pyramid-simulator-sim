@@ -5,6 +5,10 @@ const DEFAULT_TIER3_WORTH = 2500
 const DEFAULT_TIER2_WORTH = 300
 const DEFAULT_TIER1_WORTH = 20
 
+const DEFAULT_CASHOUT_RATE = 0.05
+const TIME_TO_PAY_DEBT = 15 # time player has to pay debt
+const ROI = 1.2 # ROI that the investors demand on cashout
+
 const TIME_TO_TRAVEL = 4 #time it takes to travel in days
 
 var playerName #name of player
@@ -20,10 +24,15 @@ var legit = 75.0
 var cash = 1000000.0
 var FBIsus = 0.0 #ceil the number to get the FBIstatus(FBIstatis[ceil(FBIsus)])
 var FBIstatus = ["UNINTERESTED", "INTRIGUED", "SUSPICIOUS", "ALARMED", "APPREHENDING"]
+var FBIprogress = 0.0
 var Tier3Worth = DEFAULT_TIER3_WORTH
 var Tier2Worth = DEFAULT_TIER2_WORTH
 var Tier1Worth = DEFAULT_TIER1_WORTH
 var LegitIncreaseFactor = 1.0 + (legit-50)/100.0
+
+var cashoutRate = DEFAULT_CASHOUT_RATE
+var debt = 0
+var debtDays = 0
 
 var currLocation
 var travelling = false
@@ -36,9 +45,11 @@ func init():
 	legit = 75
 	cash = 1000000.0
 	FBIsus = 0.0
+	FBIprogress = 0.0
 	Tier3Worth = DEFAULT_TIER3_WORTH
 	Tier2Worth = DEFAULT_TIER2_WORTH
 	Tier1Worth = DEFAULT_TIER1_WORTH
+	cashoutRate = DEFAULT_CASHOUT_RATE
 	days = 0
 	choosing = true
 	LegitIncreaseFactor = 1.0 + (legit-50)/100.0
@@ -57,6 +68,15 @@ func tick():
 	if travelTimer == 0:
 		travelling = false
 		currLocation = destination
+	
+	# done in Game_map file
+	#debtDays -= 1
+	#if debtDays <= -1:
+		#debtDays = -1
+	#if debtDays == 0:
+		#pass
+	
+	FBIsus += FBIprogress
 	
 
 # basic functions
