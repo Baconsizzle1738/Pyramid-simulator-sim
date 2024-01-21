@@ -42,6 +42,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	#print(str(delta))
 	if !frameOneLoad:
 		PacificIDX = $PacificWindow.get_index()
 		NorthernRockiesIDX = $NorthernRockiesWindow.get_index()
@@ -64,17 +65,22 @@ func _process(delta):
 		if timePast >= 1: # tick game every "second" representing a "day"
 			print("tick "+str(timePast))
 			
+			GameData.tick() # day go up
 			#tick each region
 			$PacificWindow/PacificPopup.tick()
 			
 			#debt timer
 			GameData.debtDays -= 1
+			print(GameData.debtDays)
+			$Debt/Bar.value = GameData.debtDays
 			if GameData.debtDays <= -1:
 				GameData.debtDays = -1
 			if GameData.debtDays == 0:
-				pass
+				$Debt.visible = false
+				GameData.legit -= (GameData.LEGIT_DECREASE_FACTOR * GameData.debt)
+				GameData.debt = 0
 			
-			GameData.tick() # day go up
+			print(GameData.legit)
 			
 			#update HUD data
 			$Legit.text = "Legitimacy: "+str(round(GameData.legit))
@@ -82,9 +88,22 @@ func _process(delta):
 			$Cash.text = "Cash: $"+str(round(GameData.cash))
 			$Days.text = "Day "+str(GameData.days)
 			
+			print(GameData.debt)
+			if GameData.days%30 == 0 and GameData.debt>0:
+				print("DEBT SHOW")
+				$Debt.visible = true
+				$Debt/Amount.text = "$"+GameData.numSuffix(GameData.debt)
+				GameData.debtDays = GameData.TIME_TO_PAY_DEBT
+				$Debt/Bar.max_value = GameData.TIME_TO_PAY_DEBT
+				$Debt/Bar.value = GameData.TIME_TO_PAY_DEBT
+			
+			
 			#reset time
 			timePast = 0
 	#other stuff
+	
+	# choose location banner visibility
+	$ChooseLocationBanner.visible = GameData.choosing
 
 
 #window closing stuff

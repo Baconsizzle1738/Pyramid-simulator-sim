@@ -1,32 +1,41 @@
-[gd_scene load_steps=3 format=3 uid="uid://dqedknamwrxhk"]
+[gd_scene load_steps=7 format=3 uid="uid://dqedknamwrxhk"]
 
-[ext_resource type="Texture2D" uid="uid://d0hcayid81rte" path="res://Assets/Temp/icon.svg" id="1_h58cu"]
 [ext_resource type="Script" path="res://Scripts/Scene_Scripts/Main_Menu.gd" id="1_yqqyg"]
+[ext_resource type="Texture2D" uid="uid://dbnjd0h7mxpbl" path="res://Assets/Buttons/startButton_ver02.png" id="2_bntoj"]
+[ext_resource type="Texture2D" uid="uid://cm87h065t4hu4" path="res://Assets/Buttons/startButton_hover.png" id="3_s1vxq"]
+[ext_resource type="Texture2D" uid="uid://c2hxhhh3ersci" path="res://Assets/Buttons/quitButton.png" id="4_5fm7l"]
+[ext_resource type="Texture2D" uid="uid://c1lsisipwf7u0" path="res://Assets/Buttons/quitButton_hover.png" id="5_ofyu5"]
+[ext_resource type="Texture2D" uid="uid://bsmwudi8ssr3n" path="res://Assets/titleScreen_ponziProject.png" id="6_wkiyh"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_yqqyg")
 
-[node name="Start_Button" type="Button" parent="."]
-offset_left = 407.0
+[node name="Start_Button" type="TextureButton" parent="."]
+offset_left = 433.0
 offset_top = 351.0
-offset_right = 707.0
+offset_right = 733.0
 offset_bottom = 421.0
-text = "Start"
+texture_normal = ExtResource("2_bntoj")
+texture_hover = ExtResource("3_s1vxq")
+metadata/_edit_use_anchors_ = true
 
-[node name="Quit_Button" type="Button" parent="."]
-offset_left = 409.0
+[node name="Quit_Button" type="TextureButton" parent="."]
+offset_left = 433.0
 offset_top = 428.0
-offset_right = 709.0
+offset_right = 733.0
 offset_bottom = 498.0
-text = "Quit"
+texture_normal = ExtResource("4_5fm7l")
+texture_hover = ExtResource("5_ofyu5")
+metadata/_edit_use_anchors_ = true
 
 [node name="Title" type="TextureRect" parent="."]
-offset_left = 201.0
+offset_left = 234.0
 offset_top = 33.0
-offset_right = 901.0
+offset_right = 934.0
 offset_bottom = 333.0
-texture = ExtResource("1_h58cu")
+texture = ExtResource("6_wkiyh")
 expand_mode = 1
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Start_Button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Quit_Button" to="." method="_on_quit_button_pressed"]

@@ -8,12 +8,13 @@ const DEFAULT_TIER1_WORTH = 20
 const DEFAULT_CASHOUT_RATE = 0.05
 const TIME_TO_PAY_DEBT = 15 # time player has to pay debt
 const ROI = 1.2 # ROI that the investors demand on cashout
+const LEGIT_DECREASE_FACTOR = 0.000015 #how much legit decreases for every unpaid dollar
 
 const TIME_TO_TRAVEL = 4 #time it takes to travel in days
 
 var playerName #name of player
 
-var days = 0 # days passed
+var days = 200 # days passed
 
 var choosing = true # change to true later
 
@@ -32,7 +33,7 @@ var LegitIncreaseFactor = 1.0 + (legit-50)/100.0
 
 var cashoutRate = DEFAULT_CASHOUT_RATE
 var debt = 0
-var debtDays = 0
+var debtDays = 0 # debt timer countdown
 
 var currLocation
 var travelling = false
@@ -50,7 +51,7 @@ func init():
 	Tier2Worth = DEFAULT_TIER2_WORTH
 	Tier1Worth = DEFAULT_TIER1_WORTH
 	cashoutRate = DEFAULT_CASHOUT_RATE
-	days = 0
+	days = 200
 	choosing = true
 	LegitIncreaseFactor = 1.0 + (legit-50)/100.0
 	HQBuildTime = 30

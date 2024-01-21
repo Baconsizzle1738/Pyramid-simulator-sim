@@ -24,6 +24,10 @@ func button_pressed():
 	$Travel.disabled = GameData.travelling or group.get_pressed_button().hasPlayer or group.get_pressed_button().HQs < 1 or GameData.choosing
 	
 
+func _process(delta):
+	#update_button_cash_disabled() # so that buttons disable faster when needed
+	pass
+
 # Called to update region data
 func tick():
 	#increase in cash
@@ -50,11 +54,23 @@ func tick():
 	var TotalCashGenerated = grow3*GameData.Tier3Worth + grow2*GameData.Tier2Worth + grow1*GameData.Tier1Worth
 	GameData.cash += TotalCashGenerated
 	
+	
 	#amount of investors cashing out after around half a year
 	if GameData.days >= 183 and GameData.days%30 == 0:
+		# number of ppl cashing out
 		var t3out = round(GameData.cashoutRate * Tier3)
-		pass
-	
+		var t2out = round(GameData.cashoutRate * Tier2)
+		var t1out = round(GameData.cashoutRate * Tier1)
+		Tier3 -= t3out
+		Tier2 -= t2out
+		Tier1 -= t1out
+		# find money value of debt
+		t3out *= GameData.ROI * GameData.Tier3Worth
+		t2out *= GameData.ROI * GameData.Tier2Worth
+		t1out *= GameData.ROI * GameData.Tier1Worth
+		
+		GameData.debt += (t3out + t2out + t1out)
+		print("PACIFIC DEBT PAYOUT")
 	
 	
 	#Ad timer logic
@@ -151,7 +167,7 @@ func _on_run_ads_pressed():
 	
 
 func update_button_cash_disabled():
-	$Build_HQ.disabled = (GameData.cash <= group.get_pressed_button().HQBaseCost) or (group.get_pressed_button().HQTimer > 0) or (group.get_pressed_button().HQs == 1)
+	$Build_HQ.disabled = !GameData.choosing and (GameData.cash <= group.get_pressed_button().HQBaseCost) or (group.get_pressed_button().HQTimer > 0) or (group.get_pressed_button().HQs == 1)
 	$Run_Ads.disabled = (AdCost > GameData.cash) or (daysSinceAd > 0) or GameData.choosing
 	$Travel.disabled = GameData.travelling or group.get_pressed_button().hasPlayer or group.get_pressed_button().HQs < 1
 	
