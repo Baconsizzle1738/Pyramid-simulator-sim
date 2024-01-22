@@ -5,6 +5,8 @@ extends Control
 #var BaseInvestGrowth
 var regionPopulation
 
+var numHQ = 0
+
 var publicity = 5
 const DEFAULT_PUBLICITY_GROWTH = 0.008
 var publicGrowth = DEFAULT_PUBLICITY_GROWTH

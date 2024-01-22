@@ -73,6 +73,8 @@ func tick():
 		print("PACIFIC DEBT PAYOUT")
 	
 	#TODO: FBI raids
+	#var rand = RandomNumberGenerator.new()
+	#var raidCity = rand.randi_range(0, 5)
 	
 	
 	#Ad timer logic
@@ -100,6 +102,7 @@ func tick():
 			GameData.legit += button.population * button.HQLegitIncrease
 			get_node("CityHQ/"+button.name).visible = true #HQ name and button name MUST BE THE SAME
 			button.get_child(0).visible = false
+			numHQ += 1
 		
 		#check if the player is in the city
 		if GameData.currLocation == button.get_name():
@@ -170,10 +173,31 @@ func _on_run_ads_pressed():
 	
 
 func update_button_cash_disabled():
-	$Build_HQ.disabled = !GameData.choosing and (GameData.cash <= group.get_pressed_button().HQBaseCost) or (group.get_pressed_button().HQTimer > 0) or (group.get_pressed_button().HQs == 1)
+	$Build_HQ.disabled = !GameData.choosing and (GameData.cash <= group.get_pressed_button().HQBaseCost) or (group.get_pressed_button().HQTimer > 0) or (group.get_pressed_button().HQs == 1) or (group.get_pressed_button().FBIcontrol)
 	$Run_Ads.disabled = (AdCost > GameData.cash) or (daysSinceAd > 0) or GameData.choosing
 	$Travel.disabled = GameData.travelling or group.get_pressed_button().hasPlayer or group.get_pressed_button().HQs < 1
 	
 
-
+func raidCity() -> void: #run this froim map tick
+	#TODO: FBI raids
+	var rand = RandomNumberGenerator.new()
+	var cityidx = rand.randi_range(0, 5) #max index of city
+	if ceil(GameData.FBIsus) == 4:
+		if numHQ == 0:
+			pass #TODO set investor growth to 0 and everyone cashes out
+		if $Cities.get_child(cityidx).hasPlayer:
+			$Cities.get_child(cityidx).FBIcontrol = true
+			$Cities.get_child(cityidx).HQs = 0
+			#TODO END THE GAMAE
+		elif $Cities.get_child(cityidx).HQs > 0: 
+			$Cities.get_child(cityidx).FBIcontrol = true
+			$Cities.get_child(cityidx).HQs = 0
+			#TODO: notify player of HQ bonk
+		else:
+			$Cities.get_child(cityidx).FBIcontrol = true
+			$Cities.get_child(cityidx).HQs = 0
+			
+	elif ceil(GameData.FBIsus) == 3: # Can only prevent more HQ building
+		if !$Cities.get_child(cityidx).HQs == 0:
+			$Cities.get_child(cityidx).FBIcontrol = true
 

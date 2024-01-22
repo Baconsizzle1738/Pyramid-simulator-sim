@@ -83,6 +83,8 @@ func tick():
 		#pass
 	
 	FBIsus += FBIprogress
+	if FBIsus > 3.9999:
+		FBIsus = 3.9999
 	
 
 # basic functions
