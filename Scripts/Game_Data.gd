@@ -8,13 +8,17 @@ const DEFAULT_TIER1_WORTH = 20
 const DEFAULT_CASHOUT_RATE = 0.05
 const TIME_TO_PAY_DEBT = 15 # time player has to pay debt
 const ROI = 1.2 # ROI that the investors demand on cashout
-const LEGIT_DECREASE_FACTOR = 0.000015 #how much legit decreases for every unpaid dollar
+const LEGIT_DECREASE_FACTOR = 0.00004 #how much legit decreases for every unpaid dollar
+const DEBT_PAYOUT_INTERVAL = 35 #cashout happens every this many days
+const START_CASHOUT = 365 # investors start cashing out after this many days
+
+const START_FBI = 548 # FBI will start investigating after this many days
 
 const TIME_TO_TRAVEL = 4 #time it takes to travel in days
 
 var playerName #name of player
 
-var days = 200 # days passed
+var days:int = 200 # days passed
 
 var choosing = true # change to true later
 
@@ -25,7 +29,7 @@ var legit = 75.0
 var cash = 1000000.0
 var FBIsus = 0.0 #ceil the number to get the FBIstatus(FBIstatis[ceil(FBIsus)])
 var FBIstatus = ["UNINTERESTED", "INTRIGUED", "SUSPICIOUS", "ALARMED", "APPREHENDING"]
-var FBIprogress = 0.0
+var FBIprogress = 0.0 # Daily gain in FBI suspicion
 var Tier3Worth = DEFAULT_TIER3_WORTH
 var Tier2Worth = DEFAULT_TIER2_WORTH
 var Tier1Worth = DEFAULT_TIER1_WORTH
@@ -63,6 +67,7 @@ func init():
 func tick():
 	days += 1
 	LegitIncreaseFactor = 1.0 + (legit-50)/100.0 # needed to update increase of investors based off legitamacy
+	cashoutRate = legitCashoutRate(legit)
 	travelTimer -= 1
 	if travelTimer < -1:
 		travelTimer = -1
@@ -99,4 +104,8 @@ func numSuffix(num) -> String:
 		num = round(num)
 		return str(num)+" k"
 	return str(num)
+	
+
+func legitCashoutRate(num) -> float:
+	return 1 / (1 + 1.5**(0.2*(num-40.5)))
 	

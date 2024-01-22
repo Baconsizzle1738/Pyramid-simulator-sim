@@ -89,7 +89,7 @@ func _process(delta):
 			$Days.text = "Day "+str(GameData.days)
 			
 			print(GameData.debt)
-			if GameData.days%30 == 0 and GameData.debt>0:
+			if GameData.days%GameData.DEBT_PAYOUT_INTERVAL == 0 and GameData.debt>0:
 				print("DEBT SHOW")
 				$Debt.visible = true
 				$Debt/Amount.text = "$"+GameData.numSuffix(GameData.debt)
@@ -97,6 +97,10 @@ func _process(delta):
 				$Debt/Bar.max_value = GameData.TIME_TO_PAY_DEBT
 				$Debt/Bar.value = GameData.TIME_TO_PAY_DEBT
 			
+			#signal FBI start
+			if (GameData.legit <= 50 or GameData.days >= GameData.START_FBI) and GameData.FBIprogress <= 0.001:
+				GameData.FBIprogress = 0.06
+				#TODO:notify player of FBI investigation
 			
 			#reset time
 			timePast = 0

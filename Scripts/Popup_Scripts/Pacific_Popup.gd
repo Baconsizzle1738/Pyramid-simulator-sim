@@ -56,7 +56,7 @@ func tick():
 	
 	
 	#amount of investors cashing out after around half a year
-	if GameData.days >= 183 and GameData.days%30 == 0:
+	if GameData.days >= GameData.START_CASHOUT and GameData.days%GameData.DEBT_PAYOUT_INTERVAL == 0:
 		# number of ppl cashing out
 		var t3out = round(GameData.cashoutRate * Tier3)
 		var t2out = round(GameData.cashoutRate * Tier2)
@@ -71,6 +71,8 @@ func tick():
 		
 		GameData.debt += (t3out + t2out + t1out)
 		print("PACIFIC DEBT PAYOUT")
+	
+	#TODO: FBI raids
 	
 	
 	#Ad timer logic
@@ -139,6 +141,7 @@ func _on_build_hq_pressed():
 		group.get_pressed_button().HQs = 1
 		GameData.choosing = false
 		GameData.currLocation = group.get_pressed_button().get_name()
+		group.get_pressed_button().hasPlayer = true
 		$Build_HQ.disabled = true
 	
 	update_button_cash_disabled()

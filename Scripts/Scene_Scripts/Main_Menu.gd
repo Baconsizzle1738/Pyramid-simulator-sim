@@ -12,9 +12,6 @@ func _process(delta):
 	
 
 
-
-
-
 func _on_start_button_pressed():
 	print("START PRESSED")
 	get_tree().change_scene_to_file("res://Game_Scenes/Choose_Name.tscn")
