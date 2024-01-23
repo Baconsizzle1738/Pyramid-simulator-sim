@@ -1,21 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://tqve15lstf8n"]
+[gd_scene load_steps=6 format=3 uid="uid://tqve15lstf8n"]
 
 [ext_resource type="Script" path="res://Scripts/Scene_Scripts/Pacific_Region_Selectable.gd" id="1_c7bi6"]
 [ext_resource type="Texture2D" uid="uid://dl45o60jgy302" path="res://Assets/Map_Graphics/map_ponziProject.png" id="2_iw0sj"]
-[ext_resource type="Texture2D" uid="uid://dbqur1uqsokte" path="res://Assets/Map_Graphics/redRegion_ponziProject.png" id="3_mn1v7"]
+[ext_resource type="Texture2D" uid="uid://dbqur1uqsokte" path="res://Assets/Map_Graphics/Default_State/redRegion_ponziProject.png" id="3_bpyyk"]
+[ext_resource type="Texture2D" uid="uid://cnw6btsbd0lef" path="res://Assets/Map_Graphics/Hover_State/redRegion_noBorder.png" id="4_bqxhi"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1xak3"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_mn1v7")
+"texture": ExtResource("3_bpyyk")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_mn1v7")
+"texture": ExtResource("4_bqxhi")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 0.0
 }]
 
 [node name="PacificRegionSelectable" type="Node2D"]

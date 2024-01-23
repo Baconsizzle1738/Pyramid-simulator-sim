@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnfva03gsshnl"
-path="res://.godot/imported/greenRegion_ponziProject.png-091f81f99689156c32ac24e942cc338c.ctex"
+uid="uid://3r5bd8alf7ie"
+path="res://.godot/imported/orangeRegion_ponziProject.png-98ee9f083b5876113df7bf91aa2f16c6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Map_Graphics/greenRegion_ponziProject.png"
-dest_files=["res://.godot/imported/greenRegion_ponziProject.png-091f81f99689156c32ac24e942cc338c.ctex"]
+source_file="res://Assets/Map_Graphics/Default_State/orangeRegion_ponziProject.png"
+dest_files=["res://.godot/imported/orangeRegion_ponziProject.png-98ee9f083b5876113df7bf91aa2f16c6.ctex"]
 
 [params]
 

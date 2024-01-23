@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c8m5cbbqhrqgu"
-path="res://.godot/imported/blueRegion_ponziProject.png-d39a105fac004e72146b4069b6c2b42f.ctex"
+path="res://.godot/imported/blueRegion_ponziProject.png-28281db2b1d23e8aaa388ebac45ba4e3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Map_Graphics/blueRegion_ponziProject.png"
-dest_files=["res://.godot/imported/blueRegion_ponziProject.png-d39a105fac004e72146b4069b6c2b42f.ctex"]
+source_file="res://Assets/Map_Graphics/Default_State/blueRegion_ponziProject.png"
+dest_files=["res://.godot/imported/blueRegion_ponziProject.png-28281db2b1d23e8aaa388ebac45ba4e3.ctex"]
 
 [params]
 

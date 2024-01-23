@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://be63vui6btwg0"
-path="res://.godot/imported/maroonRegion_ponziProject.png-3c6186ed581b39410e71af5328b551f5.ctex"
+uid="uid://dsl14c48xtar8"
+path="res://.godot/imported/brownRegion_ponziProject.png-cd5d6021105bd93c807608ce399cf77f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Map_Graphics/maroonRegion_ponziProject.png"
-dest_files=["res://.godot/imported/maroonRegion_ponziProject.png-3c6186ed581b39410e71af5328b551f5.ctex"]
+source_file="res://Assets/Map_Graphics/Default_State/brownRegion_ponziProject.png"
+dest_files=["res://.godot/imported/brownRegion_ponziProject.png-cd5d6021105bd93c807608ce399cf77f.ctex"]
 
 [params]
 

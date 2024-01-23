@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dmlrmano2ig6n" path="res://Game_Scenes/Popup_Base_Bkgd.tscn" id="3_rc1p1"]
 [ext_resource type="Texture2D" uid="uid://dujsexumthhsn" path="res://Assets/Temp/placeholder2.png" id="4_3g2js"]
 [ext_resource type="ButtonGroup" uid="uid://18mtff06jo8l" path="res://Assets/Button_Groups/Pacific_Cities.tres" id="4_gfrrf"]
-[ext_resource type="Texture2D" uid="uid://dbqur1uqsokte" path="res://Assets/Map_Graphics/redRegion_ponziProject.png" id="4_jpkch"]
+[ext_resource type="Texture2D" uid="uid://dbqur1uqsokte" path="res://Assets/Map_Graphics/Default_State/redRegion_ponziProject.png" id="4_scham"]
 [ext_resource type="Script" path="res://Scripts/Button_Scripts/Seattle.gd" id="7_3uorx"]
 [ext_resource type="Script" path="res://Scripts/Button_Scripts/Portland.gd" id="8_j3k71"]
 [ext_resource type="PackedScene" uid="uid://efbeq0ykeep8" path="res://Game_Scenes/Player_Icon.tscn" id="8_opc0s"]
@@ -31,7 +31,7 @@ group = ExtResource("4_gfrrf")
 position = Vector2(248.636, 202.589)
 rotation = -0.904081
 scale = Vector2(0.430726, 0.430726)
-texture = ExtResource("4_jpkch")
+texture = ExtResource("4_scham")
 
 [node name="Cities" type="Node" parent="."]
 

@@ -24,14 +24,14 @@ func _process(delta):
 func _on_area_2d_mouse_entered():
 	mouseHovering = true
 	if !exists:
-		$PacificRegion.frame = 0
+		$PacificRegion.frame = 1
 	#print("IN")
 
 
 func _on_area_2d_mouse_exited():
 	mouseHovering = false
 	if !exists:
-		$PacificRegion.frame = 1
+		$PacificRegion.frame = 0
 	#print("OUT")
 
 

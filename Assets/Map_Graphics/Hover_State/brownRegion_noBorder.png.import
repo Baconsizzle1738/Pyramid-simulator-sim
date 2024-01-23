@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tavku52e7qtr"
-path="res://.godot/imported/magentaRegion_ponziProject.png-8a083f2de7c3b55d4d8b43e96dcb1419.ctex"
+uid="uid://c6ygp0n8nwmna"
+path="res://.godot/imported/brownRegion_noBorder.png-07c9b6d0ae476a54c857d2d33ca5c0ff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Map_Graphics/magentaRegion_ponziProject.png"
-dest_files=["res://.godot/imported/magentaRegion_ponziProject.png-8a083f2de7c3b55d4d8b43e96dcb1419.ctex"]
+source_file="res://Assets/Map_Graphics/Hover_State/brownRegion_noBorder.png"
+dest_files=["res://.godot/imported/brownRegion_noBorder.png-07c9b6d0ae476a54c857d2d33ca5c0ff.ctex"]
 
 [params]
 

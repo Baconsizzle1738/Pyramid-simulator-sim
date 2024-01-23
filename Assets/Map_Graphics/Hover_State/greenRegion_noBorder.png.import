@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwl8a70r5vwt1"
-path="res://.godot/imported/indigoRegion_ponziProject.png-af13ee13be45a0be1277ce0c932803aa.ctex"
+uid="uid://2o0py1n1ktlb"
+path="res://.godot/imported/greenRegion_noBorder.png-300b7c098ba0710283db118e77a7ebf9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Map_Graphics/indigoRegion_ponziProject.png"
-dest_files=["res://.godot/imported/indigoRegion_ponziProject.png-af13ee13be45a0be1277ce0c932803aa.ctex"]
+source_file="res://Assets/Map_Graphics/Hover_State/greenRegion_noBorder.png"
+dest_files=["res://.godot/imported/greenRegion_noBorder.png-300b7c098ba0710283db118e77a7ebf9.ctex"]
 
 [params]
 

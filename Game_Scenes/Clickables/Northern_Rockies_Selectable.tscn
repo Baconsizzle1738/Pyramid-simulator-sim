@@ -1,16 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://dxex4mtxqdd4s"]
+[gd_scene load_steps=5 format=3 uid="uid://dxex4mtxqdd4s"]
 
 [ext_resource type="Script" path="res://Scripts/Scene_Scripts/Northern_Rockies_Selectable.gd" id="1_t3ov6"]
-[ext_resource type="Texture2D" uid="uid://cb0ik11n7leny" path="res://Assets/Map_Graphics/yellowRegion_redo.png" id="2_5yacb"]
+[ext_resource type="Texture2D" uid="uid://cb0ik11n7leny" path="res://Assets/Map_Graphics/Default_State/yellowRegion_redo.png" id="2_ea57b"]
+[ext_resource type="Texture2D" uid="uid://d0h8dy8slsex3" path="res://Assets/Map_Graphics/Hover_State/yellowRegion_noBorder.png" id="3_s7eqw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_v3qol"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_5yacb")
+"texture": ExtResource("2_ea57b")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_5yacb")
+"texture": ExtResource("3_s7eqw")
 }],
 "loop": true,
 "name": &"default",
