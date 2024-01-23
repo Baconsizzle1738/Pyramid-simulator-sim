@@ -66,6 +66,18 @@ func _process(delta):
 			print("tick "+str(timePast))
 			
 			GameData.tick() # day go up
+			
+			#cashout each region
+			if GameData.days >= GameData.START_CASHOUT and GameData.days%GameData.DEBT_PAYOUT_INTERVAL == 0:
+				$PacificWindow/PacificPopup.cashout()
+				
+			
+			#FBI raid each region
+			if GameData.days%GameData.FBI_RAID_FREQ == 0:
+				var random = RandomNumberGenerator.new()
+				random = random.randi_range(PacificIDX, PacificIDX)
+				self.get_child(random).get_child(0).raidCity()
+			
 			#tick each region
 			$PacificWindow/PacificPopup.tick()
 			
@@ -99,7 +111,7 @@ func _process(delta):
 			
 			#signal FBI start
 			if (GameData.legit <= 50 or GameData.days >= GameData.START_FBI) and GameData.FBIprogress <= 0.001:
-				GameData.FBIprogress = 0.06
+				GameData.FBIprogress = 0.015
 				#TODO:notify player of FBI investigation
 			
 			#reset time

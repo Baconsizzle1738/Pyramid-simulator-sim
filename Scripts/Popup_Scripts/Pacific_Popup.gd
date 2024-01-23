@@ -56,23 +56,23 @@ func tick():
 	
 	
 	#amount of investors cashing out after around half a year
-	if GameData.days >= GameData.START_CASHOUT and GameData.days%GameData.DEBT_PAYOUT_INTERVAL == 0:
+	#if GameData.days >= GameData.START_CASHOUT and GameData.days%GameData.DEBT_PAYOUT_INTERVAL == 0:
 		# number of ppl cashing out
-		var t3out = round(GameData.cashoutRate * Tier3)
-		var t2out = round(GameData.cashoutRate * Tier2)
-		var t1out = round(GameData.cashoutRate * Tier1)
-		Tier3 -= t3out
-		Tier2 -= t2out
-		Tier1 -= t1out
+		#var t3out = round(GameData.cashoutRate * Tier3)
+		#var t2out = round(GameData.cashoutRate * Tier2)
+		#var t1out = round(GameData.cashoutRate * Tier1)
+		#Tier3 -= t3out
+		#Tier2 -= t2out
+		#Tier1 -= t1out
 		# find money value of debt
-		t3out *= GameData.ROI * GameData.Tier3Worth
-		t2out *= GameData.ROI * GameData.Tier2Worth
-		t1out *= GameData.ROI * GameData.Tier1Worth
+		#t3out *= GameData.ROI * GameData.Tier3Worth
+		#t2out *= GameData.ROI * GameData.Tier2Worth
+		#t1out *= GameData.ROI * GameData.Tier1Worth
 		
-		GameData.debt += (t3out + t2out + t1out)
-		print("PACIFIC DEBT PAYOUT")
+		#GameData.debt += (t3out + t2out + t1out)
+		#print("PACIFIC DEBT PAYOUT")
 	
-	#TODO: FBI raids
+	#TODO: FBI raids Done in seperate functiomn
 	#var rand = RandomNumberGenerator.new()
 	#var raidCity = rand.randi_range(0, 5)
 	
@@ -146,6 +146,7 @@ func _on_build_hq_pressed():
 		GameData.currLocation = group.get_pressed_button().get_name()
 		group.get_pressed_button().hasPlayer = true
 		$Build_HQ.disabled = true
+		numHQ += 1
 	
 	update_button_cash_disabled()
 
@@ -179,7 +180,6 @@ func update_button_cash_disabled():
 	
 
 func raidCity() -> void: #run this froim map tick
-	#TODO: FBI raids
 	var rand = RandomNumberGenerator.new()
 	var cityidx = rand.randi_range(0, 5) #max index of city
 	if ceil(GameData.FBIsus) == 4:
@@ -188,16 +188,53 @@ func raidCity() -> void: #run this froim map tick
 		if $Cities.get_child(cityidx).hasPlayer:
 			$Cities.get_child(cityidx).FBIcontrol = true
 			$Cities.get_child(cityidx).HQs = 0
+			$CityHQ.get_child(cityidx).visible = false
+			numHQ -= 1
+			print("GAME OVER")
 			#TODO END THE GAMAE
 		elif $Cities.get_child(cityidx).HQs > 0: 
 			$Cities.get_child(cityidx).FBIcontrol = true
 			$Cities.get_child(cityidx).HQs = 0
+			$CityHQ.get_child(cityidx).visible = false
+			numHQ -= 1
 			#TODO: notify player of HQ bonk
-		else:
+		else: #no HQ
 			$Cities.get_child(cityidx).FBIcontrol = true
 			$Cities.get_child(cityidx).HQs = 0
+			$Cities.get_child(cityidx).get_child(0).value = -2 # if building will stop the building
+			$Cities.get_child(cityidx).get_child(0).visible = false
 			
+		if numHQ == 0: #if all HQs raided on lvl 4 then everyone cashes out and no more growth
+			ExternalFactor3 = 0
+			ExternalFactor2 = 0
+			ExternalFactor1 = 0 # NO MORE GROWTH
+			
+			GameData.debt += Tier3 * GameData.ROI * GameData.Tier3Worth
+			GameData.debt += Tier2 * GameData.ROI * GameData.Tier2Worth
+			GameData.debt += Tier1 * GameData.ROI * GameData.Tier1Worth
+		
 	elif ceil(GameData.FBIsus) == 3: # Can only prevent more HQ building
-		if !$Cities.get_child(cityidx).HQs == 0:
+		if $Cities.get_child(cityidx).HQs == 0:
 			$Cities.get_child(cityidx).FBIcontrol = true
+			$Cities.get_child(cityidx).get_child(0).value = -2
+			$Cities.get_child(cityidx).get_child(0).visible = false
+			
+	print("HQs: "+str(numHQ))
+	print("FBI OPEN UP")
+
+func cashout() -> void: # run from map tick
+	# number of ppl cashing out
+	var t3out = round(GameData.cashoutRate * Tier3)
+	var t2out = round(GameData.cashoutRate * Tier2)
+	var t1out = round(GameData.cashoutRate * Tier1)
+	Tier3 -= t3out
+	Tier2 -= t2out
+	Tier1 -= t1out
+	# find money value of debt
+	t3out *= GameData.ROI * GameData.Tier3Worth
+	t2out *= GameData.ROI * GameData.Tier2Worth
+	t1out *= GameData.ROI * GameData.Tier1Worth
+	
+	GameData.debt += (t3out + t2out + t1out)
+	print("PACIFIC DEBT PAYOUT")
 

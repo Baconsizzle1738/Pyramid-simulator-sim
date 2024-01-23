@@ -13,6 +13,7 @@ const DEBT_PAYOUT_INTERVAL = 35 #cashout happens every this many days
 const START_CASHOUT = 365 # investors start cashing out after this many days
 
 const START_FBI = 548 # FBI will start investigating after this many days
+const FBI_RAID_FREQ = 20
 
 const TIME_TO_TRAVEL = 4 #time it takes to travel in days
 
@@ -81,7 +82,7 @@ func tick():
 		#debtDays = -1
 	#if debtDays == 0:
 		#pass
-	
+	print("FBIprogress: "+str(FBIprogress))
 	FBIsus += FBIprogress
 	if FBIsus > 3.9999:
 		FBIsus = 3.9999
