@@ -25,7 +25,7 @@ func button_pressed():
 	
 
 func _process(delta):
-	#update_button_cash_disabled() # so that buttons disable faster when needed
+	update_button_cash_disabled() # so that buttons disable faster when needed
 	pass
 
 # Called to update region data
