@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://22a2euu4oy5h"
-path="res://.godot/imported/NPcityMarker_red.png-5673d1400791936a93c9bbec99178941.ctex"
+uid="uid://j6hqv3xkjucu"
+path="res://.godot/imported/frameTexture.png-9dc65bdd2e5c2defc98100c974d0966e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/City_Marker/NPcityMarker_red.png"
-dest_files=["res://.godot/imported/NPcityMarker_red.png-5673d1400791936a93c9bbec99178941.ctex"]
+source_file="res://Assets/frameTexture.png"
+dest_files=["res://.godot/imported/frameTexture.png-9dc65bdd2e5c2defc98100c974d0966e.ctex"]
 
 [params]
 
@@ -21,7 +21,7 @@ compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

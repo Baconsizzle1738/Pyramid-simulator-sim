@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://dmlrmano2ig6n" path="res://Game_Scenes/Popup_Base_Bkgd.tscn" id="1_s1x7h"]
 [ext_resource type="Texture2D" uid="uid://cb0ik11n7leny" path="res://Assets/Map_Graphics/Default_State/yellowRegion_redo.png" id="2_by1yt"]
 
-
 [node name="NorthernRockiesPopup" type="Control"]
 layout_mode = 3
 anchor_right = 0.694

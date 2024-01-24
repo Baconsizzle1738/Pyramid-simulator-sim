@@ -1,13 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://bqyrm64h4oen4"]
+[gd_scene load_steps=7 format=3 uid="uid://bqyrm64h4oen4"]
 
-[ext_resource type="Texture2D" uid="uid://d0hcayid81rte" path="res://Assets/Temp/icon.svg" id="1_dut83"]
-[ext_resource type="Texture2D" uid="uid://dg2bti02pie76" path="res://Assets/Temp/placeholder1.png" id="2_8tb5f"]
-[ext_resource type="Texture2D" uid="uid://dujsexumthhsn" path="res://Assets/Temp/placeholder2.png" id="3_5py14"]
+[ext_resource type="Script" path="res://Scripts/Scene_Scripts/Event_Base.gd" id="1_2lj4v"]
+[ext_resource type="Texture2D" uid="uid://j6hqv3xkjucu" path="res://Assets/frameTexture.png" id="2_bffg3"]
+[ext_resource type="Texture2D" uid="uid://d0hcayid81rte" path="res://Assets/Temp/icon.svg" id="3_8a02k"]
+[ext_resource type="Texture2D" uid="uid://dujsexumthhsn" path="res://Assets/Temp/placeholder2.png" id="4_eeril"]
+[ext_resource type="Texture2D" uid="uid://dg2bti02pie76" path="res://Assets/Temp/placeholder1.png" id="5_n3vb6"]
 
 [sub_resource type="Theme" id="Theme_sjrd7"]
 default_font_size = 39
 
-[node name="FbiInvestigating" type="Control"]
+[node name="EventBase" type="Control"]
 clip_children = 1
 clip_contents = true
 layout_mode = 3
@@ -17,12 +19,13 @@ offset_right = 0.255981
 offset_bottom = -0.256012
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_2lj4v")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 1
 offset_right = 400.0
 offset_bottom = 500.0
-texture = ExtResource("1_dut83")
+texture = ExtResource("2_bffg3")
 patch_margin_left = 10
 patch_margin_top = 10
 patch_margin_right = 10
@@ -49,7 +52,7 @@ uppercase = true
 [node name="Image" type="TextureRect" parent="NinePatchRect/VBoxContainer"]
 custom_minimum_size = Vector2(340, 200)
 layout_mode = 2
-texture = ExtResource("2_8tb5f")
+texture = ExtResource("3_8a02k")
 expand_mode = 1
 
 [node name="Article" type="Label" parent="NinePatchRect/VBoxContainer"]
@@ -62,8 +65,8 @@ autowrap_mode = 2
 [node name="CloseButton" type="TextureButton" parent="NinePatchRect/VBoxContainer"]
 custom_minimum_size = Vector2(340, 50)
 layout_mode = 2
-texture_normal = ExtResource("2_8tb5f")
-texture_pressed = ExtResource("3_5py14")
+texture_normal = ExtResource("4_eeril")
+texture_pressed = ExtResource("5_n3vb6")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -77,7 +80,7 @@ offset_top = -11.5
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "bruh"
+text = "<text>"
 horizontal_alignment = 1
 vertical_alignment = 1
 
