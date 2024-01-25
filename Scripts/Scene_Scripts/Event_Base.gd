@@ -19,3 +19,7 @@ func setArticle(text:String) -> void:
 
 func setButtonText(text:String) -> void:
 	$NinePatchRect/VBoxContainer/CloseButton/ButtonText.text = text
+
+
+func _on_close_button_pressed():
+	self.queue_free()

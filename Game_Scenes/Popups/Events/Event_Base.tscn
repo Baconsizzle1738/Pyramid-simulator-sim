@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bqyrm64h4oen4"]
+[gd_scene load_steps=8 format=3 uid="uid://bqyrm64h4oen4"]
 
 [ext_resource type="Script" path="res://Scripts/Scene_Scripts/Event_Base.gd" id="1_2lj4v"]
 [ext_resource type="Texture2D" uid="uid://j6hqv3xkjucu" path="res://Assets/frameTexture.png" id="2_bffg3"]
@@ -7,16 +7,22 @@
 [ext_resource type="Texture2D" uid="uid://dg2bti02pie76" path="res://Assets/Temp/placeholder1.png" id="5_n3vb6"]
 
 [sub_resource type="Theme" id="Theme_sjrd7"]
-default_font_size = 39
+default_font_size = 26
+
+[sub_resource type="Theme" id="Theme_pgp5d"]
+default_font_size = 12
 
 [node name="EventBase" type="Control"]
+top_level = true
 clip_children = 1
 clip_contents = true
 layout_mode = 3
 anchor_right = 0.347
 anchor_bottom = 0.772
-offset_right = 0.255981
-offset_bottom = -0.256012
+offset_left = 400.0
+offset_top = 70.0
+offset_right = 400.256
+offset_bottom = 69.744
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_2lj4v")
@@ -58,13 +64,15 @@ expand_mode = 1
 [node name="Article" type="Label" parent="NinePatchRect/VBoxContainer"]
 custom_minimum_size = Vector2(340, 150)
 layout_mode = 2
+theme = SubResource("Theme_pgp5d")
 text = "<ARTICLE INFO IDK>"
 horizontal_alignment = 1
-autowrap_mode = 2
+autowrap_mode = 3
 
 [node name="CloseButton" type="TextureButton" parent="NinePatchRect/VBoxContainer"]
 custom_minimum_size = Vector2(340, 50)
 layout_mode = 2
+keep_pressed_outside = true
 texture_normal = ExtResource("4_eeril")
 texture_pressed = ExtResource("5_n3vb6")
 ignore_texture_size = true
@@ -92,3 +100,5 @@ offset_top = 543.0
 offset_right = 366.0
 offset_bottom = 583.0
 text = "uh oh"
+
+[connection signal="pressed" from="NinePatchRect/VBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]

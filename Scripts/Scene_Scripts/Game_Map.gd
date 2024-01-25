@@ -2,6 +2,7 @@ extends Node2D
 
 var frameOneLoad = false
 
+const eventResource = preload("res://Game_Scenes/Popups/Events/Event_Base.tscn")
 
 #var choosing = true
 var showing_popup = false
@@ -56,14 +57,19 @@ func _process(delta):
 		NorthAtlanticIDX = $NorthAtlanticWindow.get_index()
 		NewEnglandIDX = $NewEnglandWindow.get_index()
 		
+		HQraidNotif("San Francisco")
+		#showFBIstart()
 		#print(PacificIndex)
 		frameOneLoad = true
+	
+	#determine whether or not the payment buttons work
+	updateDebtUse()
 	
 	if !GameData.choosing: #make !choosing later
 		timePast += delta
 		#print(delta)
 		if timePast >= 1: # tick game every "second" representing a "day"
-			print("tick "+str(timePast))
+			#print("tick "+str(timePast))
 			
 			GameData.tick() # day go up
 			
@@ -112,7 +118,7 @@ func _process(delta):
 			#signal FBI start
 			if (GameData.legit <= 50 or GameData.days >= GameData.START_FBI) and GameData.FBIprogress <= 0.001:
 				GameData.FBIprogress = 0.015
-				#TODO:notify player of FBI investigation
+				showFBIstart()
 			
 			#reset time
 			timePast = 0
@@ -166,3 +172,43 @@ func _on_north_atlantic_window_close_requested():
 func _on_new_england_window_close_requested():
 	$NewEnglandWindow.visible = false
 	$NewEnglandSelectable.exists = false
+
+#show that FBI has started investigation
+func showFBIstart() -> void:
+	var FBIstartNotif = eventResource.instantiate()
+	FBIstartNotif.setTitle("FBI begins investigation")
+	FBIstartNotif.setImage("res://Assets/Temp/usa-map-capitals-only-color.png")
+	FBIstartNotif.setArticle("Since the foundation of " + GameData.playerName + ", there have been a large amount of investors flocking to get their hands on a piece. However, some investors have recently raised concerns about whether or not " + GameData.playerName + " will be able to make good on the promised return on investment as there have been no signs of any widgets being produced.")
+	FBIstartNotif.setButtonText("Are they on to us?")
+	self.add_child(FBIstartNotif)
+	#print("SHOW FBI START")
+	#print("pos: "+str(FBIstartNotif.position))
+
+func HQraidNotif(cityRaided:String) -> void:
+	var raidNotif = eventResource.instantiate()
+	raidNotif.setTitle(cityRaided + " HQ Raided")
+	raidNotif.setImage("res://Assets/Temp/usa-map-capitals-only-color.png")
+	raidNotif.setArticle("After waiting for days, the FBI has finally gotten a warrant to raid the HQ of " + GameData.playerName + " in " + cityRaided + ". The doors of the HQ were torn down at 5AM and some employees were apprehended. However, the FBI was not able to capture the ringleader as they did not seem to be at that location. The FBI has stated that they will continue to raid until the pyramid scheme is gone for good.")
+	raidNotif.setButtonText("Uh oh.")
+	self.add_child(raidNotif)
+
+#update button pressability amd max value of spin box
+func updateDebtUse() -> void:
+	$Debt/PayAll.disabled = GameData.cash < GameData.debt
+	if GameData.debt > GameData.cash:
+		$Debt/SpinBox.max_value = GameData.cash
+	else:
+		$Debt/SpinBox.max_value = GameData.debt
+
+
+func _on_pay_all_pressed():
+	GameData.cash -= GameData.debt
+	$Debt.visible = false
+
+
+func _on_pay_amount_pressed():
+	GameData.cash -= $Debt/SpinBox.value
+	GameData.debt -= $Debt/SpinBox.value
+	if GameData.debt == 0:
+		$Debt.visible = false
+	$Debt/Amount.text = "$"+GameData.numSuffix(GameData.debt)
