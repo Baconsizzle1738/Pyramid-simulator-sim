@@ -7,7 +7,7 @@
 [ext_resource type="ButtonGroup" uid="uid://18mtff06jo8l" path="res://Assets/Button_Groups/Pacific_Cities.tres" id="4_gfrrf"]
 [ext_resource type="Texture2D" uid="uid://dbqur1uqsokte" path="res://Assets/Map_Graphics/Default_State/redRegion_ponziProject.png" id="4_scham"]
 [ext_resource type="Texture2D" uid="uid://wbv1nivhgpa2" path="res://Assets/City_Marker/cityMarker_red.png" id="5_04ajl"]
-[ext_resource type="Texture2D" uid="uid://22a2euu4oy5h" path="res://Assets/City_Marker/NPcityMarker_red.png" id="6_mkhhq"]
+[ext_resource type="Texture2D" uid="uid://dsuiun1itsxbk" path="res://Assets/City_Marker/shadowRed.png" id="6_sbm1d"]
 [ext_resource type="Script" path="res://Scripts/Button_Scripts/Seattle.gd" id="7_3uorx"]
 [ext_resource type="Script" path="res://Scripts/Button_Scripts/Portland.gd" id="8_j3k71"]
 [ext_resource type="PackedScene" uid="uid://efbeq0ykeep8" path="res://Game_Scenes/Player_Icon.tscn" id="8_opc0s"]
@@ -45,7 +45,7 @@ offset_bottom = 79.0
 toggle_mode = true
 button_group = ExtResource("4_gfrrf")
 texture_normal = ExtResource("5_04ajl")
-texture_pressed = ExtResource("6_mkhhq")
+texture_pressed = ExtResource("6_sbm1d")
 ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("7_3uorx")
@@ -84,7 +84,7 @@ offset_bottom = 133.0
 toggle_mode = true
 button_group = ExtResource("4_gfrrf")
 texture_normal = ExtResource("5_04ajl")
-texture_pressed = ExtResource("6_mkhhq")
+texture_pressed = ExtResource("6_sbm1d")
 ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("8_j3k71")
@@ -123,7 +123,7 @@ offset_bottom = 249.0
 toggle_mode = true
 button_group = ExtResource("4_gfrrf")
 texture_normal = ExtResource("5_04ajl")
-texture_pressed = ExtResource("6_mkhhq")
+texture_pressed = ExtResource("6_sbm1d")
 ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("9_j7ta4")
@@ -162,7 +162,7 @@ offset_bottom = 274.0
 toggle_mode = true
 button_group = ExtResource("4_gfrrf")
 texture_normal = ExtResource("5_04ajl")
-texture_pressed = ExtResource("6_mkhhq")
+texture_pressed = ExtResource("6_sbm1d")
 ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("10_588tl")
@@ -201,7 +201,7 @@ offset_bottom = 326.0
 toggle_mode = true
 button_group = ExtResource("4_gfrrf")
 texture_normal = ExtResource("5_04ajl")
-texture_pressed = ExtResource("6_mkhhq")
+texture_pressed = ExtResource("6_sbm1d")
 ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("11_fqnm1")
@@ -240,7 +240,7 @@ offset_bottom = 324.0
 toggle_mode = true
 button_group = ExtResource("4_gfrrf")
 texture_normal = ExtResource("5_04ajl")
-texture_pressed = ExtResource("6_mkhhq")
+texture_pressed = ExtResource("6_sbm1d")
 ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("12_448rl")
