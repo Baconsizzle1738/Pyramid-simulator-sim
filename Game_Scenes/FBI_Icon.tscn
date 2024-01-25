@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://vxmd7yu1i36h"]
+
+[ext_resource type="Texture2D" uid="uid://d0hcayid81rte" path="res://Assets/Temp/icon.svg" id="1_uc8ky"]
+
+[node name="FbiIcon" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -7.0
+offset_top = -7.0
+offset_right = 7.0
+offset_bottom = 7.0
+texture = ExtResource("1_uc8ky")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true

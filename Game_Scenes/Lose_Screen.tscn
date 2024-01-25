@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://c1siftekcido6"]
+
+[node name="LoseScreen" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 466.0
+offset_top = 186.0
+offset_right = 706.0
+offset_bottom = 209.0
+text = "YOU LOSE!!!!!!!!!111!!!11!!!11!111"

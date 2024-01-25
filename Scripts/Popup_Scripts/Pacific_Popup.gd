@@ -26,7 +26,6 @@ func button_pressed():
 
 func _process(delta):
 	update_button_cash_disabled() # so that buttons disable faster when needed
-	pass
 
 # Called to update region data
 func tick():
@@ -104,10 +103,18 @@ func tick():
 			button.get_child(0).visible = false
 			numHQ += 1
 		
+		if button.FBIcontrol:
+			button.HQTimer = -1
+			if button.HQs > 0:
+				numHQ -= button.HQs
+				button.HQs = 0
+		
 		#check if the player is in the city
 		if GameData.currLocation == button.get_name():
 			button.get_child(1).visible = true
 			button.hasPlayer = true
+			if button.FBIcontrol:
+				GameData.captured = true # if the player and FBI are in the same place then the player is fukd
 		else:
 			button.get_child(1).visible = false
 			button.hasPlayer = false
@@ -183,26 +190,27 @@ func raidCity() -> void: #run this froim map tick
 	var rand = RandomNumberGenerator.new()
 	var cityidx = rand.randi_range(0, 5) #max index of city
 	if ceil(GameData.FBIsus) == 4:
-		if numHQ == 0:
-			pass #TODO set investor growth to 0 and everyone cashes out
 		if $Cities.get_child(cityidx).hasPlayer:
 			$Cities.get_child(cityidx).FBIcontrol = true
 			$Cities.get_child(cityidx).HQs = 0
 			$CityHQ.get_child(cityidx).visible = false
 			numHQ -= 1
 			print("GAME OVER")
-			#TODO END THE GAMAE
+			GameData.captured = true
+			
 		elif $Cities.get_child(cityidx).HQs > 0: 
 			$Cities.get_child(cityidx).FBIcontrol = true
 			$Cities.get_child(cityidx).HQs = 0
 			$CityHQ.get_child(cityidx).visible = false
 			numHQ -= 1
-			#TODO: notify player of HQ bonk
+			self.get_parent().get_parent().HQraidNotif($Cities.get_child(cityidx).get_name())
+			$Cities.get_child(cityidx).get_child(2).visible = true
 		else: #no HQ
 			$Cities.get_child(cityidx).FBIcontrol = true
 			$Cities.get_child(cityidx).HQs = 0
 			$Cities.get_child(cityidx).get_child(0).value = -2 # if building will stop the building
 			$Cities.get_child(cityidx).get_child(0).visible = false
+			$Cities.get_child(cityidx).get_child(2).visible = true
 			
 		if numHQ == 0: #if all HQs raided on lvl 4 then everyone cashes out and no more growth
 			ExternalFactor3 = 0
@@ -218,7 +226,7 @@ func raidCity() -> void: #run this froim map tick
 			$Cities.get_child(cityidx).FBIcontrol = true
 			$Cities.get_child(cityidx).get_child(0).value = -2
 			$Cities.get_child(cityidx).get_child(0).visible = false
-			
+			$Cities.get_child(cityidx).get_child(2).visible = true
 	print("HQs: "+str(numHQ))
 	print("FBI OPEN UP")
 

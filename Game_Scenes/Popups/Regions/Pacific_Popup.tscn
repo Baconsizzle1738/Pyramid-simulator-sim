@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cg7toqor2aygk"]
+[gd_scene load_steps=18 format=3 uid="uid://cg7toqor2aygk"]
 
 [ext_resource type="Texture2D" uid="uid://d0hcayid81rte" path="res://Assets/Temp/icon.svg" id="1_3ni02"]
 [ext_resource type="Script" path="res://Scripts/Popup_Scripts/Pacific_Popup.gd" id="1_fp6li"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://Scripts/Button_Scripts/Portland.gd" id="8_j3k71"]
 [ext_resource type="PackedScene" uid="uid://efbeq0ykeep8" path="res://Game_Scenes/Player_Icon.tscn" id="8_opc0s"]
 [ext_resource type="Script" path="res://Scripts/Button_Scripts/San Francisco.gd" id="9_j7ta4"]
+[ext_resource type="PackedScene" uid="uid://vxmd7yu1i36h" path="res://Game_Scenes/FBI_Icon.tscn" id="9_m2xwp"]
 [ext_resource type="Script" path="res://Scripts/Button_Scripts/Los Angeles.gd" id="10_588tl"]
 [ext_resource type="Script" path="res://Scripts/Button_Scripts/Honolulu.gd" id="11_fqnm1"]
 [ext_resource type="Script" path="res://Scripts/Button_Scripts/Anchorage.gd" id="12_448rl"]
@@ -70,6 +71,11 @@ offset_top = -6.0
 offset_right = 15.0
 offset_bottom = -6.0
 
+[node name="FBI" parent="Cities/Seattle" instance=ExtResource("9_m2xwp")]
+visible = false
+offset_top = 12.0
+offset_bottom = 12.0
+
 [node name="Portland" type="TextureButton" parent="Cities"]
 offset_left = 64.0
 offset_top = 101.0
@@ -103,6 +109,11 @@ offset_left = 15.0
 offset_top = -6.0
 offset_right = 15.0
 offset_bottom = -6.0
+
+[node name="FBI" parent="Cities/Portland" instance=ExtResource("9_m2xwp")]
+visible = false
+offset_top = 12.0
+offset_bottom = 12.0
 
 [node name="San Francisco" type="TextureButton" parent="Cities"]
 offset_left = 156.0
@@ -138,6 +149,11 @@ offset_top = -6.0
 offset_right = 14.0
 offset_bottom = -6.0
 
+[node name="FBI" parent="Cities/San Francisco" instance=ExtResource("9_m2xwp")]
+visible = false
+offset_top = 12.0
+offset_bottom = 12.0
+
 [node name="Los Angeles" type="TextureButton" parent="Cities"]
 offset_left = 242.0
 offset_top = 242.0
@@ -171,6 +187,11 @@ offset_left = 14.0
 offset_top = -6.0
 offset_right = 14.0
 offset_bottom = -6.0
+
+[node name="FBI" parent="Cities/Los Angeles" instance=ExtResource("9_m2xwp")]
+visible = false
+offset_top = 12.0
+offset_bottom = 12.0
 
 [node name="Honolulu" type="TextureButton" parent="Cities"]
 offset_left = 260.0
@@ -206,6 +227,11 @@ offset_top = -6.0
 offset_right = 14.0
 offset_bottom = -6.0
 
+[node name="FBI" parent="Cities/Honolulu" instance=ExtResource("9_m2xwp")]
+visible = false
+offset_top = 12.0
+offset_bottom = 12.0
+
 [node name="Anchorage" type="TextureButton" parent="Cities"]
 offset_left = 425.0
 offset_top = 292.0
@@ -239,6 +265,11 @@ offset_left = 14.0
 offset_top = -6.0
 offset_right = 14.0
 offset_bottom = -6.0
+
+[node name="FBI" parent="Cities/Anchorage" instance=ExtResource("9_m2xwp")]
+visible = false
+offset_top = 12.0
+offset_bottom = 12.0
 
 [node name="CityHQ" type="Node" parent="."]
 

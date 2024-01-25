@@ -57,7 +57,7 @@ func _process(delta):
 		NorthAtlanticIDX = $NorthAtlanticWindow.get_index()
 		NewEnglandIDX = $NewEnglandWindow.get_index()
 		
-		HQraidNotif("San Francisco")
+		#HQraidNotif("San Francisco")
 		#showFBIstart()
 		#print(PacificIndex)
 		frameOneLoad = true
@@ -65,7 +65,10 @@ func _process(delta):
 	#determine whether or not the payment buttons work
 	updateDebtUse()
 	
-	if !GameData.choosing: #make !choosing later
+	if GameData.captured:
+		get_tree().change_scene_to_file("res://Game_Scenes/Lose_Screen.tscn")
+	
+	if !GameData.choosing or !GameData.captured: #make !choosing later
 		timePast += delta
 		#print(delta)
 		if timePast >= 1: # tick game every "second" representing a "day"

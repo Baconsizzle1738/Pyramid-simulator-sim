@@ -22,6 +22,7 @@ var playerName #name of player
 var days:int = 200 # days passed
 
 var choosing = true # change to true later
+var captured = false # if player is captured by the FBI
 
 var HQBuildTime = 30
 
@@ -58,6 +59,7 @@ func init():
 	cashoutRate = DEFAULT_CASHOUT_RATE
 	days = 200
 	choosing = true
+	captured = false
 	LegitIncreaseFactor = 1.0 + (legit-50)/100.0
 	HQBuildTime = 30
 	travelling = false
