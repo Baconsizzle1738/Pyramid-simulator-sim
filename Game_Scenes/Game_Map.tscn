@@ -1,25 +1,25 @@
-[gd_scene load_steps=32 format=3 uid="uid://datvv4c7b10o4"]
+[gd_scene load_steps=33 format=3 uid="uid://datvv4c7b10o4"]
 
 [ext_resource type="Script" path="res://Scripts/Scene_Scripts/Game_Map.gd" id="1_0o6xc"]
 [ext_resource type="Texture2D" uid="uid://d0hcayid81rte" path="res://Assets/Temp/icon.svg" id="1_3fppp"]
 [ext_resource type="Texture2D" uid="uid://dl45o60jgy302" path="res://Assets/Map_Graphics/map_ponziProject.png" id="2_fxt1d"]
 [ext_resource type="PackedScene" uid="uid://tqve15lstf8n" path="res://Game_Scenes/Clickables/Pacific_Region_Selectable.tscn" id="4_3f574"]
-[ext_resource type="Texture2D" uid="uid://j6hqv3xkjucu" path="res://Assets/frameTexture.png" id="4_3he8h"]
+[ext_resource type="Texture2D" uid="uid://j6hqv3xkjucu" path="res://Assets/misc/frameTexture.png" id="4_3he8h"]
 [ext_resource type="PackedScene" uid="uid://cg7toqor2aygk" path="res://Game_Scenes/Popups/Regions/Pacific_Popup.tscn" id="5_4igp3"]
-[ext_resource type="PackedScene" path="res://Game_Scenes/Clickables/Southwest_Selectable.tscn" id="6_0cwd3"]
+[ext_resource type="PackedScene" uid="uid://ri25dcymudl5" path="res://Game_Scenes/Clickables/Southwest_Selectable.tscn" id="6_0cwd3"]
 [ext_resource type="PackedScene" uid="uid://dxex4mtxqdd4s" path="res://Game_Scenes/Clickables/Northern_Rockies_Selectable.tscn" id="6_u0kkx"]
-[ext_resource type="PackedScene" path="res://Game_Scenes/Clickables/Northern_Plains_Selectable.tscn" id="7_lean7"]
+[ext_resource type="PackedScene" uid="uid://l1fxtjqpaxfw" path="res://Game_Scenes/Clickables/Northern_Plains_Selectable.tscn" id="7_lean7"]
 [ext_resource type="PackedScene" uid="uid://gsas4nig8cy4" path="res://Game_Scenes/Popups/Regions/Northern_Rockies_Popup.tscn" id="7_ner87"]
-[ext_resource type="PackedScene" path="res://Game_Scenes/Clickables/Southern_Plains_Selectable.tscn" id="8_dg5at"]
+[ext_resource type="PackedScene" uid="uid://c7ltnayvbb8bx" path="res://Game_Scenes/Clickables/Southern_Plains_Selectable.tscn" id="8_dg5at"]
 [ext_resource type="PackedScene" uid="uid://c3cjwib8lrva2" path="res://Game_Scenes/Popups/Regions/Southwest_Popup.tscn" id="9_7dfnp"]
-[ext_resource type="PackedScene" path="res://Game_Scenes/Clickables/Gulf_Coast_Selectable.tscn" id="9_gpm3q"]
-[ext_resource type="PackedScene" path="res://Game_Scenes/Clickables/Midwest_Selectable.tscn" id="10_bgsx3"]
+[ext_resource type="PackedScene" uid="uid://cglxn7k2yc41e" path="res://Game_Scenes/Clickables/Gulf_Coast_Selectable.tscn" id="9_gpm3q"]
+[ext_resource type="PackedScene" uid="uid://c2upgcdjty6r7" path="res://Game_Scenes/Clickables/Midwest_Selectable.tscn" id="10_bgsx3"]
 [ext_resource type="PackedScene" uid="uid://2vbl67m6f7qs" path="res://Game_Scenes/Popups/Regions/Northern_Plains_Popup.tscn" id="11_tymo8"]
-[ext_resource type="PackedScene" path="res://Game_Scenes/Clickables/Appalachia_Selectable.tscn" id="11_xgupn"]
-[ext_resource type="PackedScene" path="res://Game_Scenes/Clickables/South_Atlantic_Selectable.tscn" id="12_6ko11"]
-[ext_resource type="PackedScene" path="res://Game_Scenes/Clickables/North_Atlantic_Selectable.tscn" id="13_ifc1p"]
+[ext_resource type="PackedScene" uid="uid://bjrckyni80img" path="res://Game_Scenes/Clickables/Appalachia_Selectable.tscn" id="11_xgupn"]
+[ext_resource type="PackedScene" uid="uid://cacxm18vf45kk" path="res://Game_Scenes/Clickables/South_Atlantic_Selectable.tscn" id="12_6ko11"]
+[ext_resource type="PackedScene" uid="uid://cm0txfy3gg3vr" path="res://Game_Scenes/Clickables/North_Atlantic_Selectable.tscn" id="13_ifc1p"]
 [ext_resource type="PackedScene" uid="uid://c5f8idolpjdfm" path="res://Game_Scenes/Popups/Regions/Southern_Plains_Popup.tscn" id="13_qjgxr"]
-[ext_resource type="PackedScene" path="res://Game_Scenes/Clickables/New_England_Selectable.tscn" id="14_g2aqd"]
+[ext_resource type="PackedScene" uid="uid://bcgyl2byldh3q" path="res://Game_Scenes/Clickables/New_England_Selectable.tscn" id="14_g2aqd"]
 [ext_resource type="PackedScene" uid="uid://bre1weenlv0wg" path="res://Game_Scenes/Popups/Regions/Gulf_Coast_Popup.tscn" id="15_r0vhv"]
 [ext_resource type="PackedScene" uid="uid://0wxted528o6m" path="res://Game_Scenes/Popups/Regions/Midwest_Popup.tscn" id="17_6cwqu"]
 [ext_resource type="PackedScene" uid="uid://b5yipexxi7n7q" path="res://Game_Scenes/Popups/Regions/Appalachia_Popup.tscn" id="19_6by06"]
@@ -27,26 +27,15 @@
 [ext_resource type="PackedScene" uid="uid://born4gq235enn" path="res://Game_Scenes/Popups/Regions/Northern_Atlantic_Popup.tscn" id="23_8ropb"]
 [ext_resource type="PackedScene" uid="uid://vwiyyyror84n" path="res://Game_Scenes/Popups/Regions/New_England_Popup.tscn" id="25_fc2g5"]
 [ext_resource type="Texture2D" uid="uid://dg2bti02pie76" path="res://Assets/Temp/placeholder1.png" id="26_bcjtv"]
+[ext_resource type="FontFile" uid="uid://c0lbxj5nritok" path="res://Assets/misc/GFSDidot-Regular.ttf" id="26_pbkht"]
 [ext_resource type="Texture2D" uid="uid://dujsexumthhsn" path="res://Assets/Temp/placeholder2.png" id="27_bkxtv"]
+[ext_resource type="Script" path="res://Scripts/FlashingText.gd" id="30_ktwbg"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_ekam5"]
 
 [sub_resource type="Theme" id="Theme_dmk56"]
+default_font = ExtResource("26_pbkht")
 default_font_size = 9
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_on1al"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("26_bcjtv")
-}, {
-"duration": 1.0,
-"texture": ExtResource("27_bkxtv")
-}],
-"loop": true,
-"name": &"default",
-"speed": 20.0
-}]
 
 [node name="GameMap" type="Node2D"]
 script = ExtResource("1_0o6xc")
@@ -74,28 +63,28 @@ position = Vector2(125, 305)
 position = Vector2(307, 193)
 
 [node name="SouthwestSelectable" parent="." instance=ExtResource("6_0cwd3")]
-position = Vector2(278, 370)
+position = Vector2(283, 374)
 
 [node name="NorthernPlainsSelectable" parent="." instance=ExtResource("7_lean7")]
-position = Vector2(479, 229)
+position = Vector2(518, 234)
 
 [node name="SouthernPlainsSelectable" parent="." instance=ExtResource("8_dg5at")]
-position = Vector2(521, 383)
+position = Vector2(537, 404)
 
 [node name="GulfCoastSelectable" parent="." instance=ExtResource("9_gpm3q")]
-position = Vector2(560, 529)
+position = Vector2(542, 525)
 
 [node name="MidwestSelectable" parent="." instance=ExtResource("10_bgsx3")]
-position = Vector2(686, 296)
+position = Vector2(689, 279)
 
 [node name="AppalachiaSelectable" parent="." instance=ExtResource("11_xgupn")]
-position = Vector2(792, 381)
+position = Vector2(770, 370)
 
 [node name="SouthAtlanticSelectable" parent="." instance=ExtResource("12_6ko11")]
-position = Vector2(795, 488)
+position = Vector2(776, 522)
 
 [node name="NorthAtlanticSelectable" parent="." instance=ExtResource("13_ifc1p")]
-position = Vector2(843, 269)
+position = Vector2(855, 254)
 
 [node name="NewEnglandSelectable" parent="." instance=ExtResource("14_g2aqd")]
 position = Vector2(929, 180)
@@ -233,6 +222,7 @@ offset_left = 231.0
 offset_top = 22.0
 offset_right = 393.0
 offset_bottom = 45.0
+theme_override_fonts/font = ExtResource("26_pbkht")
 text = "Legitimacy: 75"
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
@@ -242,7 +232,8 @@ offset_left = 473.0
 offset_top = 21.0
 offset_right = 727.0
 offset_bottom = 44.0
-text = "The FBI is ININTERESTED"
+theme_override_fonts/font = ExtResource("26_pbkht")
+text = "The FBI is UNINTERESTED"
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
@@ -251,6 +242,7 @@ offset_left = 12.0
 offset_top = 24.0
 offset_right = 174.0
 offset_bottom = 47.0
+theme_override_fonts/font = ExtResource("26_pbkht")
 text = "Cash: $1000000"
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
@@ -260,6 +252,7 @@ offset_left = 985.0
 offset_top = 22.0
 offset_right = 1108.0
 offset_bottom = 45.0
+theme_override_fonts/font = ExtResource("26_pbkht")
 text = "Day 0"
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
@@ -273,28 +266,39 @@ offset_left = 892.0
 offset_top = 421.0
 offset_right = 1122.0
 offset_bottom = 571.0
+metadata/_edit_use_anchors_ = true
 
-[node name="BackgroundDebt" type="Sprite2D" parent="Debt"]
-position = Vector2(116, 76)
-scale = Vector2(2.19336, 1.4375)
-texture = ExtResource("1_3fppp")
+[node name="NinePatchRect" type="NinePatchRect" parent="Debt"]
+layout_mode = 0
+offset_right = 230.0
+offset_bottom = 150.0
+texture = ExtResource("4_3he8h")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+metadata/_edit_use_anchors_ = true
 
 [node name="Debt" type="Label" parent="Debt"]
 layout_mode = 0
 offset_right = 230.0
 offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("26_pbkht")
 text = "Debt"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Amount" type="Label" parent="Debt"]
 layout_mode = 0
 offset_top = 19.0
 offset_right = 230.0
 offset_bottom = 42.0
+theme_override_fonts/font = ExtResource("26_pbkht")
 text = "$0"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="PayAll" type="TextureButton" parent="Debt"]
 layout_mode = 0
@@ -307,6 +311,7 @@ texture_pressed = ExtResource("27_bkxtv")
 texture_disabled = ExtResource("1_3fppp")
 ignore_texture_size = true
 stretch_mode = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="PayAmount" type="TextureButton" parent="Debt"]
 layout_mode = 0
@@ -319,6 +324,7 @@ texture_pressed = ExtResource("27_bkxtv")
 texture_disabled = ExtResource("1_3fppp")
 ignore_texture_size = true
 stretch_mode = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="Bar" type="ProgressBar" parent="Debt"]
 self_modulate = Color(1, 0, 0, 1)
@@ -330,6 +336,8 @@ offset_bottom = 364.0
 rotation = 1.5708
 max_value = 0.0
 fill_mode = 2
+show_percentage = false
+metadata/_edit_use_anchors_ = true
 
 [node name="SpinBox" type="SpinBox" parent="Debt"]
 layout_mode = 0
@@ -341,13 +349,21 @@ theme = SubResource("Theme_dmk56")
 max_value = 1e+09
 custom_arrow_step = 10000.0
 select_all_on_focus = true
+metadata/_edit_use_anchors_ = true
 
-[node name="ChooseLocationBanner" type="AnimatedSprite2D" parent="."]
-position = Vector2(581, 95)
-scale = Vector2(2.076, 0.114667)
-sprite_frames = SubResource("SpriteFrames_on1al")
-autoplay = "default"
-frame_progress = 0.778663
+[node name="ChooseLocationBanner" type="Label" parent="."]
+offset_left = 173.0
+offset_top = 72.0
+offset_right = 955.0
+offset_bottom = 146.0
+theme_override_colors/font_color = Color(0.654902, 0.694118, 0.662745, 1)
+theme_override_fonts/font = ExtResource("26_pbkht")
+theme_override_font_sizes/font_size = 60
+text = "CHOOSE START LOCATION"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("30_ktwbg")
+metadata/_edit_use_anchors_ = true
 
 [connection signal="close_requested" from="PacificWindow" to="." method="_on_pacific_window_close_requested"]
 [connection signal="close_requested" from="NorthernRockiesWindow" to="." method="_on_northern_rockies_window_close_requested"]

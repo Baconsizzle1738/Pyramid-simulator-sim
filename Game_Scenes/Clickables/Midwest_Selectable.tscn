@@ -1,17 +1,17 @@
 [gd_scene load_steps=5 format=3 uid="uid://c2upgcdjty6r7"]
 
 [ext_resource type="Script" path="res://Scripts/Scene_Scripts/Midwest_Selectable.gd" id="1_db8lq"]
-[ext_resource type="Texture2D" uid="uid://dg2bti02pie76" path="res://Assets/Temp/placeholder1.png" id="2_7vnhj"]
-[ext_resource type="Texture2D" uid="uid://dujsexumthhsn" path="res://Assets/Temp/placeholder2.png" id="3_rneib"]
+[ext_resource type="Texture2D" uid="uid://b7gsd8852ajoe" path="res://Assets/Map_Graphics/Hover_State/magentaRegion_noBorder.png" id="2_kkmq4"]
+[ext_resource type="Texture2D" uid="uid://tavku52e7qtr" path="res://Assets/Map_Graphics/Default_State/magentaRegion_ponziProject.png" id="3_4h2wd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xrcrb"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_7vnhj")
+"texture": ExtResource("2_kkmq4")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_rneib")
+"texture": ExtResource("3_4h2wd")
 }],
 "loop": true,
 "name": &"default",
@@ -23,13 +23,14 @@ script = ExtResource("1_db8lq")
 
 [node name="MidwestRegion" type="AnimatedSprite2D" parent="."]
 position = Vector2(-7.62939e-06, 0)
-scale = Vector2(0.193333, 0.193333)
+scale = Vector2(0.469, 0.469)
 sprite_frames = SubResource("SpriteFrames_xrcrb")
+frame = 1
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="States" type="CollisionPolygon2D" parent="Area2D"]
-polygon = PackedVector2Array(-35, -36, 38, -36, 38, 35, -37, 36)
+polygon = PackedVector2Array(-67, -93, -52, -100, -38, -113, -34, -112, -39, -106, -40, -100, -29, -101, -22, -95, -10, -95, -5, -100, 9, -105, 10, -100, 24, -101, 26, -96, 25, -91, 13, -90, 7, -92, 1, -86, -8, -86, -11, -81, -16, -80, -26, -66, -25, -60, -29, -57, -28, -49, -18, -60, -20, -44, -24, -38, -21, -6, -12, 10, -4, 11, 1, 7, 2, 1, 6, -4, 6, -21, -1, -31, -1, -44, 2, -49, 2, -58, 4, -61, 10, -61, 13, -73, 15, -73, 15, -80, 20, -84, 23, -84, 29, -79, 41, -76, 41, -69, 45, -66, 44, -57, 35, -46, 38, -40, 43, -39, 55, -52, 58, -50, 60, -38, 64, -32, 63, -21, 54, -10, 54, 0, 60, 4, 72, 4, 83, -1, 96, -11, 101, -2, 104, 22, 102, 36, 98, 44, 90, 50, 90, 56, 84, 58, 82, 68, 76, 68, 71, 63, 67, 67, 58, 67, 56, 65, 51, 65, 47, 60, 38, 59, 38, 67, 35, 70, 28, 70, 28, 74, 23, 80, 22, 86, 19, 88, 16, 85, 12, 85, 12, 90, -13, 93, -21, 109, -30, 109, -32, 113, -36, 113, -39, 100, -43, 94, -52, 93, -54, 89, -53, 86, -53, 75, -59, 74, -61, 69, -74, 57, -75, 42, -74, 39, -69, 33, -67, 27, -70, 26, -69, 22, -61, 19, -56, 11, -56, 6, -65, -5, -71, -8, -75, -12, -76, -32, -92, -46, -102, -49, -102, -66, -104, -68, -102, -74, -96, -78, -96, -90, -82, -97)
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]

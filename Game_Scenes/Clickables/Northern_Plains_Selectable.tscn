@@ -1,17 +1,17 @@
 [gd_scene load_steps=5 format=3 uid="uid://l1fxtjqpaxfw"]
 
 [ext_resource type="Script" path="res://Scripts/Scene_Scripts/Northern_Plains_Selectable.gd" id="1_gvc4b"]
-[ext_resource type="Texture2D" uid="uid://dg2bti02pie76" path="res://Assets/Temp/placeholder1.png" id="2_jjq05"]
-[ext_resource type="Texture2D" uid="uid://dujsexumthhsn" path="res://Assets/Temp/placeholder2.png" id="3_2sqpk"]
+[ext_resource type="Texture2D" uid="uid://r5ckss7imes0" path="res://Assets/Map_Graphics/Hover_State/maroonRegion_noBorder.png" id="2_oavue"]
+[ext_resource type="Texture2D" uid="uid://be63vui6btwg0" path="res://Assets/Map_Graphics/Default_State/maroonRegion_ponziProject.png" id="3_eymku"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qnddc"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_jjq05")
+"texture": ExtResource("2_oavue")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_2sqpk")
+"texture": ExtResource("3_eymku")
 }],
 "loop": true,
 "name": &"default",
@@ -23,13 +23,14 @@ script = ExtResource("1_gvc4b")
 
 [node name="NorthernPlainsRegion" type="AnimatedSprite2D" parent="."]
 position = Vector2(9.53674e-07, -1)
-scale = Vector2(0.220667, 0.220667)
+scale = Vector2(0.469, 0.469)
 sprite_frames = SubResource("SpriteFrames_qnddc")
+frame = 1
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="States" type="CollisionPolygon2D" parent="Area2D"]
-polygon = PackedVector2Array(-40, -42, 40, -41, 42, 4, 41, 38, -42, 39)
+polygon = PackedVector2Array(-98, -101, 35, -96, 49, -87, 60, -89, 67, -87, 71, -81, 75, -84, 80, -80, 90, -81, 94, -83, 99, -80, 111, -80, 97, -72, 73, -47, 73, -33, 67, -30, 65, -23, 67, -20, 68, -3, 79, 1, 93, 14, 94, 35, 99, 39, 105, 42, 113, 52, 113, 56, 108, 63, 101, 66, 98, 71, 102, 73, 100, 78, 95, 83, 94, 88, 92, 86, 21, 86, 23, 94, 30, 100, -11, 99, -81, 96, -80, 75, -113, 71)
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]

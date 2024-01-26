@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://vxmd7yu1i36h"]
 
-[ext_resource type="Texture2D" uid="uid://bpbuhbnwaf47m" path="res://Assets/POPO.png" id="1_slvv5"]
+[ext_resource type="Texture2D" uid="uid://bpbuhbnwaf47m" path="res://Assets/City_Icons/POPO.png" id="1_s2v02"]
 
 [node name="FbiIcon" type="Control"]
 layout_mode = 3
@@ -12,6 +12,6 @@ offset_left = -7.0
 offset_top = -7.0
 offset_right = 7.0
 offset_bottom = 7.0
-texture = ExtResource("1_slvv5")
+texture = ExtResource("1_s2v02")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true

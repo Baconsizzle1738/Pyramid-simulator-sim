@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cejj6s4idpcvq"]
+
+[ext_resource type="AudioStream" uid="uid://b337n1llcg4kd" path="res://Assets/Sound/ClickButtonGeneric.wav" id="1_4mbii"]
+
+[node name="AutoloadSound" type="Node"]
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_4mbii")
+volume_db = 5.0
+mix_target = 1

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bpbuhbnwaf47m"
-path="res://.godot/imported/POPO.png-5b4f81cef4da427e3b52fa9e274d0417.ctex"
+path="res://.godot/imported/POPO.png-772d3c78cd5bfa51b23f564dbbdacf2a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/POPO.png"
-dest_files=["res://.godot/imported/POPO.png-5b4f81cef4da427e3b52fa9e274d0417.ctex"]
+source_file="res://Assets/City_Icons/POPO.png"
+dest_files=["res://.godot/imported/POPO.png-772d3c78cd5bfa51b23f564dbbdacf2a.ctex"]
 
 [params]
 

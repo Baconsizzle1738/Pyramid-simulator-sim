@@ -1,17 +1,17 @@
 [gd_scene load_steps=5 format=3 uid="uid://c7ltnayvbb8bx"]
 
 [ext_resource type="Script" path="res://Scripts/Scene_Scripts/Southern_Plains_Selectable.gd" id="1_6r7yh"]
-[ext_resource type="Texture2D" uid="uid://dg2bti02pie76" path="res://Assets/Temp/placeholder1.png" id="1_naso3"]
-[ext_resource type="Texture2D" uid="uid://dujsexumthhsn" path="res://Assets/Temp/placeholder2.png" id="2_it58y"]
+[ext_resource type="Texture2D" uid="uid://dcak5gecgnko3" path="res://Assets/Map_Graphics/Hover_State/orangeRegion_noBorder.png" id="2_ld1fd"]
+[ext_resource type="Texture2D" uid="uid://3r5bd8alf7ie" path="res://Assets/Map_Graphics/Default_State/orangeRegion_ponziProject.png" id="3_vlvpx"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u5a8o"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_naso3")
+"texture": ExtResource("2_ld1fd")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_it58y")
+"texture": ExtResource("3_vlvpx")
 }],
 "loop": true,
 "name": &"default",
@@ -23,13 +23,14 @@ script = ExtResource("1_6r7yh")
 
 [node name="SouthernPlainsRegion" type="AnimatedSprite2D" parent="."]
 position = Vector2(1.19209e-07, 0)
-scale = Vector2(0.156666, 0.156666)
+scale = Vector2(0.469, 0.469)
 sprite_frames = SubResource("SpriteFrames_u5a8o")
+frame = 1
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="States" type="CollisionPolygon2D" parent="Area2D"]
-polygon = PackedVector2Array(-29, -30, 29, -29, 30, 30, -29, 30)
+polygon = PackedVector2Array(-100, -73, 16, -68, 5, -78, 4, -82, 74, -82, 76, -67, 89, -56, 91, -50, 97, -49, 97, -39, 95, -37, 99, -30, 108, -29, 111, -25, 115, -10, 120, -10, 120, -3, 113, 4, 113, 8, 105, 22, 106, 34, 99, 38, 99, 49, 89, 63, 91, 81, 39, 82, 39, 69, 32, 69, 20, 63, 4, 63, -5, 66, -7, 63, -33, 63, -38, 57, -44, 59, -53, 57, -58, 51, -67, 51, -70, 48, -68, 11, -71, 5, -122, 2, -121, -7, -103, -7)
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]

@@ -1,8 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://cg7toqor2aygk"]
+[gd_scene load_steps=24 format=3 uid="uid://cg7toqor2aygk"]
 
 [ext_resource type="Texture2D" uid="uid://d0hcayid81rte" path="res://Assets/Temp/icon.svg" id="1_3ni02"]
 [ext_resource type="Script" path="res://Scripts/Popup_Scripts/Pacific_Popup.gd" id="1_fp6li"]
-[ext_resource type="Texture2D" uid="uid://dg2bti02pie76" path="res://Assets/Temp/placeholder1.png" id="3_8p2ej"]
 [ext_resource type="PackedScene" uid="uid://dmlrmano2ig6n" path="res://Game_Scenes/Popup_Base_Bkgd.tscn" id="3_rc1p1"]
 [ext_resource type="ButtonGroup" uid="uid://18mtff06jo8l" path="res://Assets/Button_Groups/Pacific_Cities.tres" id="4_gfrrf"]
 [ext_resource type="Texture2D" uid="uid://dbqur1uqsokte" path="res://Assets/Map_Graphics/Default_State/redRegion_ponziProject.png" id="4_scham"]
@@ -17,6 +16,13 @@
 [ext_resource type="Script" path="res://Scripts/Button_Scripts/Honolulu.gd" id="11_fqnm1"]
 [ext_resource type="Script" path="res://Scripts/Button_Scripts/Anchorage.gd" id="12_448rl"]
 [ext_resource type="PackedScene" uid="uid://sj3vbrki06d2" path="res://Game_Scenes/HQ.tscn" id="13_lvhlx"]
+[ext_resource type="Texture2D" uid="uid://d7olc657okom" path="res://Assets/Buttons/buildHQ_button.png" id="16_g11mm"]
+[ext_resource type="FontFile" uid="uid://c0lbxj5nritok" path="res://Assets/misc/GFSDidot-Regular.ttf" id="16_vgpnr"]
+[ext_resource type="Texture2D" uid="uid://00gyfh26ml1" path="res://Assets/Buttons/buildHQ_greyButton.png" id="17_pblny"]
+[ext_resource type="Texture2D" uid="uid://bfr8iwl6cx6u3" path="res://Assets/Buttons/travel_button.png" id="18_4o4qx"]
+[ext_resource type="Texture2D" uid="uid://b4b3ft0lrhms4" path="res://Assets/Buttons/travel_greyButton.png" id="19_d7jah"]
+[ext_resource type="Texture2D" uid="uid://bvxawwah5nod0" path="res://Assets/Buttons/runAD_button.png" id="20_8eyba"]
+[ext_resource type="Texture2D" uid="uid://r170wkq1dkri" path="res://Assets/Buttons/runAD_buttongray.png" id="21_4lma6"]
 
 [node name="PacificPopup" type="Control"]
 layout_mode = 3
@@ -279,7 +285,7 @@ position = Vector2(45, 72)
 
 [node name="Portland" parent="CityHQ" instance=ExtResource("13_lvhlx")]
 visible = false
-position = Vector2(89, 130)
+position = Vector2(70, 134)
 
 [node name="San Francisco" parent="CityHQ" instance=ExtResource("13_lvhlx")]
 visible = false
@@ -287,15 +293,15 @@ position = Vector2(163, 247)
 
 [node name="Los Angeles" parent="CityHQ" instance=ExtResource("13_lvhlx")]
 visible = false
-position = Vector2(267, 273)
+position = Vector2(260, 279)
 
 [node name="Honolulu" parent="CityHQ" instance=ExtResource("13_lvhlx")]
 visible = false
-position = Vector2(285, 327)
+position = Vector2(267, 328)
 
 [node name="Anchorage" parent="CityHQ" instance=ExtResource("13_lvhlx")]
 visible = false
-position = Vector2(451, 325)
+position = Vector2(441, 329)
 
 [node name="Data" type="Control" parent="."]
 layout_mode = 1
@@ -312,6 +318,7 @@ offset_left = 614.0
 offset_top = 6.0
 offset_right = 700.0
 offset_bottom = 29.0
+theme_override_fonts/font = ExtResource("16_vgpnr")
 text = "INVESTORS"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -322,6 +329,7 @@ offset_left = 517.0
 offset_top = 209.0
 offset_right = 798.0
 offset_bottom = 232.0
+theme_override_fonts/font = ExtResource("16_vgpnr")
 text = "Selected: "
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -332,6 +340,7 @@ offset_left = 525.0
 offset_top = 258.0
 offset_right = 790.0
 offset_bottom = 281.0
+theme_override_fonts/font = ExtResource("16_vgpnr")
 text = "HQ cost: 0"
 vertical_alignment = 1
 
@@ -341,6 +350,7 @@ offset_left = 525.0
 offset_top = 236.0
 offset_right = 790.0
 offset_bottom = 259.0
+theme_override_fonts/font = ExtResource("16_vgpnr")
 text = "Population: 0"
 vertical_alignment = 1
 
@@ -350,6 +360,7 @@ offset_left = 524.0
 offset_top = 30.0
 offset_right = 789.0
 offset_bottom = 53.0
+theme_override_fonts/font = ExtResource("16_vgpnr")
 text = "Tier 3: 0"
 vertical_alignment = 1
 
@@ -359,6 +370,7 @@ offset_left = 524.0
 offset_top = 54.0
 offset_right = 789.0
 offset_bottom = 77.0
+theme_override_fonts/font = ExtResource("16_vgpnr")
 text = "Tier 2: 0"
 vertical_alignment = 1
 
@@ -368,6 +380,7 @@ offset_left = 524.0
 offset_top = 78.0
 offset_right = 789.0
 offset_bottom = 101.0
+theme_override_fonts/font = ExtResource("16_vgpnr")
 text = "Tier 1: 0"
 vertical_alignment = 1
 
@@ -377,6 +390,7 @@ offset_left = 524.0
 offset_top = 106.0
 offset_right = 789.0
 offset_bottom = 129.0
+theme_override_fonts/font = ExtResource("16_vgpnr")
 text = "Region Population: "
 vertical_alignment = 1
 
@@ -386,6 +400,7 @@ offset_left = 524.0
 offset_top = 129.0
 offset_right = 789.0
 offset_bottom = 152.0
+theme_override_fonts/font = ExtResource("16_vgpnr")
 text = "Publicity: 5"
 vertical_alignment = 1
 
@@ -395,6 +410,7 @@ offset_left = 648.0
 offset_top = 162.0
 offset_right = 769.0
 offset_bottom = 185.0
+theme_override_fonts/font = ExtResource("16_vgpnr")
 text = "$0"
 horizontal_alignment = 2
 vertical_alignment = 1
@@ -405,8 +421,8 @@ offset_left = 607.0
 offset_top = 291.0
 offset_right = 707.0
 offset_bottom = 331.0
-texture_normal = ExtResource("3_8p2ej")
-texture_disabled = ExtResource("1_3ni02")
+texture_normal = ExtResource("16_g11mm")
+texture_disabled = ExtResource("17_pblny")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -416,8 +432,8 @@ offset_left = 607.0
 offset_top = 344.0
 offset_right = 707.0
 offset_bottom = 384.0
-texture_normal = ExtResource("3_8p2ej")
-texture_disabled = ExtResource("1_3ni02")
+texture_normal = ExtResource("18_4o4qx")
+texture_disabled = ExtResource("19_d7jah")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -440,8 +456,8 @@ offset_left = 545.0
 offset_top = 153.0
 offset_right = 645.0
 offset_bottom = 193.0
-texture_normal = ExtResource("3_8p2ej")
-texture_disabled = ExtResource("1_3ni02")
+texture_normal = ExtResource("20_8eyba")
+texture_disabled = ExtResource("21_4lma6")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -461,26 +477,43 @@ show_percentage = false
 [node name="Investors" type="Node" parent="."]
 
 [node name="InvestorDood" type="TextureRect" parent="Investors"]
-offset_left = 735.0
-offset_top = 31.0
-offset_right = 755.0
-offset_bottom = 71.0
+offset_left = 704.0
+offset_top = 36.0
+offset_right = 724.0
+offset_bottom = 76.0
 texture = ExtResource("1_3ni02")
 expand_mode = 1
 
 [node name="InvestorDood3" type="TextureRect" parent="Investors"]
-offset_left = 725.0
-offset_top = 50.0
-offset_right = 745.0
-offset_bottom = 90.0
+offset_left = 721.0
+offset_top = 42.0
+offset_right = 741.0
+offset_bottom = 82.0
+texture = ExtResource("1_3ni02")
+expand_mode = 1
+flip_h = true
+
+[node name="InvestorDood2" type="TextureRect" parent="Investors"]
+offset_left = 734.0
+offset_top = 54.0
+offset_right = 754.0
+offset_bottom = 94.0
 texture = ExtResource("1_3ni02")
 expand_mode = 1
 
-[node name="InvestorDood2" type="TextureRect" parent="Investors"]
-offset_left = 744.0
-offset_top = 58.0
-offset_right = 764.0
-offset_bottom = 98.0
+[node name="InvestorDood4" type="TextureRect" parent="Investors"]
+offset_left = 708.0
+offset_top = 61.0
+offset_right = 728.0
+offset_bottom = 101.0
+texture = ExtResource("1_3ni02")
+expand_mode = 1
+
+[node name="InvestorDood5" type="TextureRect" parent="Investors"]
+offset_left = 724.0
+offset_top = 65.0
+offset_right = 744.0
+offset_bottom = 105.0
 texture = ExtResource("1_3ni02")
 expand_mode = 1
 

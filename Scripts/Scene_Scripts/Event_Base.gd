@@ -18,7 +18,7 @@ func setArticle(text:String) -> void:
 	$NinePatchRect/VBoxContainer/Article.text = text
 
 func setButtonText(text:String) -> void:
-	$NinePatchRect/VBoxContainer/CloseButton/ButtonText.text = text
+	$NinePatchRect/CloseButton/ButtonText.text = text
 
 
 func _on_close_button_pressed():

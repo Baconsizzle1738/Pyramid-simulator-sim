@@ -1,17 +1,17 @@
 [gd_scene load_steps=5 format=3 uid="uid://ri25dcymudl5"]
 
 [ext_resource type="Script" path="res://Scripts/Scene_Scripts/Southwest_Selectable.gd" id="1_rs8q4"]
-[ext_resource type="Texture2D" uid="uid://dg2bti02pie76" path="res://Assets/Temp/placeholder1.png" id="2_w6klv"]
-[ext_resource type="Texture2D" uid="uid://dujsexumthhsn" path="res://Assets/Temp/placeholder2.png" id="3_ip8te"]
+[ext_resource type="Texture2D" uid="uid://bnfva03gsshnl" path="res://Assets/Map_Graphics/Default_State/greenRegion_ponziProject.png" id="2_2io6e"]
+[ext_resource type="Texture2D" uid="uid://2o0py1n1ktlb" path="res://Assets/Map_Graphics/Hover_State/greenRegion_noBorder.png" id="2_7g7fd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4lln2"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_w6klv")
+"texture": ExtResource("2_7g7fd")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_ip8te")
+"texture": ExtResource("2_2io6e")
 }],
 "loop": true,
 "name": &"default",
@@ -23,15 +23,16 @@ script = ExtResource("1_rs8q4")
 
 [node name="SouthwestRegion" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, -1)
-scale = Vector2(0.200667, 0.200667)
+scale = Vector2(0.469, 0.469)
 sprite_frames = SubResource("SpriteFrames_4lln2")
+frame = 1
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="States" type="CollisionPolygon2D" parent="Area2D"]
 position = Vector2(-1.52588e-05, 2.00002)
 scale = Vector2(0.227394, 0.227394)
-polygon = PackedVector2Array(-193, -190, 37, -190, 187, -186, 189, 181, -40, 184, -186, 186)
+polygon = PackedVector2Array(-580.49, -602.479, 26.386, -461.754, 13.193, -369.403, 87.9531, -351.812, 422.175, -312.234, 668.443, -290.245, 655.25, 87.953, 576.093, 87.953, 545.309, 562.9, 241.871, 540.911, 241.871, 558.502, 136.327, 536.514, 105.544, 584.888, -118.737, 549.707, -395.789, 378.198, -365.005, 365.005, -365.005, 338.619, -378.198, 329.824, -382.596, 307.836, -347.415, 272.654, -351.812, 250.666, -316.631, 224.28, -347.415, 140.725, -655.25, -347.415)
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]

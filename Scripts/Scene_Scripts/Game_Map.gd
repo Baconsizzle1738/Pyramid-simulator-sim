@@ -60,6 +60,7 @@ func _process(delta):
 		#HQraidNotif("San Francisco")
 		#showFBIstart()
 		#print(PacificIndex)
+		#pressRelease()
 		frameOneLoad = true
 	
 	#determine whether or not the payment buttons work
@@ -68,10 +69,10 @@ func _process(delta):
 	if GameData.captured:
 		get_tree().change_scene_to_file("res://Game_Scenes/Lose_Screen.tscn")
 	
-	if !GameData.choosing or !GameData.captured: #make !choosing later
+	if !GameData.choosing and !GameData.captured: #make !choosing later
 		timePast += delta
 		#print(delta)
-		if timePast >= 1: # tick game every "second" representing a "day"
+		if timePast >= 0.2: # tick game every "second" representing a "day"
 			#print("tick "+str(timePast))
 			
 			GameData.tick() # day go up
@@ -118,9 +119,15 @@ func _process(delta):
 				$Debt/Bar.max_value = GameData.TIME_TO_PAY_DEBT
 				$Debt/Bar.value = GameData.TIME_TO_PAY_DEBT
 			
+			#FBI press release
+			if GameData.FBIprogress > 0 and GameData.days%GameData.FBI_PR_RELEASE_FREQ == 0 and (GameData.FBIsus >= 1.1 and GameData.FBIsus <= 2.0):
+				GameData.FBIprogress *= 1.1
+				GameData.legit -= 2
+				pressRelease()
+			
 			#signal FBI start
 			if (GameData.legit <= 50 or GameData.days >= GameData.START_FBI) and GameData.FBIprogress <= 0.001:
-				GameData.FBIprogress = 0.015
+				GameData.FBIprogress = 0.005
 				showFBIstart()
 			
 			#reset time
@@ -194,6 +201,14 @@ func HQraidNotif(cityRaided:String) -> void:
 	raidNotif.setArticle("After waiting for days, the FBI has finally gotten a warrant to raid the HQ of " + GameData.playerName + " in " + cityRaided + ". The doors of the HQ were torn down at 5AM and some employees were apprehended. However, the FBI was not able to capture the ringleader as they did not seem to be at that location. The FBI has stated that they will continue to raid until the pyramid scheme is gone for good.")
 	raidNotif.setButtonText("Uh oh.")
 	self.add_child(raidNotif)
+
+func pressRelease() -> void:
+	var release = eventResource.instantiate()
+	release.setTitle("FBI Press Release")
+	release.setImage("res://Assets/Temp/yellowRegion_ponziProject.png")
+	release.setArticle("Today, the FBI has released a press release regarding the alleged pyramid scheme known as " + GameData.playerName + ". They have stated that due to some suspicious financial reports, more resources will be allocated towards the investigation. " + GameData.playerName + " has denied any allegations of being a pyramid scheme.")
+	release.setButtonText("Hate us cuz they aint us")
+	self.add_child(release)
 
 #update button pressability amd max value of spin box
 func updateDebtUse() -> void:

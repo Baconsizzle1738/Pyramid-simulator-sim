@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://efbeq0ykeep8"]
 
-[ext_resource type="Texture2D" uid="uid://d0hcayid81rte" path="res://Assets/Temp/icon.svg" id="1_d3rkm"]
+[ext_resource type="Texture2D" uid="uid://1o7vai4wlwo1" path="res://Assets/City_Icons/MC.png" id="1_f5bgx"]
 
 [node name="PlayerIcon" type="Control"]
 layout_mode = 3
@@ -12,5 +12,5 @@ offset_left = -6.0
 offset_top = -12.0
 offset_right = 6.0
 offset_bottom = 12.0
-texture = ExtResource("1_d3rkm")
+texture = ExtResource("1_f5bgx")
 expand_mode = 1

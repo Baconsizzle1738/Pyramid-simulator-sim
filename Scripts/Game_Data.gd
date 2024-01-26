@@ -14,8 +14,11 @@ const START_CASHOUT = 365 # investors start cashing out after this many days
 
 const START_FBI = 548 # FBI will start investigating after this many days
 const FBI_RAID_FREQ = 20
+const FBI_PR_RELEASE_FREQ = 50
 
 const TIME_TO_TRAVEL = 4 #time it takes to travel in days
+
+@onready var AUDIO = get_node("/root/AutoloadSound")
 
 var playerName #name of player
 

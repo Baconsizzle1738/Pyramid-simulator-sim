@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://bqyrm64h4oen4"]
 
 [ext_resource type="Script" path="res://Scripts/Scene_Scripts/Event_Base.gd" id="1_2lj4v"]
-[ext_resource type="Texture2D" uid="uid://j6hqv3xkjucu" path="res://Assets/frameTexture.png" id="2_bffg3"]
+[ext_resource type="Texture2D" uid="uid://j6hqv3xkjucu" path="res://Assets/misc/frameTexture.png" id="2_3fl4m"]
 [ext_resource type="Texture2D" uid="uid://d0hcayid81rte" path="res://Assets/Temp/icon.svg" id="3_8a02k"]
-[ext_resource type="Texture2D" uid="uid://dujsexumthhsn" path="res://Assets/Temp/placeholder2.png" id="4_eeril"]
+[ext_resource type="Texture2D" uid="uid://gkx34squpgd" path="res://Assets/Buttons/generic_button.png" id="4_l8d2h"]
 [ext_resource type="Texture2D" uid="uid://dg2bti02pie76" path="res://Assets/Temp/placeholder1.png" id="5_n3vb6"]
 
 [sub_resource type="Theme" id="Theme_sjrd7"]
@@ -31,21 +31,18 @@ script = ExtResource("1_2lj4v")
 layout_mode = 1
 offset_right = 400.0
 offset_bottom = 500.0
-texture = ExtResource("2_bffg3")
+texture = ExtResource("2_3fl4m")
 patch_margin_left = 10
 patch_margin_top = 10
 patch_margin_right = 10
 patch_margin_bottom = 10
 
 [node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -170.0
-offset_right = 170.0
-offset_bottom = 466.0
-grow_horizontal = 2
+layout_mode = 0
+offset_left = 30.0
+offset_top = 10.0
+offset_right = 370.0
+offset_bottom = 476.0
 
 [node name="Title" type="Label" parent="NinePatchRect/VBoxContainer"]
 layout_mode = 2
@@ -69,16 +66,19 @@ text = "<ARTICLE INFO IDK>"
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="CloseButton" type="TextureButton" parent="NinePatchRect/VBoxContainer"]
-custom_minimum_size = Vector2(340, 50)
-layout_mode = 2
+[node name="CloseButton" type="TextureButton" parent="NinePatchRect"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 0
+offset_left = 100.0
+offset_top = 432.0
+offset_right = 300.0
+offset_bottom = 472.0
 keep_pressed_outside = true
-texture_normal = ExtResource("4_eeril")
+texture_normal = ExtResource("4_l8d2h")
 texture_pressed = ExtResource("5_n3vb6")
 ignore_texture_size = true
-stretch_mode = 0
 
-[node name="ButtonText" type="Label" parent="NinePatchRect/VBoxContainer/CloseButton"]
+[node name="ButtonText" type="Label" parent="NinePatchRect/CloseButton"]
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
@@ -95,10 +95,10 @@ vertical_alignment = 1
 [node name="TestButton" type="Button" parent="."]
 visible = false
 layout_mode = 0
-offset_left = 166.0
-offset_top = 543.0
-offset_right = 366.0
-offset_bottom = 583.0
+offset_left = 134.0
+offset_top = 655.0
+offset_right = 334.0
+offset_bottom = 695.0
 text = "uh oh"
 
-[connection signal="pressed" from="NinePatchRect/VBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="NinePatchRect/CloseButton" to="." method="_on_close_button_pressed"]

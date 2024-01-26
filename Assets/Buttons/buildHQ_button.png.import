@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsmwudi8ssr3n"
-path="res://.godot/imported/titleScreen_ponziProject.png-bc5ca5be82c1dd78476cca9841a06cf1.ctex"
+uid="uid://d7olc657okom"
+path="res://.godot/imported/buildHQ_button.png-d59b00df0acaf6c8dad9d784fb84e1b9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/titleScreen_ponziProject.png"
-dest_files=["res://.godot/imported/titleScreen_ponziProject.png-bc5ca5be82c1dd78476cca9841a06cf1.ctex"]
+source_file="res://Assets/Buttons/buildHQ_button.png"
+dest_files=["res://.godot/imported/buildHQ_button.png-d59b00df0acaf6c8dad9d784fb84e1b9.ctex"]
 
 [params]
 
