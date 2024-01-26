@@ -458,6 +458,32 @@ max_value = 0.0
 fill_mode = 2
 show_percentage = false
 
+[node name="Investors" type="Node" parent="."]
+
+[node name="InvestorDood" type="TextureRect" parent="Investors"]
+offset_left = 735.0
+offset_top = 31.0
+offset_right = 755.0
+offset_bottom = 71.0
+texture = ExtResource("1_3ni02")
+expand_mode = 1
+
+[node name="InvestorDood3" type="TextureRect" parent="Investors"]
+offset_left = 725.0
+offset_top = 50.0
+offset_right = 745.0
+offset_bottom = 90.0
+texture = ExtResource("1_3ni02")
+expand_mode = 1
+
+[node name="InvestorDood2" type="TextureRect" parent="Investors"]
+offset_left = 744.0
+offset_top = 58.0
+offset_right = 764.0
+offset_bottom = 98.0
+texture = ExtResource("1_3ni02")
+expand_mode = 1
+
 [connection signal="pressed" from="Build_HQ" to="." method="_on_build_hq_pressed"]
 [connection signal="pressed" from="Travel" to="." method="_on_travel_pressed"]
 [connection signal="pressed" from="Run_Ads" to="." method="_on_run_ads_pressed"]
