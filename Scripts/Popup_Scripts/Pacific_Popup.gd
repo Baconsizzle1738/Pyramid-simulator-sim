@@ -22,6 +22,7 @@ func button_pressed():
 	
 	$Build_HQ.disabled = !GameData.choosing and (GameData.cash <= group.get_pressed_button().HQBaseCost) or (group.get_pressed_button().HQTimer > 0) or (group.get_pressed_button().HQs == 1)
 	$Travel.disabled = GameData.travelling or group.get_pressed_button().hasPlayer or group.get_pressed_button().HQs < 1 or GameData.choosing
+	GameData.AUDIO.get_child(0).play()
 	
 
 func _process(delta):
@@ -133,6 +134,7 @@ func tick():
 
 
 func _on_build_hq_pressed():
+	GameData.AUDIO.get_child(0).play()
 	if !GameData.choosing:
 		GameData.cash -= group.get_pressed_button().HQBaseCost
 		group.get_pressed_button().HQTimer = GameData.HQBuildTime
@@ -158,6 +160,7 @@ func _on_build_hq_pressed():
 	update_button_cash_disabled()
 
 func _on_travel_pressed():
+	GameData.AUDIO.get_child(0).play()
 	GameData.travelling = true
 	GameData.destination = group.get_pressed_button().get_name()
 	GameData.travelTimer = GameData.TIME_TO_TRAVEL
@@ -170,6 +173,7 @@ func _on_travel_pressed():
 
 
 func _on_run_ads_pressed():
+	GameData.AUDIO.get_child(0).play()
 	GameData.cash -= AdCost
 	daysSinceAd = AD_COOLDOWN
 	$Run_Ads.disabled = true

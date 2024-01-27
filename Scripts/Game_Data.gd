@@ -1,18 +1,18 @@
 extends Node #GLOBAL DATA FOR THE GAME
 
 
-const DEFAULT_TIER3_WORTH = 2500
-const DEFAULT_TIER2_WORTH = 300
-const DEFAULT_TIER1_WORTH = 20
+const DEFAULT_TIER3_WORTH = 5000
+const DEFAULT_TIER2_WORTH = 350
+const DEFAULT_TIER1_WORTH = 50
 
 const DEFAULT_CASHOUT_RATE = 0.05
 const TIME_TO_PAY_DEBT = 15 # time player has to pay debt
-const ROI = 1.2 # ROI that the investors demand on cashout
+const ROI = 1.15 # ROI that the investors demand on cashout
 const LEGIT_DECREASE_FACTOR = 0.00004 #how much legit decreases for every unpaid dollar
-const DEBT_PAYOUT_INTERVAL = 35 #cashout happens every this many days
+const DEBT_PAYOUT_INTERVAL = 70 #cashout happens every this many days
 const START_CASHOUT = 365 # investors start cashing out after this many days
 
-const START_FBI = 548 # FBI will start investigating after this many days
+const START_FBI = 730 # FBI will start investigating after this many days
 const FBI_RAID_FREQ = 20
 const FBI_PR_RELEASE_FREQ = 50
 
@@ -20,9 +20,9 @@ const TIME_TO_TRAVEL = 4 #time it takes to travel in days
 
 @onready var AUDIO = get_node("/root/AutoloadSound")
 
-var playerName #name of player
+var playerName = "" #name of player
 
-var days:int = 200 # days passed
+var days:int = 0 # days passed
 
 var choosing = true # change to true later
 var captured = false # if player is captured by the FBI
@@ -60,7 +60,7 @@ func init():
 	Tier2Worth = DEFAULT_TIER2_WORTH
 	Tier1Worth = DEFAULT_TIER1_WORTH
 	cashoutRate = DEFAULT_CASHOUT_RATE
-	days = 200
+	days = 0
 	choosing = true
 	captured = false
 	LegitIncreaseFactor = 1.0 + (legit-50)/100.0
@@ -91,6 +91,11 @@ func tick():
 	FBIsus += FBIprogress
 	if FBIsus > 3.9999:
 		FBIsus = 3.9999
+	
+	if legit >= 100:
+		legit = 100
+	if legit <= 0:
+		legit = 0
 	
 
 # basic functions

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpbuhbnwaf47m"
-path="res://.godot/imported/POPO.png-772d3c78cd5bfa51b23f564dbbdacf2a.ctex"
+uid="uid://d06yneieehopx"
+path="res://.godot/imported/generic_border.png-2c82b815a1e6889286b5ac4f08d9dc5a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/City_Icons/POPO.png"
-dest_files=["res://.godot/imported/POPO.png-772d3c78cd5bfa51b23f564dbbdacf2a.ctex"]
+source_file="res://Assets/Buttons/generic_border.png"
+dest_files=["res://.godot/imported/generic_border.png-2c82b815a1e6889286b5ac4f08d9dc5a.ctex"]
 
 [params]
 

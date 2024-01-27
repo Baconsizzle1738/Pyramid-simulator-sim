@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cr571q1gukbt3"]
 
-[ext_resource type="Texture2D" uid="uid://d0hcayid81rte" path="res://Assets/Temp/icon.svg" id="1_jg7hh"]
 [ext_resource type="Script" path="res://Scripts/Scene_Scripts/Choose_Name.gd" id="1_yqlyu"]
+[ext_resource type="Texture2D" uid="uid://c6lax7gyl8wlb" path="res://Assets/Background/menu_background.png" id="2_73qek"]
 [ext_resource type="Texture2D" uid="uid://knldl7at5n7q" path="res://Assets/Buttons/setName.png" id="3_wok3c"]
 [ext_resource type="Texture2D" uid="uid://ce44x8cw05afp" path="res://Assets/Buttons/setName_hover.png" id="4_d4yxu"]
 [ext_resource type="FontFile" uid="uid://c0lbxj5nritok" path="res://Assets/misc/GFSDidot-Regular.ttf" id="5_scefu"]
@@ -9,17 +9,17 @@
 [node name="ChooseName" type="Node2D"]
 script = ExtResource("1_yqlyu")
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(591.25, 333)
-scale = Vector2(9.48046, 5.48438)
-texture = ExtResource("1_jg7hh")
+[node name="MenuBackground" type="Sprite2D" parent="."]
+position = Vector2(581, 341)
+texture = ExtResource("2_73qek")
 
 [node name="Player_Name" type="TextEdit" parent="."]
 offset_left = 421.0
 offset_top = 273.0
 offset_right = 760.0
 offset_bottom = 308.0
-text = "GIMMEMONIE"
+theme_override_fonts/font = ExtResource("5_scefu")
+text = "GIMMIEMONIE"
 placeholder_text = "Pyramid Scheme Name here"
 drag_and_drop_selection_enabled = false
 

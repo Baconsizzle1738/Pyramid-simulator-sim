@@ -35,5 +35,6 @@ func _on_start_button_pressed():
 		
 	else:
 		$Warn.visible = true
+		GameData.AUDIO.get_child(0).play()
 	#print($Player_Name.get_text())
 	

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://sj3vbrki06d2"]
 
-[ext_resource type="Texture2D" uid="uid://dg2bti02pie76" path="res://Assets/Temp/placeholder1.png" id="1_8a8rw"]
+[ext_resource type="Texture2D" uid="uid://dbs5s5trjdnsd" path="res://Assets/Icons/HQicon.png" id="1_4wi3r"]
 
 [node name="Hq" type="Node2D"]
 
@@ -9,5 +9,5 @@ offset_left = -7.0
 offset_top = -7.0
 offset_right = 7.0
 offset_bottom = 7.0
-texture = ExtResource("1_8a8rw")
+texture = ExtResource("1_4wi3r")
 expand_mode = 1

@@ -1,7 +1,7 @@
-[gd_scene load_steps=33 format=3 uid="uid://datvv4c7b10o4"]
+[gd_scene load_steps=46 format=3 uid="uid://datvv4c7b10o4"]
 
 [ext_resource type="Script" path="res://Scripts/Scene_Scripts/Game_Map.gd" id="1_0o6xc"]
-[ext_resource type="Texture2D" uid="uid://d0hcayid81rte" path="res://Assets/Temp/icon.svg" id="1_3fppp"]
+[ext_resource type="Texture2D" uid="uid://cro6f2gjo6rda" path="res://Assets/Background/mainGame_background02.png" id="2_5uxmb"]
 [ext_resource type="Texture2D" uid="uid://dl45o60jgy302" path="res://Assets/Map_Graphics/map_ponziProject.png" id="2_fxt1d"]
 [ext_resource type="PackedScene" uid="uid://tqve15lstf8n" path="res://Game_Scenes/Clickables/Pacific_Region_Selectable.tscn" id="4_3f574"]
 [ext_resource type="Texture2D" uid="uid://j6hqv3xkjucu" path="res://Assets/misc/frameTexture.png" id="4_3he8h"]
@@ -26,12 +26,35 @@
 [ext_resource type="PackedScene" uid="uid://bl77w3cersnj8" path="res://Game_Scenes/Popups/Regions/South_Atlantic_Popup.tscn" id="21_qtjt7"]
 [ext_resource type="PackedScene" uid="uid://born4gq235enn" path="res://Game_Scenes/Popups/Regions/Northern_Atlantic_Popup.tscn" id="23_8ropb"]
 [ext_resource type="PackedScene" uid="uid://vwiyyyror84n" path="res://Game_Scenes/Popups/Regions/New_England_Popup.tscn" id="25_fc2g5"]
-[ext_resource type="Texture2D" uid="uid://dg2bti02pie76" path="res://Assets/Temp/placeholder1.png" id="26_bcjtv"]
 [ext_resource type="FontFile" uid="uid://c0lbxj5nritok" path="res://Assets/misc/GFSDidot-Regular.ttf" id="26_pbkht"]
-[ext_resource type="Texture2D" uid="uid://dujsexumthhsn" path="res://Assets/Temp/placeholder2.png" id="27_bkxtv"]
+[ext_resource type="Texture2D" uid="uid://d06yneieehopx" path="res://Assets/Buttons/generic_border.png" id="27_eru0d"]
+[ext_resource type="Texture2D" uid="uid://tj3qxiqiansy" path="res://Assets/Buttons/generic_noBorder.png" id="28_joxot"]
 [ext_resource type="Script" path="res://Scripts/FlashingText.gd" id="30_ktwbg"]
+[ext_resource type="Texture2D" uid="uid://ciloiyfjlh2jh" path="res://Assets/Icons/currency_.png" id="31_cealh"]
+[ext_resource type="Texture2D" uid="uid://bpbuhbnwaf47m" path="res://Assets/Icons/POPO.png" id="32_apacx"]
+[ext_resource type="Texture2D" uid="uid://de0cv80a8f2p4" path="res://Assets/Icons/legitimacy_.png" id="33_t3jf4"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_ekam5"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_a8qf5"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_7yb6y"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_28bpt"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_l2p60"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_383b2"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_bdpx8"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_w88e1"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_gyri1"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_sucp1"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_hevog"]
 
 [sub_resource type="Theme" id="Theme_dmk56"]
 default_font = ExtResource("26_pbkht")
@@ -39,6 +62,10 @@ default_font_size = 9
 
 [node name="GameMap" type="Node2D"]
 script = ExtResource("1_0o6xc")
+
+[node name="MainGameBackground02" type="Sprite2D" parent="."]
+position = Vector2(568, 323)
+texture = ExtResource("2_5uxmb")
 
 [node name="MapPonziProject" type="Sprite2D" parent="."]
 position = Vector2(529.085, 290.5)
@@ -120,6 +147,7 @@ unresizable = true
 popup_window = true
 
 [node name="NorthernRockiesPopup" parent="NorthernRockiesWindow" instance=ExtResource("7_ner87")]
+group = SubResource("ButtonGroup_a8qf5")
 
 [node name="SouthwestWindow" type="Window" parent="."]
 title = "Southwest Region"
@@ -131,6 +159,7 @@ unresizable = true
 popup_window = true
 
 [node name="SouthwestPopup" parent="SouthwestWindow" instance=ExtResource("9_7dfnp")]
+group = SubResource("ButtonGroup_7yb6y")
 
 [node name="NorthernPlainsWindow" type="Window" parent="."]
 title = "Northern Plains Region"
@@ -142,6 +171,7 @@ unresizable = true
 popup_window = true
 
 [node name="NorthernPlainsPopup" parent="NorthernPlainsWindow" instance=ExtResource("11_tymo8")]
+group = SubResource("ButtonGroup_28bpt")
 
 [node name="SouthernPlainsWindow" type="Window" parent="."]
 title = "Southern Plains Region"
@@ -153,6 +183,7 @@ unresizable = true
 popup_window = true
 
 [node name="SouthernPlainsPopup" parent="SouthernPlainsWindow" instance=ExtResource("13_qjgxr")]
+group = SubResource("ButtonGroup_l2p60")
 
 [node name="GulfCoastWindow" type="Window" parent="."]
 title = "Gulf Coast Region"
@@ -164,6 +195,7 @@ unresizable = true
 popup_window = true
 
 [node name="GulfCoastPopup" parent="GulfCoastWindow" instance=ExtResource("15_r0vhv")]
+group = SubResource("ButtonGroup_383b2")
 
 [node name="MidwestWindow" type="Window" parent="."]
 title = "Midwest Region"
@@ -172,6 +204,7 @@ size = Vector2i(800, 400)
 visible = false
 
 [node name="MidwestPopup" parent="MidwestWindow" instance=ExtResource("17_6cwqu")]
+group = SubResource("ButtonGroup_bdpx8")
 
 [node name="AppalachiaWindow" type="Window" parent="."]
 title = "Appalachia Region"
@@ -183,6 +216,7 @@ unresizable = true
 popup_window = true
 
 [node name="AppalachiaPopup" parent="AppalachiaWindow" instance=ExtResource("19_6by06")]
+group = SubResource("ButtonGroup_w88e1")
 
 [node name="SouthAtlanticWindow" type="Window" parent="."]
 title = "South Atlantic Region"
@@ -194,6 +228,7 @@ unresizable = true
 popup_window = true
 
 [node name="SouthAtlanticPopup" parent="SouthAtlanticWindow" instance=ExtResource("21_qtjt7")]
+group = SubResource("ButtonGroup_gyri1")
 
 [node name="NorthAtlanticWindow" type="Window" parent="."]
 title = "North Atlantic Region"
@@ -205,6 +240,7 @@ unresizable = true
 popup_window = true
 
 [node name="NorthernAtlanticPopup" parent="NorthAtlanticWindow" instance=ExtResource("23_8ropb")]
+group = SubResource("ButtonGroup_sucp1")
 
 [node name="NewEnglandWindow" type="Window" parent="."]
 title = "New England Region"
@@ -216,42 +252,47 @@ unresizable = true
 popup_window = true
 
 [node name="NewEnglandPopup" parent="NewEnglandWindow" instance=ExtResource("25_fc2g5")]
+group = SubResource("ButtonGroup_hevog")
 
 [node name="Legit" type="Label" parent="."]
-offset_left = 231.0
-offset_top = 22.0
-offset_right = 393.0
-offset_bottom = 45.0
+offset_left = 58.0
+offset_top = 24.0
+offset_right = 220.0
+offset_bottom = 47.0
+theme_override_colors/font_color = Color(0.137255, 0.137255, 0.137255, 1)
 theme_override_fonts/font = ExtResource("26_pbkht")
 text = "Legitimacy: 75"
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="FBIsus" type="Label" parent="."]
-offset_left = 473.0
-offset_top = 21.0
-offset_right = 727.0
-offset_bottom = 44.0
+offset_left = 600.0
+offset_top = 24.0
+offset_right = 854.0
+offset_bottom = 47.0
+theme_override_colors/font_color = Color(0.137255, 0.137255, 0.137255, 1)
 theme_override_fonts/font = ExtResource("26_pbkht")
 text = "The FBI is UNINTERESTED"
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Cash" type="Label" parent="."]
-offset_left = 12.0
+offset_left = 300.0
 offset_top = 24.0
-offset_right = 174.0
+offset_right = 462.0
 offset_bottom = 47.0
+theme_override_colors/font_color = Color(0.137255, 0.137255, 0.137255, 1)
 theme_override_fonts/font = ExtResource("26_pbkht")
 text = "Cash: $1000000"
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Days" type="Label" parent="."]
-offset_left = 985.0
-offset_top = 22.0
-offset_right = 1108.0
-offset_bottom = 45.0
+offset_left = 1000.0
+offset_top = 24.0
+offset_right = 1123.0
+offset_bottom = 47.0
+theme_override_colors/font_color = Color(0.137255, 0.137255, 0.137255, 1)
 theme_override_fonts/font = ExtResource("26_pbkht")
 text = "Day 0"
 vertical_alignment = 1
@@ -283,6 +324,7 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 0
 offset_right = 230.0
 offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.137255, 0.137255, 0.137255, 1)
 theme_override_fonts/font = ExtResource("26_pbkht")
 text = "Debt"
 horizontal_alignment = 1
@@ -294,6 +336,7 @@ layout_mode = 0
 offset_top = 19.0
 offset_right = 230.0
 offset_bottom = 42.0
+theme_override_colors/font_color = Color(0.137255, 0.137255, 0.137255, 1)
 theme_override_fonts/font = ExtResource("26_pbkht")
 text = "$0"
 horizontal_alignment = 1
@@ -306,11 +349,23 @@ offset_left = 54.0
 offset_top = 42.0
 offset_right = 174.0
 offset_bottom = 72.0
-texture_normal = ExtResource("26_bcjtv")
-texture_pressed = ExtResource("27_bkxtv")
-texture_disabled = ExtResource("1_3fppp")
+texture_normal = ExtResource("27_eru0d")
+texture_pressed = ExtResource("28_joxot")
+texture_disabled = ExtResource("28_joxot")
 ignore_texture_size = true
 stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Debt/PayAll"]
+layout_mode = 0
+offset_top = 5.0
+offset_right = 120.0
+offset_bottom = 26.0
+theme_override_fonts/font = ExtResource("26_pbkht")
+text = "PAY ALL"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
 metadata/_edit_use_anchors_ = true
 
 [node name="PayAmount" type="TextureButton" parent="Debt"]
@@ -319,11 +374,23 @@ offset_left = 54.0
 offset_top = 77.0
 offset_right = 174.0
 offset_bottom = 107.0
-texture_normal = ExtResource("26_bcjtv")
-texture_pressed = ExtResource("27_bkxtv")
-texture_disabled = ExtResource("1_3fppp")
+texture_normal = ExtResource("27_eru0d")
+texture_pressed = ExtResource("28_joxot")
+texture_disabled = ExtResource("28_joxot")
 ignore_texture_size = true
 stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Debt/PayAmount"]
+layout_mode = 0
+offset_top = 5.0
+offset_right = 120.0
+offset_bottom = 26.0
+theme_override_fonts/font = ExtResource("26_pbkht")
+text = "PAY AMOUNT"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
 metadata/_edit_use_anchors_ = true
 
 [node name="Bar" type="ProgressBar" parent="Debt"]
@@ -364,6 +431,18 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("30_ktwbg")
 metadata/_edit_use_anchors_ = true
+
+[node name="Currency" type="Sprite2D" parent="."]
+position = Vector2(289, 34)
+texture = ExtResource("31_cealh")
+
+[node name="Popo" type="Sprite2D" parent="."]
+position = Vector2(588, 35)
+texture = ExtResource("32_apacx")
+
+[node name="Legitimacy" type="Sprite2D" parent="."]
+position = Vector2(44, 35)
+texture = ExtResource("33_t3jf4")
 
 [connection signal="close_requested" from="PacificWindow" to="." method="_on_pacific_window_close_requested"]
 [connection signal="close_requested" from="NorthernRockiesWindow" to="." method="_on_northern_rockies_window_close_requested"]

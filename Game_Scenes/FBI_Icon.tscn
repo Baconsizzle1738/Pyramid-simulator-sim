@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://vxmd7yu1i36h"]
 
-[ext_resource type="Texture2D" uid="uid://bpbuhbnwaf47m" path="res://Assets/City_Icons/POPO.png" id="1_s2v02"]
+[ext_resource type="Texture2D" uid="uid://bpbuhbnwaf47m" path="res://Assets/Icons/POPO.png" id="1_s2v02"]
 
 [node name="FbiIcon" type="Control"]
 layout_mode = 3

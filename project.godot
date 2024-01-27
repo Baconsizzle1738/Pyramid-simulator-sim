@@ -24,3 +24,10 @@ AutoloadSound="*res://Game_Scenes/AutoloadSound.tscn"
 
 window/size/mode=2
 window/stretch/mode="viewport"
+
+[input]
+
+closeWindows={
+"deadzone": 0.5,
+"events": []
+}

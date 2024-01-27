@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://cejj6s4idpcvq"]
+[gd_scene load_steps=4 format=3 uid="uid://cejj6s4idpcvq"]
 
 [ext_resource type="AudioStream" uid="uid://b337n1llcg4kd" path="res://Assets/Sound/ClickButtonGeneric.wav" id="1_4mbii"]
+[ext_resource type="AudioStream" uid="uid://17g3hqngr1r7" path="res://Assets/Sound/Debt.wav" id="2_jypsc"]
+[ext_resource type="AudioStream" uid="uid://l6yaltt425tg" path="res://Assets/Sound/Region select.wav" id="3_ad36m"]
 
 [node name="AutoloadSound" type="Node"]
 
@@ -8,3 +10,11 @@
 stream = ExtResource("1_4mbii")
 volume_db = 5.0
 mix_target = 1
+
+[node name="Debt" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_jypsc")
+volume_db = 5.0
+
+[node name="RegionSelect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ad36m")
+volume_db = 3.0

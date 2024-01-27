@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://efbeq0ykeep8"]
 
-[ext_resource type="Texture2D" uid="uid://1o7vai4wlwo1" path="res://Assets/City_Icons/MC.png" id="1_f5bgx"]
+[ext_resource type="Texture2D" uid="uid://1o7vai4wlwo1" path="res://Assets/Icons/MC.png" id="1_f5bgx"]
 
 [node name="PlayerIcon" type="Control"]
 layout_mode = 3

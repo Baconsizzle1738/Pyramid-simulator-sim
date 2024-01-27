@@ -1,7 +1,28 @@
-[gd_scene load_steps=3 format=3 uid="uid://2vbl67m6f7qs"]
+[gd_scene load_steps=24 format=3 uid="uid://2vbl67m6f7qs"]
 
-[ext_resource type="Texture2D" uid="uid://d0hcayid81rte" path="res://Assets/Temp/icon.svg" id="1_ednfd"]
-[ext_resource type="Texture2D" uid="uid://dg2bti02pie76" path="res://Assets/Temp/placeholder1.png" id="2_vk0xy"]
+[ext_resource type="Script" path="res://Scripts/Popup_Scripts/Northern_Plains_Popup.gd" id="1_sbhfh"]
+[ext_resource type="PackedScene" uid="uid://dmlrmano2ig6n" path="res://Game_Scenes/Popup_Base_Bkgd.tscn" id="2_8m3w5"]
+[ext_resource type="ButtonGroup" uid="uid://3ovkwj51h1if" path="res://Assets/Button_Groups/Northern_Plains_Cities.tres" id="2_eradi"]
+[ext_resource type="Texture2D" uid="uid://be63vui6btwg0" path="res://Assets/Map_Graphics/Default_State/maroonRegion_ponziProject.png" id="3_fpbsq"]
+[ext_resource type="Texture2D" uid="uid://g3smviwetru4" path="res://Assets/City_Marker/cityMarker_maroon.png" id="5_pwn33"]
+[ext_resource type="Texture2D" uid="uid://3xft40jwarvt" path="res://Assets/City_Marker/shadowMaroon.png" id="6_4wqqf"]
+[ext_resource type="Script" path="res://Scripts/Button_Scripts/Fargo.gd" id="7_eulqh"]
+[ext_resource type="PackedScene" uid="uid://efbeq0ykeep8" path="res://Game_Scenes/Player_Icon.tscn" id="7_jqg27"]
+[ext_resource type="PackedScene" uid="uid://vxmd7yu1i36h" path="res://Game_Scenes/FBI_Icon.tscn" id="8_n1oso"]
+[ext_resource type="FontFile" uid="uid://c0lbxj5nritok" path="res://Assets/misc/GFSDidot-Regular.ttf" id="9_60md3"]
+[ext_resource type="PackedScene" uid="uid://sj3vbrki06d2" path="res://Game_Scenes/HQ.tscn" id="10_gpyyh"]
+[ext_resource type="Script" path="res://Scripts/Button_Scripts/Sioux Falls.gd" id="11_ky233"]
+[ext_resource type="Texture2D" uid="uid://d7olc657okom" path="res://Assets/Buttons/buildHQ_button.png" id="11_nj2hj"]
+[ext_resource type="Texture2D" uid="uid://00gyfh26ml1" path="res://Assets/Buttons/buildHQ_greyButton.png" id="12_5ctvs"]
+[ext_resource type="Script" path="res://Scripts/Button_Scripts/Omaha.gd" id="12_vfaie"]
+[ext_resource type="Texture2D" uid="uid://bfr8iwl6cx6u3" path="res://Assets/Buttons/travel_button.png" id="13_3b3ke"]
+[ext_resource type="Script" path="res://Scripts/Button_Scripts/Des Moines.gd" id="13_hpduu"]
+[ext_resource type="Texture2D" uid="uid://b4b3ft0lrhms4" path="res://Assets/Buttons/travel_greyButton.png" id="14_ay03y"]
+[ext_resource type="Script" path="res://Scripts/Button_Scripts/Minneapolis.gd" id="14_djapc"]
+[ext_resource type="Texture2D" uid="uid://bvxawwah5nod0" path="res://Assets/Buttons/runAD_button.png" id="15_b67n5"]
+[ext_resource type="Texture2D" uid="uid://r170wkq1dkri" path="res://Assets/Buttons/runAD_buttongray.png" id="16_klq0l"]
+[ext_resource type="Texture2D" uid="uid://duv4cc3qp05g4" path="res://Assets/Icons/investor01.png" id="22_bbfm0"]
+[ext_resource type="Texture2D" uid="uid://fdnn4of6thpb" path="res://Assets/Icons/publicity_.png" id="23_3j33y"]
 
 [node name="NorthernPlainsPopup" type="Control"]
 layout_mode = 3
@@ -11,13 +32,521 @@ offset_right = 0.511963
 offset_bottom = 0.18396
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_sbhfh")
+group = ExtResource("2_eradi")
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(400, 199)
-scale = Vector2(6.28125, 3.15625)
-texture = ExtResource("1_ednfd")
+[node name="PopupBaseBkgd" parent="." instance=ExtResource("2_8m3w5")]
 
 [node name="NorthernPlains" type="Sprite2D" parent="."]
-position = Vector2(171, 205)
-scale = Vector2(0.268, 0.268)
-texture = ExtResource("2_vk0xy")
+position = Vector2(262, 199)
+scale = Vector2(0.871298, 0.871298)
+texture = ExtResource("3_fpbsq")
+
+[node name="Cities" type="Node" parent="."]
+
+[node name="Fargo" type="TextureButton" parent="Cities"]
+offset_left = 254.0
+offset_top = 73.0
+offset_right = 286.0
+offset_bottom = 105.0
+toggle_mode = true
+button_group = ExtResource("2_eradi")
+texture_normal = ExtResource("5_pwn33")
+texture_pressed = ExtResource("6_4wqqf")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("7_eulqh")
+
+[node name="Bar" type="ProgressBar" parent="Cities/Fargo"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 32.0
+offset_top = 33.0
+offset_right = 36.0
+offset_bottom = 65.0
+rotation = 1.5708
+max_value = 0.0
+fill_mode = 2
+show_percentage = false
+
+[node name="Player" parent="Cities/Fargo" instance=ExtResource("7_jqg27")]
+visible = false
+show_behind_parent = true
+offset_left = 15.0
+offset_top = -6.0
+offset_right = 15.0
+offset_bottom = -6.0
+
+[node name="FBI" parent="Cities/Fargo" instance=ExtResource("8_n1oso")]
+visible = false
+offset_top = 12.0
+offset_bottom = 12.0
+
+[node name="Name" type="Label" parent="Cities/Fargo"]
+layout_mode = 0
+offset_left = -237.0
+offset_top = 7.0
+offset_right = -6.0
+offset_bottom = 37.0
+theme_override_colors/font_color = Color(0.0196078, 0.0196078, 0.0196078, 0.509804)
+theme_override_fonts/font = ExtResource("9_60md3")
+theme_override_font_sizes/font_size = 24
+text = "<NAME>"
+horizontal_alignment = 2
+vertical_alignment = 1
+uppercase = true
+
+[node name="Sioux Falls" type="TextureButton" parent="Cities"]
+offset_left = 259.0
+offset_top = 207.0
+offset_right = 291.0
+offset_bottom = 239.0
+toggle_mode = true
+button_group = ExtResource("2_eradi")
+texture_normal = ExtResource("5_pwn33")
+texture_pressed = ExtResource("6_4wqqf")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("11_ky233")
+
+[node name="Bar" type="ProgressBar" parent="Cities/Sioux Falls"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 32.0
+offset_top = 33.0
+offset_right = 36.0
+offset_bottom = 65.0
+rotation = 1.5708
+max_value = 0.0
+fill_mode = 2
+show_percentage = false
+
+[node name="Player" parent="Cities/Sioux Falls" instance=ExtResource("7_jqg27")]
+visible = false
+show_behind_parent = true
+offset_left = 15.0
+offset_top = -6.0
+offset_right = 15.0
+offset_bottom = -6.0
+
+[node name="FBI" parent="Cities/Sioux Falls" instance=ExtResource("8_n1oso")]
+visible = false
+offset_top = 12.0
+offset_bottom = 12.0
+
+[node name="Name" type="Label" parent="Cities/Sioux Falls"]
+layout_mode = 0
+offset_left = -234.0
+offset_top = -4.0
+offset_right = -13.0
+offset_bottom = 26.0
+theme_override_colors/font_color = Color(0.0196078, 0.0196078, 0.0196078, 0.509804)
+theme_override_fonts/font = ExtResource("9_60md3")
+theme_override_font_sizes/font_size = 24
+text = "<NAME>"
+horizontal_alignment = 2
+vertical_alignment = 1
+uppercase = true
+
+[node name="Omaha" type="TextureButton" parent="Cities"]
+offset_left = 278.0
+offset_top = 307.0
+offset_right = 310.0
+offset_bottom = 339.0
+toggle_mode = true
+button_group = ExtResource("2_eradi")
+texture_normal = ExtResource("5_pwn33")
+texture_pressed = ExtResource("6_4wqqf")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("12_vfaie")
+
+[node name="Bar" type="ProgressBar" parent="Cities/Omaha"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 32.0
+offset_top = 33.0
+offset_right = 36.0
+offset_bottom = 65.0
+rotation = 1.5708
+max_value = 0.0
+fill_mode = 2
+show_percentage = false
+
+[node name="Player" parent="Cities/Omaha" instance=ExtResource("7_jqg27")]
+visible = false
+show_behind_parent = true
+offset_left = 14.0
+offset_top = -6.0
+offset_right = 14.0
+offset_bottom = -6.0
+
+[node name="FBI" parent="Cities/Omaha" instance=ExtResource("8_n1oso")]
+visible = false
+offset_top = 12.0
+offset_bottom = 12.0
+
+[node name="Name" type="Label" parent="Cities/Omaha"]
+layout_mode = 0
+offset_left = -197.0
+offset_top = 1.0
+offset_right = -5.0
+offset_bottom = 31.0
+theme_override_colors/font_color = Color(0.0196078, 0.0196078, 0.0196078, 0.509804)
+theme_override_fonts/font = ExtResource("9_60md3")
+theme_override_font_sizes/font_size = 24
+text = "<NAME>"
+horizontal_alignment = 2
+vertical_alignment = 1
+uppercase = true
+
+[node name="Des Moines" type="TextureButton" parent="Cities"]
+offset_left = 354.0
+offset_top = 278.0
+offset_right = 386.0
+offset_bottom = 310.0
+toggle_mode = true
+button_group = ExtResource("2_eradi")
+texture_normal = ExtResource("5_pwn33")
+texture_pressed = ExtResource("6_4wqqf")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("13_hpduu")
+
+[node name="Bar" type="ProgressBar" parent="Cities/Des Moines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 32.0
+offset_top = 33.0
+offset_right = 36.0
+offset_bottom = 65.0
+rotation = 1.5708
+max_value = 0.0
+fill_mode = 2
+show_percentage = false
+
+[node name="Player" parent="Cities/Des Moines" instance=ExtResource("7_jqg27")]
+visible = false
+show_behind_parent = true
+offset_left = 14.0
+offset_top = -6.0
+offset_right = 14.0
+offset_bottom = -6.0
+
+[node name="FBI" parent="Cities/Des Moines" instance=ExtResource("8_n1oso")]
+visible = false
+offset_top = 12.0
+offset_bottom = 12.0
+
+[node name="Name" type="Label" parent="Cities/Des Moines"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 32.0
+offset_right = 105.0
+offset_bottom = 62.0
+theme_override_colors/font_color = Color(0.0196078, 0.0196078, 0.0196078, 0.509804)
+theme_override_fonts/font = ExtResource("9_60md3")
+theme_override_font_sizes/font_size = 24
+text = "<NAME>"
+vertical_alignment = 1
+uppercase = true
+
+[node name="Minneapolis" type="TextureButton" parent="Cities"]
+offset_left = 348.0
+offset_top = 153.0
+offset_right = 380.0
+offset_bottom = 185.0
+toggle_mode = true
+button_group = ExtResource("2_eradi")
+texture_normal = ExtResource("5_pwn33")
+texture_pressed = ExtResource("6_4wqqf")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("14_djapc")
+
+[node name="Bar" type="ProgressBar" parent="Cities/Minneapolis"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 32.0
+offset_top = 33.0
+offset_right = 36.0
+offset_bottom = 65.0
+rotation = 1.5708
+max_value = 0.0
+fill_mode = 2
+show_percentage = false
+
+[node name="Player" parent="Cities/Minneapolis" instance=ExtResource("7_jqg27")]
+visible = false
+show_behind_parent = true
+offset_left = 15.0
+offset_top = -6.0
+offset_right = 15.0
+offset_bottom = -6.0
+
+[node name="FBI" parent="Cities/Minneapolis" instance=ExtResource("8_n1oso")]
+visible = false
+offset_top = 12.0
+offset_bottom = 12.0
+
+[node name="Name" type="Label" parent="Cities/Minneapolis"]
+layout_mode = 0
+offset_left = -28.0
+offset_top = 38.0
+offset_right = 112.0
+offset_bottom = 68.0
+theme_override_colors/font_color = Color(0.0196078, 0.0196078, 0.0196078, 0.509804)
+theme_override_fonts/font = ExtResource("9_60md3")
+theme_override_font_sizes/font_size = 24
+text = "<NAME>"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="CityHQ" type="Node" parent="."]
+
+[node name="Fargo" parent="CityHQ" instance=ExtResource("10_gpyyh")]
+visible = false
+position = Vector2(264, 113)
+
+[node name="Sioux Falls" parent="CityHQ" instance=ExtResource("10_gpyyh")]
+visible = false
+position = Vector2(262, 243)
+
+[node name="Omaha" parent="CityHQ" instance=ExtResource("10_gpyyh")]
+visible = false
+position = Vector2(280, 338)
+
+[node name="Des Moines" parent="CityHQ" instance=ExtResource("10_gpyyh")]
+visible = false
+position = Vector2(360, 309)
+
+[node name="Minneapolis" parent="CityHQ" instance=ExtResource("10_gpyyh")]
+visible = false
+position = Vector2(372, 188)
+
+[node name="Data" type="Node" parent="."]
+
+[node name="INVESTORS" type="Label" parent="Data"]
+offset_left = 614.0
+offset_top = 6.0
+offset_right = 700.0
+offset_bottom = 29.0
+theme_override_colors/font_color = Color(0.137255, 0.137255, 0.137255, 1)
+theme_override_fonts/font = ExtResource("9_60md3")
+text = "INVESTORS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SelectedCity" type="Label" parent="Data"]
+offset_left = 517.0
+offset_top = 209.0
+offset_right = 798.0
+offset_bottom = 232.0
+theme_override_colors/font_color = Color(0.137255, 0.137255, 0.137255, 1)
+theme_override_fonts/font = ExtResource("9_60md3")
+text = "Selected: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HQCost" type="Label" parent="Data"]
+offset_left = 525.0
+offset_top = 258.0
+offset_right = 790.0
+offset_bottom = 281.0
+theme_override_colors/font_color = Color(0.137255, 0.137255, 0.137255, 1)
+theme_override_fonts/font = ExtResource("9_60md3")
+text = "HQ cost: 0"
+vertical_alignment = 1
+
+[node name="Population" type="Label" parent="Data"]
+offset_left = 525.0
+offset_top = 236.0
+offset_right = 790.0
+offset_bottom = 259.0
+theme_override_colors/font_color = Color(0.137255, 0.137255, 0.137255, 1)
+theme_override_fonts/font = ExtResource("9_60md3")
+text = "Population: 0"
+vertical_alignment = 1
+
+[node name="Tier3Invest" type="Label" parent="Data"]
+offset_left = 524.0
+offset_top = 30.0
+offset_right = 789.0
+offset_bottom = 53.0
+theme_override_colors/font_color = Color(0.137255, 0.137255, 0.137255, 1)
+theme_override_fonts/font = ExtResource("9_60md3")
+text = "Tier 3: 0"
+vertical_alignment = 1
+
+[node name="Tier2Invest" type="Label" parent="Data"]
+offset_left = 524.0
+offset_top = 54.0
+offset_right = 789.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0.137255, 0.137255, 0.137255, 1)
+theme_override_fonts/font = ExtResource("9_60md3")
+text = "Tier 2: 0"
+vertical_alignment = 1
+
+[node name="Tier1Invest" type="Label" parent="Data"]
+offset_left = 524.0
+offset_top = 78.0
+offset_right = 789.0
+offset_bottom = 101.0
+theme_override_colors/font_color = Color(0.137255, 0.137255, 0.137255, 1)
+theme_override_fonts/font = ExtResource("9_60md3")
+text = "Tier 1: 0"
+vertical_alignment = 1
+
+[node name="RegionPopulation" type="Label" parent="Data"]
+offset_left = 524.0
+offset_top = 106.0
+offset_right = 789.0
+offset_bottom = 129.0
+theme_override_colors/font_color = Color(0.137255, 0.137255, 0.137255, 1)
+theme_override_fonts/font = ExtResource("9_60md3")
+text = "Region Population: "
+vertical_alignment = 1
+
+[node name="Publicity" type="Label" parent="Data"]
+offset_left = 524.0
+offset_top = 129.0
+offset_right = 789.0
+offset_bottom = 152.0
+theme_override_colors/font_color = Color(0.137255, 0.137255, 0.137255, 1)
+theme_override_fonts/font = ExtResource("9_60md3")
+text = "Publicity: 5"
+vertical_alignment = 1
+
+[node name="AdCost" type="Label" parent="Data"]
+offset_left = 648.0
+offset_top = 162.0
+offset_right = 769.0
+offset_bottom = 185.0
+theme_override_colors/font_color = Color(0.137255, 0.137255, 0.137255, 1)
+theme_override_fonts/font = ExtResource("9_60md3")
+text = "$0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Build_HQ" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 607.0
+offset_top = 291.0
+offset_right = 707.0
+offset_bottom = 331.0
+texture_normal = ExtResource("11_nj2hj")
+texture_disabled = ExtResource("12_5ctvs")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Travel" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 607.0
+offset_top = 344.0
+offset_right = 707.0
+offset_bottom = 384.0
+texture_normal = ExtResource("13_3b3ke")
+texture_disabled = ExtResource("14_ay03y")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Bar" type="ProgressBar" parent="Travel"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 97.0
+offset_top = 41.0
+offset_right = 101.0
+offset_bottom = 135.0
+rotation = 1.5708
+max_value = 0.0
+fill_mode = 2
+show_percentage = false
+
+[node name="Run_Ads" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 545.0
+offset_top = 153.0
+offset_right = 645.0
+offset_bottom = 193.0
+texture_normal = ExtResource("15_b67n5")
+texture_disabled = ExtResource("16_klq0l")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Bar" type="ProgressBar" parent="Run_Ads"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 97.0
+offset_top = 41.0
+offset_right = 101.0
+offset_bottom = 135.0
+rotation = 1.5708
+max_value = 0.0
+fill_mode = 2
+show_percentage = false
+
+[node name="Investors" type="Node" parent="."]
+
+[node name="InvestorDood" type="TextureRect" parent="Investors"]
+offset_left = 735.0
+offset_top = 34.0
+offset_right = 755.0
+offset_bottom = 74.0
+texture = ExtResource("22_bbfm0")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="InvestorDood2" type="TextureRect" parent="Investors"]
+offset_left = 751.0
+offset_top = 38.0
+offset_right = 771.0
+offset_bottom = 78.0
+texture = ExtResource("22_bbfm0")
+expand_mode = 1
+flip_h = true
+metadata/_edit_use_anchors_ = true
+
+[node name="InvestorDood3" type="TextureRect" parent="Investors"]
+offset_left = 721.0
+offset_top = 42.0
+offset_right = 741.0
+offset_bottom = 82.0
+texture = ExtResource("22_bbfm0")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="InvestorDood4" type="TextureRect" parent="Investors"]
+offset_left = 730.0
+offset_top = 52.0
+offset_right = 750.0
+offset_bottom = 92.0
+texture = ExtResource("22_bbfm0")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="InvestorDood5" type="TextureRect" parent="Investors"]
+offset_left = 741.0
+offset_top = 56.0
+offset_right = 761.0
+offset_bottom = 96.0
+texture = ExtResource("22_bbfm0")
+expand_mode = 1
+flip_h = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Publicity" type="Sprite2D" parent="."]
+position = Vector2(642, 139)
+texture = ExtResource("23_3j33y")
+
+[connection signal="pressed" from="Build_HQ" to="." method="_on_build_hq_pressed"]
+[connection signal="pressed" from="Travel" to="." method="_on_travel_pressed"]
+[connection signal="pressed" from="Run_Ads" to="." method="_on_run_ads_pressed"]

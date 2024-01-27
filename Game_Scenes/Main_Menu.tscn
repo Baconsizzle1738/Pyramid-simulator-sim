@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dqedknamwrxhk"]
+[gd_scene load_steps=8 format=3 uid="uid://dqedknamwrxhk"]
 
 [ext_resource type="Script" path="res://Scripts/Scene_Scripts/Main_Menu.gd" id="1_yqqyg"]
 [ext_resource type="Texture2D" uid="uid://dbnjd0h7mxpbl" path="res://Assets/Buttons/startButton_ver02.png" id="2_bntoj"]
+[ext_resource type="Texture2D" uid="uid://c6lax7gyl8wlb" path="res://Assets/Background/menu_background.png" id="2_h4rag"]
 [ext_resource type="Texture2D" uid="uid://cm87h065t4hu4" path="res://Assets/Buttons/startButton_hover.png" id="3_s1vxq"]
 [ext_resource type="Texture2D" uid="uid://c2hxhhh3ersci" path="res://Assets/Buttons/quitButton.png" id="4_5fm7l"]
 [ext_resource type="Texture2D" uid="uid://c1lsisipwf7u0" path="res://Assets/Buttons/quitButton_hover.png" id="5_ofyu5"]
@@ -9,6 +10,10 @@
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_yqqyg")
+
+[node name="MenuBackground" type="Sprite2D" parent="."]
+position = Vector2(581, 341)
+texture = ExtResource("2_h4rag")
 
 [node name="Start_Button" type="TextureButton" parent="."]
 offset_left = 433.0

@@ -5,6 +5,7 @@ extends "res://Scripts/Basic_City_Data.gd"
 func _ready():
 	population = 4018762
 	HQBaseCost = population * HQ_COST_MULT
+	$Name.text = self.get_name()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

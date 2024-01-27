@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bqyrm64h4oen4"]
+[gd_scene load_steps=9 format=3 uid="uid://bqyrm64h4oen4"]
 
 [ext_resource type="Script" path="res://Scripts/Scene_Scripts/Event_Base.gd" id="1_2lj4v"]
 [ext_resource type="Texture2D" uid="uid://j6hqv3xkjucu" path="res://Assets/misc/frameTexture.png" id="2_3fl4m"]
 [ext_resource type="Texture2D" uid="uid://d0hcayid81rte" path="res://Assets/Temp/icon.svg" id="3_8a02k"]
-[ext_resource type="Texture2D" uid="uid://gkx34squpgd" path="res://Assets/Buttons/generic_button.png" id="4_l8d2h"]
-[ext_resource type="Texture2D" uid="uid://dg2bti02pie76" path="res://Assets/Temp/placeholder1.png" id="5_n3vb6"]
+[ext_resource type="FontFile" uid="uid://c0lbxj5nritok" path="res://Assets/misc/GFSDidot-Regular.ttf" id="3_xb12g"]
+[ext_resource type="Texture2D" uid="uid://d06yneieehopx" path="res://Assets/Buttons/generic_border.png" id="4_il3ev"]
+[ext_resource type="Texture2D" uid="uid://tj3qxiqiansy" path="res://Assets/Buttons/generic_noBorder.png" id="5_c1f8q"]
 
 [sub_resource type="Theme" id="Theme_sjrd7"]
 default_font_size = 26
@@ -47,6 +48,8 @@ offset_bottom = 476.0
 [node name="Title" type="Label" parent="NinePatchRect/VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_sjrd7")
+theme_override_colors/font_color = Color(0.137255, 0.137255, 0.137255, 1)
+theme_override_fonts/font = ExtResource("3_xb12g")
 text = "<TITLE>"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -62,6 +65,8 @@ expand_mode = 1
 custom_minimum_size = Vector2(340, 150)
 layout_mode = 2
 theme = SubResource("Theme_pgp5d")
+theme_override_colors/font_color = Color(0.137255, 0.137255, 0.137255, 1)
+theme_override_fonts/font = ExtResource("3_xb12g")
 text = "<ARTICLE INFO IDK>"
 horizontal_alignment = 1
 autowrap_mode = 3
@@ -74,8 +79,8 @@ offset_top = 432.0
 offset_right = 300.0
 offset_bottom = 472.0
 keep_pressed_outside = true
-texture_normal = ExtResource("4_l8d2h")
-texture_pressed = ExtResource("5_n3vb6")
+texture_normal = ExtResource("4_il3ev")
+texture_pressed = ExtResource("5_c1f8q")
 ignore_texture_size = true
 
 [node name="ButtonText" type="Label" parent="NinePatchRect/CloseButton"]
@@ -88,6 +93,8 @@ offset_top = -11.5
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.137255, 0.137255, 0.137255, 1)
+theme_override_fonts/font = ExtResource("3_xb12g")
 text = "<text>"
 horizontal_alignment = 1
 vertical_alignment = 1

@@ -1,7 +1,28 @@
-[gd_scene load_steps=3 format=3 uid="uid://born4gq235enn"]
+[gd_scene load_steps=24 format=3 uid="uid://born4gq235enn"]
 
-[ext_resource type="Texture2D" uid="uid://d0hcayid81rte" path="res://Assets/Temp/icon.svg" id="1_x1ksf"]
-[ext_resource type="Texture2D" uid="uid://dg2bti02pie76" path="res://Assets/Temp/placeholder1.png" id="2_eiv3u"]
+[ext_resource type="Script" path="res://Scripts/Popup_Scripts/Northern_Atlantic_Popup.gd" id="1_dkh1g"]
+[ext_resource type="PackedScene" uid="uid://dmlrmano2ig6n" path="res://Game_Scenes/Popup_Base_Bkgd.tscn" id="1_fudc5"]
+[ext_resource type="ButtonGroup" uid="uid://dffu6qyinggbg" path="res://Assets/Button_Groups/North_Atlantic_Cities.tres" id="2_4kqk3"]
+[ext_resource type="Texture2D" uid="uid://bqr6f7dyj5krx" path="res://Assets/Map_Graphics/Default_State/darkBlueRegion_ponziProject.png" id="2_rq3w0"]
+[ext_resource type="Texture2D" uid="uid://dyhbbckckyneg" path="res://Assets/City_Marker/cityMarker_darkBlue.png" id="5_0l88l"]
+[ext_resource type="Texture2D" uid="uid://di3gxkrylpkrl" path="res://Assets/City_Marker/shadowDBlue.png" id="6_icii2"]
+[ext_resource type="PackedScene" uid="uid://efbeq0ykeep8" path="res://Game_Scenes/Player_Icon.tscn" id="7_r76wd"]
+[ext_resource type="Script" path="res://Scripts/Button_Scripts/Buffalo.gd" id="7_yv42i"]
+[ext_resource type="PackedScene" uid="uid://vxmd7yu1i36h" path="res://Game_Scenes/FBI_Icon.tscn" id="8_2qx5a"]
+[ext_resource type="FontFile" uid="uid://c0lbxj5nritok" path="res://Assets/misc/GFSDidot-Regular.ttf" id="9_33mmp"]
+[ext_resource type="Script" path="res://Scripts/Button_Scripts/New York.gd" id="11_1jvmq"]
+[ext_resource type="Script" path="res://Scripts/Button_Scripts/Pittsburgh.gd" id="12_43tto"]
+[ext_resource type="Script" path="res://Scripts/Button_Scripts/Philadelphia.gd" id="13_uicpc"]
+[ext_resource type="Script" path="res://Scripts/Button_Scripts/Washington DC.gd" id="14_qe1k2"]
+[ext_resource type="PackedScene" uid="uid://sj3vbrki06d2" path="res://Game_Scenes/HQ.tscn" id="14_wyalm"]
+[ext_resource type="Texture2D" uid="uid://d7olc657okom" path="res://Assets/Buttons/buildHQ_button.png" id="15_vte6o"]
+[ext_resource type="Texture2D" uid="uid://00gyfh26ml1" path="res://Assets/Buttons/buildHQ_greyButton.png" id="16_skoyg"]
+[ext_resource type="Texture2D" uid="uid://bfr8iwl6cx6u3" path="res://Assets/Buttons/travel_button.png" id="17_af3ku"]
+[ext_resource type="Texture2D" uid="uid://b4b3ft0lrhms4" path="res://Assets/Buttons/travel_greyButton.png" id="18_w30kd"]
+[ext_resource type="Texture2D" uid="uid://bvxawwah5nod0" path="res://Assets/Buttons/runAD_button.png" id="19_6omcn"]
+[ext_resource type="Texture2D" uid="uid://r170wkq1dkri" path="res://Assets/Buttons/runAD_buttongray.png" id="20_1414y"]
+[ext_resource type="Texture2D" uid="uid://duv4cc3qp05g4" path="res://Assets/Icons/investor01.png" id="22_xxwyx"]
+[ext_resource type="Texture2D" uid="uid://fdnn4of6thpb" path="res://Assets/Icons/publicity_.png" id="23_1uiee"]
 
 [node name="NorthernAtlanticPopup" type="Control"]
 layout_mode = 3
@@ -11,13 +32,518 @@ offset_right = 0.511963
 offset_bottom = 0.18396
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_dkh1g")
+group = ExtResource("2_4kqk3")
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(399, 199)
-scale = Vector2(6.23438, 3.10938)
-texture = ExtResource("1_x1ksf")
+[node name="PopupBaseBkgd" parent="." instance=ExtResource("1_fudc5")]
 
-[node name="Placeholder1" type="Sprite2D" parent="."]
-position = Vector2(189, 206)
-scale = Vector2(0.358667, 0.358667)
-texture = ExtResource("2_eiv3u")
+[node name="NorthAtlanticRegion" type="Sprite2D" parent="."]
+position = Vector2(248, 175)
+rotation = 0.47822
+scale = Vector2(1.2032, 1.2032)
+texture = ExtResource("2_rq3w0")
+
+[node name="Cities" type="Node" parent="."]
+
+[node name="Buffalo" type="TextureButton" parent="Cities"]
+offset_left = 141.0
+offset_top = 69.0
+offset_right = 173.0
+offset_bottom = 101.0
+toggle_mode = true
+button_group = ExtResource("2_4kqk3")
+texture_normal = ExtResource("5_0l88l")
+texture_pressed = ExtResource("6_icii2")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("7_yv42i")
+
+[node name="Bar" type="ProgressBar" parent="Cities/Buffalo"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 32.0
+offset_top = 33.0
+offset_right = 36.0
+offset_bottom = 65.0
+rotation = 1.5708
+max_value = 0.0
+fill_mode = 2
+show_percentage = false
+
+[node name="Player" parent="Cities/Buffalo" instance=ExtResource("7_r76wd")]
+visible = false
+show_behind_parent = true
+offset_left = 15.0
+offset_top = -6.0
+offset_right = 15.0
+offset_bottom = -6.0
+
+[node name="FBI" parent="Cities/Buffalo" instance=ExtResource("8_2qx5a")]
+visible = false
+offset_top = 12.0
+offset_bottom = 12.0
+
+[node name="Name" type="Label" parent="Cities/Buffalo"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 17.0
+offset_right = 228.0
+offset_bottom = 47.0
+theme_override_colors/font_color = Color(0.0196078, 0.0196078, 0.0196078, 0.509804)
+theme_override_fonts/font = ExtResource("9_33mmp")
+theme_override_font_sizes/font_size = 24
+text = "<NAME>"
+vertical_alignment = 1
+uppercase = true
+
+[node name="New York" type="TextureButton" parent="Cities"]
+offset_left = 326.0
+offset_top = 207.0
+offset_right = 358.0
+offset_bottom = 239.0
+toggle_mode = true
+button_group = ExtResource("2_4kqk3")
+texture_normal = ExtResource("5_0l88l")
+texture_pressed = ExtResource("6_icii2")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("11_1jvmq")
+
+[node name="Bar" type="ProgressBar" parent="Cities/New York"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 32.0
+offset_top = 33.0
+offset_right = 36.0
+offset_bottom = 65.0
+rotation = 1.5708
+max_value = 0.0
+fill_mode = 2
+show_percentage = false
+
+[node name="Player" parent="Cities/New York" instance=ExtResource("7_r76wd")]
+visible = false
+show_behind_parent = true
+offset_left = 15.0
+offset_top = -6.0
+offset_right = 15.0
+offset_bottom = -6.0
+
+[node name="FBI" parent="Cities/New York" instance=ExtResource("8_2qx5a")]
+visible = false
+offset_top = 12.0
+offset_bottom = 12.0
+
+[node name="Name" type="Label" parent="Cities/New York"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = -20.0
+offset_right = 244.0
+offset_bottom = 10.0
+theme_override_colors/font_color = Color(0.0196078, 0.0196078, 0.0196078, 0.509804)
+theme_override_fonts/font = ExtResource("9_33mmp")
+theme_override_font_sizes/font_size = 24
+text = "<NAME>"
+vertical_alignment = 1
+uppercase = true
+
+[node name="Pittsburgh" type="TextureButton" parent="Cities"]
+offset_left = 61.0
+offset_top = 193.0
+offset_right = 93.0
+offset_bottom = 225.0
+toggle_mode = true
+button_group = ExtResource("2_4kqk3")
+texture_normal = ExtResource("5_0l88l")
+texture_pressed = ExtResource("6_icii2")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("12_43tto")
+
+[node name="Bar" type="ProgressBar" parent="Cities/Pittsburgh"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 32.0
+offset_top = 33.0
+offset_right = 36.0
+offset_bottom = 65.0
+rotation = 1.5708
+max_value = 0.0
+fill_mode = 2
+show_percentage = false
+
+[node name="Player" parent="Cities/Pittsburgh" instance=ExtResource("7_r76wd")]
+visible = false
+show_behind_parent = true
+offset_left = 14.0
+offset_top = -6.0
+offset_right = 14.0
+offset_bottom = -6.0
+
+[node name="FBI" parent="Cities/Pittsburgh" instance=ExtResource("8_2qx5a")]
+visible = false
+offset_top = 12.0
+offset_bottom = 12.0
+
+[node name="Name" type="Label" parent="Cities/Pittsburgh"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 14.0
+offset_right = 222.0
+offset_bottom = 44.0
+theme_override_colors/font_color = Color(0.0196078, 0.0196078, 0.0196078, 0.509804)
+theme_override_fonts/font = ExtResource("9_33mmp")
+theme_override_font_sizes/font_size = 24
+text = "<NAME>"
+vertical_alignment = 1
+uppercase = true
+
+[node name="Philadelphia" type="TextureButton" parent="Cities"]
+offset_left = 251.0
+offset_top = 252.0
+offset_right = 283.0
+offset_bottom = 284.0
+toggle_mode = true
+button_group = ExtResource("2_4kqk3")
+texture_normal = ExtResource("5_0l88l")
+texture_pressed = ExtResource("6_icii2")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("13_uicpc")
+
+[node name="Bar" type="ProgressBar" parent="Cities/Philadelphia"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 32.0
+offset_top = 33.0
+offset_right = 36.0
+offset_bottom = 65.0
+rotation = 1.5708
+max_value = 0.0
+fill_mode = 2
+show_percentage = false
+
+[node name="Player" parent="Cities/Philadelphia" instance=ExtResource("7_r76wd")]
+visible = false
+show_behind_parent = true
+offset_left = 14.0
+offset_top = -6.0
+offset_right = 14.0
+offset_bottom = -6.0
+
+[node name="FBI" parent="Cities/Philadelphia" instance=ExtResource("8_2qx5a")]
+visible = false
+offset_top = 12.0
+offset_bottom = 12.0
+
+[node name="Name" type="Label" parent="Cities/Philadelphia"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 6.0
+offset_right = 182.0
+offset_bottom = 36.0
+theme_override_colors/font_color = Color(0.0196078, 0.0196078, 0.0196078, 0.509804)
+theme_override_fonts/font = ExtResource("9_33mmp")
+theme_override_font_sizes/font_size = 24
+text = "<NAME>"
+vertical_alignment = 1
+uppercase = true
+
+[node name="Washington DC" type="TextureButton" parent="Cities"]
+offset_left = 170.0
+offset_top = 296.0
+offset_right = 202.0
+offset_bottom = 328.0
+toggle_mode = true
+button_group = ExtResource("2_4kqk3")
+texture_normal = ExtResource("5_0l88l")
+texture_pressed = ExtResource("6_icii2")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("14_qe1k2")
+
+[node name="Bar" type="ProgressBar" parent="Cities/Washington DC"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 32.0
+offset_top = 33.0
+offset_right = 36.0
+offset_bottom = 65.0
+rotation = 1.5708
+max_value = 0.0
+fill_mode = 2
+show_percentage = false
+
+[node name="Player" parent="Cities/Washington DC" instance=ExtResource("7_r76wd")]
+visible = false
+show_behind_parent = true
+offset_left = 15.0
+offset_top = -6.0
+offset_right = 15.0
+offset_bottom = -6.0
+
+[node name="FBI" parent="Cities/Washington DC" instance=ExtResource("8_2qx5a")]
+visible = false
+offset_top = 12.0
+offset_bottom = 12.0
+
+[node name="Name" type="Label" parent="Cities/Washington DC"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 11.0
+offset_right = 170.0
+offset_bottom = 41.0
+theme_override_colors/font_color = Color(0.0196078, 0.0196078, 0.0196078, 0.509804)
+theme_override_fonts/font = ExtResource("9_33mmp")
+theme_override_font_sizes/font_size = 24
+text = "<NAME>"
+vertical_alignment = 1
+uppercase = true
+
+[node name="CityHQ" type="Node" parent="."]
+
+[node name="Buffalo" parent="CityHQ" instance=ExtResource("14_wyalm")]
+visible = false
+position = Vector2(145, 102)
+
+[node name="New York" parent="CityHQ" instance=ExtResource("14_wyalm")]
+visible = false
+position = Vector2(353, 244)
+
+[node name="Pittsburgh" parent="CityHQ" instance=ExtResource("14_wyalm")]
+visible = false
+position = Vector2(65, 225)
+
+[node name="Philadelphia" parent="CityHQ" instance=ExtResource("14_wyalm")]
+visible = false
+position = Vector2(256, 283)
+
+[node name="Washington DC" parent="CityHQ" instance=ExtResource("14_wyalm")]
+visible = false
+position = Vector2(183, 334)
+
+[node name="Data" type="Node" parent="."]
+
+[node name="INVESTORS" type="Label" parent="Data"]
+offset_left = 614.0
+offset_top = 6.0
+offset_right = 700.0
+offset_bottom = 29.0
+theme_override_colors/font_color = Color(0.137255, 0.137255, 0.137255, 1)
+theme_override_fonts/font = ExtResource("9_33mmp")
+text = "INVESTORS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SelectedCity" type="Label" parent="Data"]
+offset_left = 517.0
+offset_top = 209.0
+offset_right = 798.0
+offset_bottom = 232.0
+theme_override_colors/font_color = Color(0.137255, 0.137255, 0.137255, 1)
+theme_override_fonts/font = ExtResource("9_33mmp")
+text = "Selected: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HQCost" type="Label" parent="Data"]
+offset_left = 525.0
+offset_top = 258.0
+offset_right = 790.0
+offset_bottom = 281.0
+theme_override_colors/font_color = Color(0.137255, 0.137255, 0.137255, 1)
+theme_override_fonts/font = ExtResource("9_33mmp")
+text = "HQ cost: 0"
+vertical_alignment = 1
+
+[node name="Population" type="Label" parent="Data"]
+offset_left = 525.0
+offset_top = 236.0
+offset_right = 790.0
+offset_bottom = 259.0
+theme_override_colors/font_color = Color(0.137255, 0.137255, 0.137255, 1)
+theme_override_fonts/font = ExtResource("9_33mmp")
+text = "Population: 0"
+vertical_alignment = 1
+
+[node name="Tier3Invest" type="Label" parent="Data"]
+offset_left = 524.0
+offset_top = 30.0
+offset_right = 789.0
+offset_bottom = 53.0
+theme_override_colors/font_color = Color(0.137255, 0.137255, 0.137255, 1)
+theme_override_fonts/font = ExtResource("9_33mmp")
+text = "Tier 3: 0"
+vertical_alignment = 1
+
+[node name="Tier2Invest" type="Label" parent="Data"]
+offset_left = 524.0
+offset_top = 54.0
+offset_right = 789.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0.137255, 0.137255, 0.137255, 1)
+theme_override_fonts/font = ExtResource("9_33mmp")
+text = "Tier 2: 0"
+vertical_alignment = 1
+
+[node name="Tier1Invest" type="Label" parent="Data"]
+offset_left = 524.0
+offset_top = 78.0
+offset_right = 789.0
+offset_bottom = 101.0
+theme_override_colors/font_color = Color(0.137255, 0.137255, 0.137255, 1)
+theme_override_fonts/font = ExtResource("9_33mmp")
+text = "Tier 1: 0"
+vertical_alignment = 1
+
+[node name="RegionPopulation" type="Label" parent="Data"]
+offset_left = 524.0
+offset_top = 106.0
+offset_right = 789.0
+offset_bottom = 129.0
+theme_override_colors/font_color = Color(0.137255, 0.137255, 0.137255, 1)
+theme_override_fonts/font = ExtResource("9_33mmp")
+text = "Region Population: "
+vertical_alignment = 1
+
+[node name="Publicity" type="Label" parent="Data"]
+offset_left = 524.0
+offset_top = 129.0
+offset_right = 789.0
+offset_bottom = 152.0
+theme_override_colors/font_color = Color(0.137255, 0.137255, 0.137255, 1)
+theme_override_fonts/font = ExtResource("9_33mmp")
+text = "Publicity: 5"
+vertical_alignment = 1
+
+[node name="AdCost" type="Label" parent="Data"]
+offset_left = 648.0
+offset_top = 162.0
+offset_right = 769.0
+offset_bottom = 185.0
+theme_override_colors/font_color = Color(0.137255, 0.137255, 0.137255, 1)
+theme_override_fonts/font = ExtResource("9_33mmp")
+text = "$0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Build_HQ" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 607.0
+offset_top = 291.0
+offset_right = 707.0
+offset_bottom = 331.0
+texture_normal = ExtResource("15_vte6o")
+texture_disabled = ExtResource("16_skoyg")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Travel" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 607.0
+offset_top = 344.0
+offset_right = 707.0
+offset_bottom = 384.0
+texture_normal = ExtResource("17_af3ku")
+texture_disabled = ExtResource("18_w30kd")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Bar" type="ProgressBar" parent="Travel"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 97.0
+offset_top = 41.0
+offset_right = 101.0
+offset_bottom = 135.0
+rotation = 1.5708
+max_value = 0.0
+fill_mode = 2
+show_percentage = false
+
+[node name="Run_Ads" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 545.0
+offset_top = 153.0
+offset_right = 645.0
+offset_bottom = 193.0
+texture_normal = ExtResource("19_6omcn")
+texture_disabled = ExtResource("20_1414y")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Bar" type="ProgressBar" parent="Run_Ads"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 97.0
+offset_top = 41.0
+offset_right = 101.0
+offset_bottom = 135.0
+rotation = 1.5708
+max_value = 0.0
+fill_mode = 2
+show_percentage = false
+
+[node name="Investors" type="Node" parent="."]
+
+[node name="InvestorDood" type="TextureRect" parent="Investors"]
+offset_left = 735.0
+offset_top = 34.0
+offset_right = 755.0
+offset_bottom = 74.0
+texture = ExtResource("22_xxwyx")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="InvestorDood2" type="TextureRect" parent="Investors"]
+offset_left = 751.0
+offset_top = 38.0
+offset_right = 771.0
+offset_bottom = 78.0
+texture = ExtResource("22_xxwyx")
+expand_mode = 1
+flip_h = true
+metadata/_edit_use_anchors_ = true
+
+[node name="InvestorDood3" type="TextureRect" parent="Investors"]
+offset_left = 721.0
+offset_top = 42.0
+offset_right = 741.0
+offset_bottom = 82.0
+texture = ExtResource("22_xxwyx")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="InvestorDood4" type="TextureRect" parent="Investors"]
+offset_left = 730.0
+offset_top = 52.0
+offset_right = 750.0
+offset_bottom = 92.0
+texture = ExtResource("22_xxwyx")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="InvestorDood5" type="TextureRect" parent="Investors"]
+offset_left = 741.0
+offset_top = 56.0
+offset_right = 761.0
+offset_bottom = 96.0
+texture = ExtResource("22_xxwyx")
+expand_mode = 1
+flip_h = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Publicity" type="Sprite2D" parent="."]
+position = Vector2(642, 139)
+texture = ExtResource("23_1uiee")
+
+[connection signal="pressed" from="Build_HQ" to="." method="_on_build_hq_pressed"]
+[connection signal="pressed" from="Travel" to="." method="_on_travel_pressed"]
+[connection signal="pressed" from="Run_Ads" to="." method="_on_run_ads_pressed"]

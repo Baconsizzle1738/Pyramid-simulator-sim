@@ -72,7 +72,7 @@ func _process(delta):
 	if !GameData.choosing and !GameData.captured: #make !choosing later
 		timePast += delta
 		#print(delta)
-		if timePast >= 0.2: # tick game every "second" representing a "day"
+		if timePast >= 1.15: # tick game every "second" representing a "day"
 			#print("tick "+str(timePast))
 			
 			GameData.tick() # day go up
@@ -80,16 +80,35 @@ func _process(delta):
 			#cashout each region
 			if GameData.days >= GameData.START_CASHOUT and GameData.days%GameData.DEBT_PAYOUT_INTERVAL == 0:
 				$PacificWindow/PacificPopup.cashout()
-				
+				$NorthernRockiesWindow/NorthernRockiesPopup.cashout()
+				$SouthwestWindow/SouthwestPopup.cashout()
+				$NorthernPlainsWindow/NorthernPlainsPopup.cashout()
+				$SouthernPlainsWindow/SouthernPlainsPopup.cashout()
+				$GulfCoastWindow/GulfCoastPopup.cashout()
+				$MidwestWindow/MidwestPopup.cashout()
+				$AppalachiaWindow/AppalachiaPopup.cashout()
+				$SouthAtlanticWindow/SouthAtlanticPopup.cashout()
+				$NorthAtlanticWindow/NorthernAtlanticPopup.cashout()
+				$NewEnglandWindow/NewEnglandPopup.cashout()
 			
 			#FBI raid each region
 			if GameData.days%GameData.FBI_RAID_FREQ == 0:
 				var random = RandomNumberGenerator.new()
-				random = random.randi_range(PacificIDX, PacificIDX)
+				random = random.randi_range(PacificIDX, NewEnglandIDX)
 				self.get_child(random).get_child(0).raidCity()
 			
 			#tick each region
 			$PacificWindow/PacificPopup.tick()
+			$NorthernRockiesWindow/NorthernRockiesPopup.tick()
+			$SouthwestWindow/SouthwestPopup.tick()
+			$NorthernPlainsWindow/NorthernPlainsPopup.tick()
+			$SouthernPlainsWindow/SouthernPlainsPopup.tick()
+			$GulfCoastWindow/GulfCoastPopup.tick()
+			$MidwestWindow/MidwestPopup.tick()
+			$AppalachiaWindow/AppalachiaPopup.tick()
+			$SouthAtlanticWindow/SouthAtlanticPopup.tick()
+			$NorthAtlanticWindow/NorthernAtlanticPopup.tick()
+			$NewEnglandWindow/NewEnglandPopup.tick()
 			
 			#debt timer
 			GameData.debtDays -= 1
@@ -112,6 +131,7 @@ func _process(delta):
 			
 			print(GameData.debt)
 			if GameData.days%GameData.DEBT_PAYOUT_INTERVAL == 0 and GameData.debt>0:
+				GameData.AUDIO.get_child(1).play()
 				print("DEBT SHOW")
 				$Debt.visible = true
 				$Debt/Amount.text = "$"+GameData.numSuffix(GameData.debt)
@@ -137,6 +157,21 @@ func _process(delta):
 	# choose location banner visibility
 	$ChooseLocationBanner.visible = GameData.choosing
 
+
+func _input(event):
+	if event.is_action_pressed("ui_cancel"):
+		print("CLOSE")
+		_on_pacific_window_close_requested()
+		_on_northern_rockies_window_close_requested()
+		_on_southwest_window_close_requested()
+		_on_northern_plains_window_close_requested()
+		_on_southern_plains_window_close_requested()
+		_on_gulf_coast_window_close_requested()
+		_on_midwest_window_close_requested()
+		_on_appalachia_window_close_requested()
+		_on_south_atlantic_window_close_requested()
+		_on_north_atlantic_window_close_requested()
+		_on_new_england_window_close_requested()
 
 #window closing stuff
 func _on_pacific_window_close_requested():
@@ -187,7 +222,7 @@ func _on_new_england_window_close_requested():
 func showFBIstart() -> void:
 	var FBIstartNotif = eventResource.instantiate()
 	FBIstartNotif.setTitle("FBI begins investigation")
-	FBIstartNotif.setImage("res://Assets/Temp/usa-map-capitals-only-color.png")
+	FBIstartNotif.setImage("res://Assets/Headlines/investigation.png")
 	FBIstartNotif.setArticle("Since the foundation of " + GameData.playerName + ", there have been a large amount of investors flocking to get their hands on a piece. However, some investors have recently raised concerns about whether or not " + GameData.playerName + " will be able to make good on the promised return on investment as there have been no signs of any widgets being produced.")
 	FBIstartNotif.setButtonText("Are they on to us?")
 	self.add_child(FBIstartNotif)
@@ -197,7 +232,7 @@ func showFBIstart() -> void:
 func HQraidNotif(cityRaided:String) -> void:
 	var raidNotif = eventResource.instantiate()
 	raidNotif.setTitle(cityRaided + " HQ Raided")
-	raidNotif.setImage("res://Assets/Temp/usa-map-capitals-only-color.png")
+	raidNotif.setImage("res://Assets/Headlines/raidHQ.png")
 	raidNotif.setArticle("After waiting for days, the FBI has finally gotten a warrant to raid the HQ of " + GameData.playerName + " in " + cityRaided + ". The doors of the HQ were torn down at 5AM and some employees were apprehended. However, the FBI was not able to capture the ringleader as they did not seem to be at that location. The FBI has stated that they will continue to raid until the pyramid scheme is gone for good.")
 	raidNotif.setButtonText("Uh oh.")
 	self.add_child(raidNotif)
@@ -205,7 +240,7 @@ func HQraidNotif(cityRaided:String) -> void:
 func pressRelease() -> void:
 	var release = eventResource.instantiate()
 	release.setTitle("FBI Press Release")
-	release.setImage("res://Assets/Temp/yellowRegion_ponziProject.png")
+	release.setImage("res://Assets/Headlines/press.png")
 	release.setArticle("Today, the FBI has released a press release regarding the alleged pyramid scheme known as " + GameData.playerName + ". They have stated that due to some suspicious financial reports, more resources will be allocated towards the investigation. " + GameData.playerName + " has denied any allegations of being a pyramid scheme.")
 	release.setButtonText("Hate us cuz they aint us")
 	self.add_child(release)
@@ -220,11 +255,13 @@ func updateDebtUse() -> void:
 
 
 func _on_pay_all_pressed():
+	GameData.AUDIO.get_child(0).play()
 	GameData.cash -= GameData.debt
 	$Debt.visible = false
 
 
 func _on_pay_amount_pressed():
+	GameData.AUDIO.get_child(0).play()
 	GameData.cash -= $Debt/SpinBox.value
 	GameData.debt -= $Debt/SpinBox.value
 	if GameData.debt == 0:

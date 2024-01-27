@@ -22,4 +22,5 @@ func setButtonText(text:String) -> void:
 
 
 func _on_close_button_pressed():
+	GameData.AUDIO.get_child(0).play()
 	self.queue_free()

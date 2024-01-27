@@ -1,7 +1,28 @@
-[gd_scene load_steps=3 format=3 uid="uid://c5f8idolpjdfm"]
+[gd_scene load_steps=24 format=3 uid="uid://c5f8idolpjdfm"]
 
-[ext_resource type="Texture2D" uid="uid://d0hcayid81rte" path="res://Assets/Temp/icon.svg" id="1_vgnyh"]
-[ext_resource type="Texture2D" uid="uid://dg2bti02pie76" path="res://Assets/Temp/placeholder1.png" id="2_i1plg"]
+[ext_resource type="Script" path="res://Scripts/Popup_Scripts/Southern_Plains_Popup.gd" id="1_53fgi"]
+[ext_resource type="ButtonGroup" uid="uid://bm2j3rv7ec3i1" path="res://Assets/Button_Groups/South_Plains_Cities.tres" id="2_75hp1"]
+[ext_resource type="PackedScene" uid="uid://dmlrmano2ig6n" path="res://Game_Scenes/Popup_Base_Bkgd.tscn" id="2_hwjst"]
+[ext_resource type="Texture2D" uid="uid://3r5bd8alf7ie" path="res://Assets/Map_Graphics/Default_State/orangeRegion_ponziProject.png" id="3_1il0m"]
+[ext_resource type="Texture2D" uid="uid://8sv81e2katsi" path="res://Assets/City_Marker/cityMarker_orange.png" id="5_ei1j5"]
+[ext_resource type="Texture2D" uid="uid://bhxyt60kx02v7" path="res://Assets/City_Marker/shadowOrange.png" id="6_xwh5u"]
+[ext_resource type="Script" path="res://Scripts/Button_Scripts/Wichita.gd" id="7_grx50"]
+[ext_resource type="PackedScene" uid="uid://efbeq0ykeep8" path="res://Game_Scenes/Player_Icon.tscn" id="7_lmp1q"]
+[ext_resource type="PackedScene" uid="uid://vxmd7yu1i36h" path="res://Game_Scenes/FBI_Icon.tscn" id="8_b4r86"]
+[ext_resource type="FontFile" uid="uid://c0lbxj5nritok" path="res://Assets/misc/GFSDidot-Regular.ttf" id="9_ku4ck"]
+[ext_resource type="PackedScene" uid="uid://sj3vbrki06d2" path="res://Game_Scenes/HQ.tscn" id="10_67loj"]
+[ext_resource type="Texture2D" uid="uid://d7olc657okom" path="res://Assets/Buttons/buildHQ_button.png" id="11_1ogtu"]
+[ext_resource type="Script" path="res://Scripts/Button_Scripts/Oklahoma City.gd" id="11_6fyo5"]
+[ext_resource type="Texture2D" uid="uid://00gyfh26ml1" path="res://Assets/Buttons/buildHQ_greyButton.png" id="12_jhlhx"]
+[ext_resource type="Script" path="res://Scripts/Button_Scripts/Little Rock.gd" id="12_vuku6"]
+[ext_resource type="Texture2D" uid="uid://bfr8iwl6cx6u3" path="res://Assets/Buttons/travel_button.png" id="13_58igb"]
+[ext_resource type="Script" path="res://Scripts/Button_Scripts/St Louis.gd" id="13_sengh"]
+[ext_resource type="Texture2D" uid="uid://b4b3ft0lrhms4" path="res://Assets/Buttons/travel_greyButton.png" id="14_baylo"]
+[ext_resource type="Script" path="res://Scripts/Button_Scripts/Kansas City.gd" id="14_gsofg"]
+[ext_resource type="Texture2D" uid="uid://bvxawwah5nod0" path="res://Assets/Buttons/runAD_button.png" id="15_mdjkh"]
+[ext_resource type="Texture2D" uid="uid://r170wkq1dkri" path="res://Assets/Buttons/runAD_buttongray.png" id="16_w20yg"]
+[ext_resource type="Texture2D" uid="uid://duv4cc3qp05g4" path="res://Assets/Icons/investor01.png" id="22_w8gpq"]
+[ext_resource type="Texture2D" uid="uid://fdnn4of6thpb" path="res://Assets/Icons/publicity_.png" id="23_mwpn0"]
 
 [node name="SouthernPlainsPopup" type="Control"]
 layout_mode = 3
@@ -12,13 +33,521 @@ offset_right = -352.0
 offset_bottom = -248.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_53fgi")
+group = ExtResource("2_75hp1")
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(398.5, 200)
-scale = Vector2(6.24219, 3.09375)
-texture = ExtResource("1_vgnyh")
+[node name="PopupBaseBkgd" parent="." instance=ExtResource("2_hwjst")]
 
-[node name="Placeholder1" type="Sprite2D" parent="."]
-position = Vector2(158, 186)
-scale = Vector2(0.204, 0.204)
-texture = ExtResource("2_i1plg")
+[node name="SouthernPlains" type="Sprite2D" parent="."]
+position = Vector2(261, 206)
+scale = Vector2(0.958101, 0.958101)
+texture = ExtResource("3_1il0m")
+
+[node name="Cities" type="Node" parent="."]
+
+[node name="Wichita" type="TextureButton" parent="Cities"]
+offset_left = 204.0
+offset_top = 135.0
+offset_right = 236.0
+offset_bottom = 167.0
+toggle_mode = true
+button_group = ExtResource("2_75hp1")
+texture_normal = ExtResource("5_ei1j5")
+texture_pressed = ExtResource("6_xwh5u")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("7_grx50")
+
+[node name="Bar" type="ProgressBar" parent="Cities/Wichita"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 32.0
+offset_top = 33.0
+offset_right = 36.0
+offset_bottom = 65.0
+rotation = 1.5708
+max_value = 0.0
+fill_mode = 2
+show_percentage = false
+
+[node name="Player" parent="Cities/Wichita" instance=ExtResource("7_lmp1q")]
+visible = false
+show_behind_parent = true
+offset_left = 15.0
+offset_top = -6.0
+offset_right = 15.0
+offset_bottom = -6.0
+
+[node name="FBI" parent="Cities/Wichita" instance=ExtResource("8_b4r86")]
+visible = false
+offset_top = 12.0
+offset_bottom = 12.0
+
+[node name="Name" type="Label" parent="Cities/Wichita"]
+layout_mode = 0
+offset_left = -237.0
+offset_top = 7.0
+offset_right = -6.0
+offset_bottom = 37.0
+theme_override_colors/font_color = Color(0.0196078, 0.0196078, 0.0196078, 0.509804)
+theme_override_fonts/font = ExtResource("9_ku4ck")
+theme_override_font_sizes/font_size = 24
+text = "<NAME>"
+horizontal_alignment = 2
+vertical_alignment = 1
+uppercase = true
+
+[node name="Oklahoma City" type="TextureButton" parent="Cities"]
+offset_left = 201.0
+offset_top = 225.0
+offset_right = 233.0
+offset_bottom = 257.0
+toggle_mode = true
+button_group = ExtResource("2_75hp1")
+texture_normal = ExtResource("5_ei1j5")
+texture_pressed = ExtResource("6_xwh5u")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("11_6fyo5")
+
+[node name="Bar" type="ProgressBar" parent="Cities/Oklahoma City"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 32.0
+offset_top = 33.0
+offset_right = 36.0
+offset_bottom = 65.0
+rotation = 1.5708
+max_value = 0.0
+fill_mode = 2
+show_percentage = false
+
+[node name="Player" parent="Cities/Oklahoma City" instance=ExtResource("7_lmp1q")]
+visible = false
+show_behind_parent = true
+offset_left = 15.0
+offset_top = -6.0
+offset_right = 15.0
+offset_bottom = -6.0
+
+[node name="FBI" parent="Cities/Oklahoma City" instance=ExtResource("8_b4r86")]
+visible = false
+offset_top = 12.0
+offset_bottom = 12.0
+
+[node name="Name" type="Label" parent="Cities/Oklahoma City"]
+layout_mode = 0
+offset_left = -190.0
+offset_top = 30.0
+offset_right = 54.0
+offset_bottom = 60.0
+theme_override_colors/font_color = Color(0.0196078, 0.0196078, 0.0196078, 0.509804)
+theme_override_fonts/font = ExtResource("9_ku4ck")
+theme_override_font_sizes/font_size = 24
+text = "<NAME>"
+horizontal_alignment = 2
+vertical_alignment = 1
+uppercase = true
+
+[node name="Little Rock" type="TextureButton" parent="Cities"]
+offset_left = 379.0
+offset_top = 259.0
+offset_right = 411.0
+offset_bottom = 291.0
+toggle_mode = true
+button_group = ExtResource("2_75hp1")
+texture_normal = ExtResource("5_ei1j5")
+texture_pressed = ExtResource("6_xwh5u")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("12_vuku6")
+
+[node name="Bar" type="ProgressBar" parent="Cities/Little Rock"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 32.0
+offset_top = 33.0
+offset_right = 36.0
+offset_bottom = 65.0
+rotation = 1.5708
+max_value = 0.0
+fill_mode = 2
+show_percentage = false
+
+[node name="Player" parent="Cities/Little Rock" instance=ExtResource("7_lmp1q")]
+visible = false
+show_behind_parent = true
+offset_left = 14.0
+offset_top = -6.0
+offset_right = 14.0
+offset_bottom = -6.0
+
+[node name="FBI" parent="Cities/Little Rock" instance=ExtResource("8_b4r86")]
+visible = false
+offset_top = 12.0
+offset_bottom = 12.0
+
+[node name="Name" type="Label" parent="Cities/Little Rock"]
+layout_mode = 0
+offset_left = -136.0
+offset_top = 31.0
+offset_right = 56.0
+offset_bottom = 61.0
+theme_override_colors/font_color = Color(0.0196078, 0.0196078, 0.0196078, 0.509804)
+theme_override_fonts/font = ExtResource("9_ku4ck")
+theme_override_font_sizes/font_size = 24
+text = "<NAME>"
+horizontal_alignment = 2
+vertical_alignment = 1
+uppercase = true
+
+[node name="St Louis" type="TextureButton" parent="Cities"]
+offset_left = 443.0
+offset_top = 89.0
+offset_right = 475.0
+offset_bottom = 121.0
+toggle_mode = true
+button_group = ExtResource("2_75hp1")
+texture_normal = ExtResource("5_ei1j5")
+texture_pressed = ExtResource("6_xwh5u")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("13_sengh")
+
+[node name="Bar" type="ProgressBar" parent="Cities/St Louis"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 32.0
+offset_top = 33.0
+offset_right = 36.0
+offset_bottom = 65.0
+rotation = 1.5708
+max_value = 0.0
+fill_mode = 2
+show_percentage = false
+
+[node name="Player" parent="Cities/St Louis" instance=ExtResource("7_lmp1q")]
+visible = false
+show_behind_parent = true
+offset_left = 14.0
+offset_top = -6.0
+offset_right = 14.0
+offset_bottom = -6.0
+
+[node name="FBI" parent="Cities/St Louis" instance=ExtResource("8_b4r86")]
+visible = false
+offset_top = 12.0
+offset_bottom = 12.0
+
+[node name="Name" type="Label" parent="Cities/St Louis"]
+layout_mode = 0
+offset_left = -82.0
+offset_top = 33.0
+offset_right = 24.0
+offset_bottom = 63.0
+theme_override_colors/font_color = Color(0.0196078, 0.0196078, 0.0196078, 0.509804)
+theme_override_fonts/font = ExtResource("9_ku4ck")
+theme_override_font_sizes/font_size = 24
+text = "<NAME>"
+vertical_alignment = 1
+uppercase = true
+
+[node name="Kansas City" type="TextureButton" parent="Cities"]
+offset_left = 296.0
+offset_top = 79.0
+offset_right = 328.0
+offset_bottom = 111.0
+toggle_mode = true
+button_group = ExtResource("2_75hp1")
+texture_normal = ExtResource("5_ei1j5")
+texture_pressed = ExtResource("6_xwh5u")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("14_gsofg")
+
+[node name="Bar" type="ProgressBar" parent="Cities/Kansas City"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 32.0
+offset_top = 33.0
+offset_right = 36.0
+offset_bottom = 65.0
+rotation = 1.5708
+max_value = 0.0
+fill_mode = 2
+show_percentage = false
+
+[node name="Player" parent="Cities/Kansas City" instance=ExtResource("7_lmp1q")]
+visible = false
+show_behind_parent = true
+offset_left = 15.0
+offset_top = -6.0
+offset_right = 15.0
+offset_bottom = -6.0
+
+[node name="FBI" parent="Cities/Kansas City" instance=ExtResource("8_b4r86")]
+visible = false
+offset_top = 12.0
+offset_bottom = 12.0
+
+[node name="Name" type="Label" parent="Cities/Kansas City"]
+layout_mode = 0
+offset_left = -150.0
+offset_top = -8.0
+offset_right = -10.0
+offset_bottom = 22.0
+theme_override_colors/font_color = Color(0.0196078, 0.0196078, 0.0196078, 0.509804)
+theme_override_fonts/font = ExtResource("9_ku4ck")
+theme_override_font_sizes/font_size = 24
+text = "<NAME>"
+horizontal_alignment = 2
+vertical_alignment = 1
+uppercase = true
+
+[node name="CityHQ" type="Node" parent="."]
+
+[node name="Wichita" parent="CityHQ" instance=ExtResource("10_67loj")]
+visible = false
+position = Vector2(211, 163)
+
+[node name="Oklahoma City" parent="CityHQ" instance=ExtResource("10_67loj")]
+visible = false
+position = Vector2(227, 251)
+
+[node name="Little Rock" parent="CityHQ" instance=ExtResource("10_67loj")]
+visible = false
+position = Vector2(411, 285)
+
+[node name="St Louis" parent="CityHQ" instance=ExtResource("10_67loj")]
+visible = false
+position = Vector2(471, 116)
+
+[node name="Kansas City" parent="CityHQ" instance=ExtResource("10_67loj")]
+visible = false
+position = Vector2(301, 105)
+
+[node name="Data" type="Node" parent="."]
+
+[node name="INVESTORS" type="Label" parent="Data"]
+offset_left = 614.0
+offset_top = 6.0
+offset_right = 700.0
+offset_bottom = 29.0
+theme_override_colors/font_color = Color(0.137255, 0.137255, 0.137255, 1)
+theme_override_fonts/font = ExtResource("9_ku4ck")
+text = "INVESTORS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SelectedCity" type="Label" parent="Data"]
+offset_left = 517.0
+offset_top = 209.0
+offset_right = 798.0
+offset_bottom = 232.0
+theme_override_colors/font_color = Color(0.137255, 0.137255, 0.137255, 1)
+theme_override_fonts/font = ExtResource("9_ku4ck")
+text = "Selected: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HQCost" type="Label" parent="Data"]
+offset_left = 525.0
+offset_top = 258.0
+offset_right = 790.0
+offset_bottom = 281.0
+theme_override_colors/font_color = Color(0.137255, 0.137255, 0.137255, 1)
+theme_override_fonts/font = ExtResource("9_ku4ck")
+text = "HQ cost: 0"
+vertical_alignment = 1
+
+[node name="Population" type="Label" parent="Data"]
+offset_left = 525.0
+offset_top = 236.0
+offset_right = 790.0
+offset_bottom = 259.0
+theme_override_colors/font_color = Color(0.137255, 0.137255, 0.137255, 1)
+theme_override_fonts/font = ExtResource("9_ku4ck")
+text = "Population: 0"
+vertical_alignment = 1
+
+[node name="Tier3Invest" type="Label" parent="Data"]
+offset_left = 524.0
+offset_top = 30.0
+offset_right = 789.0
+offset_bottom = 53.0
+theme_override_colors/font_color = Color(0.137255, 0.137255, 0.137255, 1)
+theme_override_fonts/font = ExtResource("9_ku4ck")
+text = "Tier 3: 0"
+vertical_alignment = 1
+
+[node name="Tier2Invest" type="Label" parent="Data"]
+offset_left = 524.0
+offset_top = 54.0
+offset_right = 789.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0.137255, 0.137255, 0.137255, 1)
+theme_override_fonts/font = ExtResource("9_ku4ck")
+text = "Tier 2: 0"
+vertical_alignment = 1
+
+[node name="Tier1Invest" type="Label" parent="Data"]
+offset_left = 524.0
+offset_top = 78.0
+offset_right = 789.0
+offset_bottom = 101.0
+theme_override_colors/font_color = Color(0.137255, 0.137255, 0.137255, 1)
+theme_override_fonts/font = ExtResource("9_ku4ck")
+text = "Tier 1: 0"
+vertical_alignment = 1
+
+[node name="RegionPopulation" type="Label" parent="Data"]
+offset_left = 524.0
+offset_top = 106.0
+offset_right = 789.0
+offset_bottom = 129.0
+theme_override_colors/font_color = Color(0.137255, 0.137255, 0.137255, 1)
+theme_override_fonts/font = ExtResource("9_ku4ck")
+text = "Region Population: "
+vertical_alignment = 1
+
+[node name="Publicity" type="Label" parent="Data"]
+offset_left = 524.0
+offset_top = 129.0
+offset_right = 789.0
+offset_bottom = 152.0
+theme_override_colors/font_color = Color(0.137255, 0.137255, 0.137255, 1)
+theme_override_fonts/font = ExtResource("9_ku4ck")
+text = "Publicity: 5"
+vertical_alignment = 1
+
+[node name="AdCost" type="Label" parent="Data"]
+offset_left = 648.0
+offset_top = 162.0
+offset_right = 769.0
+offset_bottom = 185.0
+theme_override_colors/font_color = Color(0.137255, 0.137255, 0.137255, 1)
+theme_override_fonts/font = ExtResource("9_ku4ck")
+text = "$0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Build_HQ" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 607.0
+offset_top = 291.0
+offset_right = 707.0
+offset_bottom = 331.0
+texture_normal = ExtResource("11_1ogtu")
+texture_disabled = ExtResource("12_jhlhx")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Travel" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 607.0
+offset_top = 344.0
+offset_right = 707.0
+offset_bottom = 384.0
+texture_normal = ExtResource("13_58igb")
+texture_disabled = ExtResource("14_baylo")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Bar" type="ProgressBar" parent="Travel"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 97.0
+offset_top = 41.0
+offset_right = 101.0
+offset_bottom = 135.0
+rotation = 1.5708
+max_value = 0.0
+fill_mode = 2
+show_percentage = false
+
+[node name="Run_Ads" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 545.0
+offset_top = 153.0
+offset_right = 645.0
+offset_bottom = 193.0
+texture_normal = ExtResource("15_mdjkh")
+texture_disabled = ExtResource("16_w20yg")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Bar" type="ProgressBar" parent="Run_Ads"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 97.0
+offset_top = 41.0
+offset_right = 101.0
+offset_bottom = 135.0
+rotation = 1.5708
+max_value = 0.0
+fill_mode = 2
+show_percentage = false
+
+[node name="Investors" type="Node" parent="."]
+
+[node name="InvestorDood" type="TextureRect" parent="Investors"]
+offset_left = 735.0
+offset_top = 34.0
+offset_right = 755.0
+offset_bottom = 74.0
+texture = ExtResource("22_w8gpq")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="InvestorDood2" type="TextureRect" parent="Investors"]
+offset_left = 751.0
+offset_top = 38.0
+offset_right = 771.0
+offset_bottom = 78.0
+texture = ExtResource("22_w8gpq")
+expand_mode = 1
+flip_h = true
+metadata/_edit_use_anchors_ = true
+
+[node name="InvestorDood3" type="TextureRect" parent="Investors"]
+offset_left = 721.0
+offset_top = 42.0
+offset_right = 741.0
+offset_bottom = 82.0
+texture = ExtResource("22_w8gpq")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="InvestorDood4" type="TextureRect" parent="Investors"]
+offset_left = 730.0
+offset_top = 52.0
+offset_right = 750.0
+offset_bottom = 92.0
+texture = ExtResource("22_w8gpq")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="InvestorDood5" type="TextureRect" parent="Investors"]
+offset_left = 741.0
+offset_top = 56.0
+offset_right = 761.0
+offset_bottom = 96.0
+texture = ExtResource("22_w8gpq")
+expand_mode = 1
+flip_h = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Publicity" type="Sprite2D" parent="."]
+position = Vector2(642, 139)
+texture = ExtResource("23_mwpn0")
+
+[connection signal="pressed" from="Build_HQ" to="." method="_on_build_hq_pressed"]
+[connection signal="pressed" from="Travel" to="." method="_on_travel_pressed"]
+[connection signal="pressed" from="Run_Ads" to="." method="_on_run_ads_pressed"]
